@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo Template
+title: 素颜的博客~
 subtitle: ''
 description: ''
 keywords:
-author: JiJi
-language: en
+author: Suyan
+language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://jiji.pro/hexo-template
+url: http://suyanblog.cn/
 permalink: :title/
 permalink_defaults:
 pretty_urls:
@@ -70,6 +70,29 @@ default_category: uncategorized
 category_map:
 tag_map:
 
+# 电子钟
+# see https://anzhiy.cn/posts/fc18.html
+electric_clock:
+  enable: true # 开关
+  priority: 5 #过滤器优先权
+  enable_page: all # 应用页面
+  exclude:
+    # - /posts/
+    # - /about/
+  layout: # 挂载容器类型
+    type: class
+    name: sticky_layout
+    index: 0
+  loading: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/loading.gif #加载动画自定义
+  clock_css: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.css
+  clock_js: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.js
+  ip_api: https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0
+  qweather_key: # 和风天气key
+  gaud_map_key: # 高得地图web服务key
+  default_rectangle: true # 开启后将一直显示rectangle位置的天气，否则将获取访问者的地理位置与天气
+  rectangle: 112.6534116,27.96920845 # 获取访问者位置失败时会显示该位置的天气，同时该位置为开启default_rectangle后的位置
+
+
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 meta_generator: true
@@ -98,6 +121,11 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: butterfly
+
+#数学字符显示
+markdown:
+    plugins:
+      - '@renbaoshuo/markdown-it-katex'
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
