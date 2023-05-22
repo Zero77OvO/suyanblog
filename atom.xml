@@ -6,7 +6,7 @@
   <link href="http://suyanblog.cn/atom.xml" rel="self"/>
   
   <link href="http://suyanblog.cn/"/>
-  <updated>2023-05-18T19:53:22.000Z</updated>
+  <updated>2023-05-22T21:53:00.000Z</updated>
   <id>http://suyanblog.cn/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vercel部署Waline，评论出现Fail to fetch的解决方案</title>
+    <link href="http://suyanblog.cn/walinecomments/"/>
+    <id>http://suyanblog.cn/walinecomments/</id>
+    <published>2023-05-22T21:42:00.000Z</published>
+    <updated>2023-05-22T21:53:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>配置好Waline后，出现了本地评论正常，服务器上显示Fail to fetch的情况，F12控制台出现了如下情况。<br/><br>![img](&#x2F;pic&#x2F;comment mistakes&#x2F;mis1.png)<br/><br>看了看应该是服务器端口跨域问题，网上一搜已经有解决方案了，下面是参考文章。<br/></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;配置好Waline后，出现了本地评论正常，服务器上显示Fail to fetch的情况，F12控制台出现了如下情况。&lt;br/&gt;&lt;br&gt;![img](&amp;#x2F;pic&amp;#x2F;comment mistakes&amp;#x2F;mis1.png)&lt;br/&gt;&lt;br&gt;看了看应该是服务</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>你为什么要读研</title>
