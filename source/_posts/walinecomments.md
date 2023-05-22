@@ -20,4 +20,4 @@ cover: https://s2.loli.net/2023/05/22/4W8qmPlAhyTOdFV.jpg
 晚上跟浙✌出去逛了逛超市，买了不少东西哈哈哈，po张夜景看看<br/>
 ![QQ图片20230522221003.jpg](https://s2.loli.net/2023/05/22/4W8qmPlAhyTOdFV.jpg)<br/>
 ![supermarket.jpg](https://s2.loli.net/2023/05/22/Vui7HT1kfsQtCMr.jpg)<br/>
-![6B87822CBF1EB9A5BCA9B9E5B620E6A8.jpg](https://s2.loli.net/2023/05/22/da5zX1lbPuDvVM9.jpg)<br/>
+![zheye.png](https://s2.loli.net/2023/05/22/XlaIdZmtH6BnQ8u.png)<br/>
