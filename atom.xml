@@ -23,12 +23,12 @@
     <published>2023-05-22T21:42:00.000Z</published>
     <updated>2023-05-22T21:53:00.000Z</updated>
     
-    <content type="html"><![CDATA[<p>配置好Waline后，出现了本地评论正常，服务器上显示Fail to fetch的情况，F12控制台出现了如下情况。<br/><br>![img](&#x2F;pic&#x2F;comment mistakes&#x2F;mis1.png)<br/><br>看了看应该是服务器端口跨域问题，网上一搜已经有解决方案了，下面是参考文章。<br/><br><a href="https://juejin.cn/post/6993644913900388359">好像终于懂了http-proxy-middleware为何能解决跨域问题</a><br/><br><a href="https://blog.csdn.net/qq_41956139/article/details/106564357">react-解决 fetch 跨域问题</a><br/></p>]]></content>
+    <content type="html"><![CDATA[<p>配置好Waline后，出现了本地评论正常，服务器上显示Fail to fetch的情况，F12控制台出现了如下情况。<br/><br><img src="https://s2.loli.net/2023/05/22/AFWgKuSJQX97lMy.png" alt="mis1.png">  <br/><br>看了看应该是服务器端口跨域问题，网上一搜已经有解决方案了，下面是参考文章。<br/><br><a href="https://juejin.cn/post/6993644913900388359">好像终于懂了http-proxy-middleware为何能解决跨域问题</a><br/><br><a href="https://blog.csdn.net/qq_41956139/article/details/106564357">react-解决 fetch 跨域问题</a><br/></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;配置好Waline后，出现了本地评论正常，服务器上显示Fail to fetch的情况，F12控制台出现了如下情况。&lt;br/&gt;&lt;br&gt;![img](&amp;#x2F;pic&amp;#x2F;comment mistakes&amp;#x2F;mis1.png)&lt;br/&gt;&lt;br&gt;看了看应该是服务</summary>
+    <summary type="html">&lt;p&gt;配置好Waline后，出现了本地评论正常，服务器上显示Fail to fetch的情况，F12控制台出现了如下情况。&lt;br/&gt;&lt;br&gt;&lt;img src=&quot;https://s2.loli.net/2023/05/22/AFWgKuSJQX97lMy.png&quot; alt=&quot;mis</summary>
       
     
     

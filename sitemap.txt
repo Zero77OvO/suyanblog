@@ -1,8 +1,8 @@
 http://suyanblog.cn/walinecomments/
+http://suyanblog.cn/tags/index.html
 http://suyanblog.cn/categories/index.html
 http://suyanblog.cn/comments/index.html
 http://suyanblog.cn/link/index.html
-http://suyanblog.cn/tags/index.html
 http://suyanblog.cn/whystudy1/
 http://suyanblog.cn/Circuit%20Principle6/
 http://suyanblog.cn/talktomoon1/
