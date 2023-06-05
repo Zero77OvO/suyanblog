@@ -6,9 +6,9 @@ type:
 comments:
 description:
 keywords:
-top_img: https://s2.loli.net/2023/05/17/U6lKeBaMDsTudnI.webp
+top_img: https://s2.loli.net/2023/06/05/TJBd5YgVvWn4Mqw.jpg
 mathjax:
-cover: https://s2.loli.net/2023/05/17/U6lKeBaMDsTudnI.webp
+cover: https://s2.loli.net/2023/06/05/TJBd5YgVvWn4Mqw.jpg
 ---
 <br/>
 最近又把迅哥跟林姐的书又翻了几翻，又多了几分感慨，发现他们在当时分明是个老爷小姐。小时候读他们的文章并不会注意他们身份背景，只是单纯觉得他们写的故事有趣好看，所以我爱读。但是现在再看，我感觉他们写的那些东西于我而言已经产生距离感了，就像儿时的玩伴，多年未见，他成了大亨，但是你还是那个乡下土孩子。“我们之间已经隔了一层可悲的厚障壁了。”之前没有多少感觉，走马观花似的读完了故事。等到这件事切切实实发生在我身上时，发觉同他毕恭毕敬的叫一声老爷是多么可悲。<br/>
