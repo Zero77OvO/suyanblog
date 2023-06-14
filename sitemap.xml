@@ -4,7 +4,7 @@
   <url>
     <loc>http://suyanblog.cn/categories/index.html</loc>
     
-    <lastmod>2023-06-05</lastmod>
+    <lastmod>2023-06-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,7 +13,7 @@
   <url>
     <loc>http://suyanblog.cn/comments/index.html</loc>
     
-    <lastmod>2023-06-05</lastmod>
+    <lastmod>2023-06-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -22,7 +22,7 @@
   <url>
     <loc>http://suyanblog.cn/link/index.html</loc>
     
-    <lastmod>2023-06-05</lastmod>
+    <lastmod>2023-06-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,7 +31,7 @@
   <url>
     <loc>http://suyanblog.cn/tags/index.html</loc>
     
-    <lastmod>2023-06-05</lastmod>
+    <lastmod>2023-06-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -103,7 +103,7 @@
 
   <url>
     <loc>http://suyanblog.cn/</loc>
-    <lastmod>2023-06-05</lastmod>
+    <lastmod>2023-06-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
