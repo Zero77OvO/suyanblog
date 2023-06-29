@@ -10,7 +10,7 @@ top_img: https://s2.loli.net/2023/05/17/U6lKeBaMDsTudnI.webp
 mathjax:
 cover: https://s2.loli.net/2023/06/29/FphVB4J3WHXEo2i.jpg
 ---
-   都说人生像一场旅行，乘着名为时间的列车不可挽回地驶向终末地。<br/>
+   都说人生像一场旅行，乘着名为时间的列车不可挽回地驶向终末地。
    你会邂逅很多人或事，见证很多历史。
    我们永远都在路上，求学 考研 工作 恋爱 结婚 生子 然后一步步坦然地面对死亡。
    无一例外。<br/>
