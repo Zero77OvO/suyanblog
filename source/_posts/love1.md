@@ -20,4 +20,3 @@ cover: https://s2.loli.net/2023/06/29/FphVB4J3WHXEo2i.jpg
    大师段位，于我而言只是一个分数，重要的是谁和你排的，谁又能见证你的大师。<br/>
    所以很多东西本身并无意义，只是人的情感在作祟。<br/>
    ![sand.jpg](https://s2.loli.net/2023/06/29/2vKHh7kUubeLmrc.jpg)<br/>
-   ![IMG_20230603_194235.jpg](https://s2.loli.net/2023/06/05/7kagbzy2ehjnW51.jpg)
