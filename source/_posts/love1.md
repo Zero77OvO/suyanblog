@@ -10,7 +10,6 @@ top_img: https://s2.loli.net/2023/05/17/U6lKeBaMDsTudnI.webp
 mathjax:
 cover: https://s2.loli.net/2023/06/29/FphVB4J3WHXEo2i.jpg
 ---
-<br/>
    都说人生像一场旅行，乘着名为时间的列车不可挽回地驶向终末地。<br/>
    你会邂逅很多人或事，见证很多历史。<br/>
    我们永远都在路上，求学 考研 工作 恋爱 结婚 生子 然后一步步坦然地面对死亡。<br/>
@@ -19,4 +18,5 @@ cover: https://s2.loli.net/2023/06/29/FphVB4J3WHXEo2i.jpg
    一场旅行，重要的永远不是旅行本身，无所谓过程，去了哪看了啥，而是谁能和你一起见证。<br/>
    大师段位，于我而言只是一个分数，重要的是谁和你排的，谁又能见证你的大师。<br/>
    所以很多东西本身并无意义，只是人的情感在作祟。<br/>
-![sand.jpg](https://s2.loli.net/2023/06/29/2vKHh7kUubeLmrc.jpg)<br/>
+   <br/>
+ <a href="https://smms.app/image/2vKHh7kUubeLmrc" target="_blank"><img src="https://s2.loli.net/2023/06/29/2vKHh7kUubeLmrc.jpg" alt="sand.jpg"></a><br/>
