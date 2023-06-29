@@ -19,5 +19,5 @@ cover: https://s2.loli.net/2023/06/29/FphVB4J3WHXEo2i.jpg
    一场旅行，重要的永远不是旅行本身，无所谓过程，去了哪看了啥，而是谁能和你一起见证。<br/>
    大师段位，于我而言只是一个分数，重要的是谁和你排的，谁又能见证你的大师。<br/>
    所以很多东西本身并无意义，只是人的情感在作祟。<br/>
-   ![sand.jpg](https://s2.loli.net/2023/06/29/2vKHh7kUubeLmrc.jpg)
-<br/>
+   ![sand.jpg](https://s2.loli.net/2023/06/29/2vKHh7kUubeLmrc.jpg)<br/>
+   ![IMG_20230603_194235.jpg](https://s2.loli.net/2023/06/05/7kagbzy2ehjnW51.jpg)
