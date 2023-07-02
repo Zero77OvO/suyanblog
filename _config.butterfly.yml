@@ -123,6 +123,15 @@ cover:
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
      - https://s2.loli.net/2023/05/17/U6lKeBaMDsTudnI.webp
+     - https://s2.loli.net/2023/07/02/rEDtg1QO42Ts5Si.jpg
+     - https://s2.loli.net/2023/07/02/48slkw9SRXLfqK6.jpg
+     - https://s2.loli.net/2023/07/02/aYZjm6ubw9W5LRO.jpg
+     - https://s2.loli.net/2023/07/02/tkrqE1wFO8B36sj.jpg
+     - https://s2.loli.net/2023/07/02/UAEDc9MLvw1FhPb.jpg
+     - https://s2.loli.net/2023/07/02/d5I8vaBEh4163Do.jpg
+     - https://s2.loli.net/2023/07/02/W3ymICZrBK8sFvi.jpg
+     - https://s2.loli.net/2023/07/02/jkFXDGfHhKUlOxC.jpg
+     - https://s2.loli.net/2023/07/02/LWvoCUNg8zycV7d.jpg
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
