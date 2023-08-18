@@ -4,7 +4,7 @@ date: 2023-06-29 21:41
 updated: 2023-06-29 21:41
 type:
 categories:
--关于
+- 关于
 top_img: https://s2.loli.net/2023/05/17/U6lKeBaMDsTudnI.webp
 cover: https://s2.loli.net/2023/06/29/FphVB4J3WHXEo2i.jpg
 ---

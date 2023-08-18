@@ -4,7 +4,7 @@ date: 2023-06-22 02:02:33
 updated: 2023-06-22 02:02:33
 type:
 categories:
--碎记
+- 碎记
 top_img: https://s2.loli.net/2023/06/22/OTMqhENLpiA9G3j.jpg
 cover: https://s2.loli.net/2023/06/22/OTMqhENLpiA9G3j.jpg
 ---
