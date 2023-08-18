@@ -125,6 +125,8 @@
     
     <category term="碎记" scheme="http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/"/>
     
+    <category term="游戏" scheme="http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/%E6%B8%B8%E6%88%8F/"/>
+    
     
   </entry>
   
@@ -145,7 +147,7 @@
     
     
     
-    <category term="碎记" scheme="http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/"/>
+    <category term="关于" scheme="http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/"/>
     
     
   </entry>
