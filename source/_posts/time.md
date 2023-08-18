@@ -2,12 +2,10 @@
 title: 关于时间
 date: 2023-06-05 00:19:43
 updated: 2023-06-05 00:19:43
-type:
-comments:
-description:
-keywords:
+tags:
+categories:
+-碎记
 top_img: https://s2.loli.net/2023/06/05/7kagbzy2ehjnW51.jpg
-mathjax:
 cover: https://s2.loli.net/2023/06/05/7kagbzy2ehjnW51.jpg
 ---
 人的一天大概有24小时，听别人说年纪越大，对时间的流逝越不敏感。<br/>

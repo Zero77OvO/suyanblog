@@ -4,10 +4,8 @@ date: 2023-05-17 02:53
 updated: 2023-05-17 02:53
 tags:
 categories:
-keywords:
-description:
+-碎记
 top_img:
-comments:
 cover: https://s2.loli.net/2023/05/18/JrO5VLgUToZMh2F.jpg
 ---
 坏了，真坏了，记得之前或多或少能写点东西出来，有意义无意义也罢也是能有，现在脑瓜子想半天一个子儿都出不来，好多东西都是写到一半，想想也没必要记，也就那样，然后搁置了，最后就忘了，日子一长也就习惯了;<br/>
