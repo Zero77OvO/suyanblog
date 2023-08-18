@@ -1,16 +1,6 @@
-http://suyanblog.cn/categories/index.html
 http://suyanblog.cn/comments/index.html
 http://suyanblog.cn/link/index.html
-http://suyanblog.cn/tags/index.html
 http://suyanblog.cn/life1/
 http://suyanblog.cn/plan/
-http://suyanblog.cn/love1/
-http://suyanblog.cn/love/
-http://suyanblog.cn/game1/
-http://suyanblog.cn/time/
-http://suyanblog.cn/book1/
-http://suyanblog.cn/walinecomments/
-http://suyanblog.cn/whystudy1/
-http://suyanblog.cn/talktomoon1/
 http://suyanblog.cn/myblog/
 http://suyanblog.cn/
