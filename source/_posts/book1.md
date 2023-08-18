@@ -2,12 +2,11 @@
 title: 读书碎记
 date: 2023-06-03 22:53:23
 updated: 2023-06-03 22:53:23
-type:
-comments:
+categories:
+-碎记
 description:
-keywords:
+tags:
 top_img: https://s2.loli.net/2023/06/05/TJBd5YgVvWn4Mqw.jpg
-mathjax:
 cover: https://s2.loli.net/2023/06/05/TJBd5YgVvWn4Mqw.jpg
 ---
 <br/>

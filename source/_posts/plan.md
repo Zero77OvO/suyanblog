@@ -3,11 +3,7 @@ title: 开始挖坑
 date: 2023-07-02 14:40
 updated: 2023-07-02 14:40
 type:
-comments:
-description:
-keywords:
-top_img: 
-mathjax:
+categories:
 cover: 
 ---
 人生如白驹过隙，转瞬即逝。大一也是过的浑浑噩噩，感觉什么也没学到。

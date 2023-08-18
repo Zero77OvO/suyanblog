@@ -3,11 +3,9 @@ title: 派派，生活，文化
 date: 2023-06-22 02:02:33
 updated: 2023-06-22 02:02:33
 type:
-comments:
-description:
-keywords:
+categories:
+-碎记
 top_img: https://s2.loli.net/2023/06/22/OTMqhENLpiA9G3j.jpg
-mathjax:
 cover: https://s2.loli.net/2023/06/22/OTMqhENLpiA9G3j.jpg
 ---
 近来无事，于是有了充足的时间打派派。排位也是熬了几个周上了大师，颇有感想，于是记之。<br/>

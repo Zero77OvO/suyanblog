@@ -3,11 +3,9 @@ title: 碎记
 date: 2023-06-29 21:41
 updated: 2023-06-29 21:41
 type:
-comments:
-description:
-keywords:
+categories:
+-关于
 top_img: https://s2.loli.net/2023/05/17/U6lKeBaMDsTudnI.webp
-mathjax:
 cover: https://s2.loli.net/2023/06/29/FphVB4J3WHXEo2i.jpg
 ---
    都说人生像一场旅行，乘着名为时间的列车不可挽回地驶向终末地。
