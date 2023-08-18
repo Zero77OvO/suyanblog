@@ -3,6 +3,8 @@ title: 碎记
 date: 2023-07-24 10:33:12
 updated: 2023-07-24 10:33:12
 type:
+categories:
+- 碎记
 top_img:
 cover: 
 ---
