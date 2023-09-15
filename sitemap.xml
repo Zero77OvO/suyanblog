@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>http://suyanblog.cn/plan/</loc>
+    
+    <lastmod>2023-09-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://suyanblog.cn/categories/index.html</loc>
     
     <lastmod>2023-09-15</lastmod>
@@ -41,15 +50,6 @@
     <loc>http://suyanblog.cn/tags/index.html</loc>
     
     <lastmod>2023-09-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://suyanblog.cn/plan/</loc>
-    
-    <lastmod>2023-08-26</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
