@@ -1,10 +1,12 @@
-http://suyanblog.cn/whystudy2/
+http://suyanblog.cn/game2/
+http://suyanblog.cn/life1/
 http://suyanblog.cn/plan/
 http://suyanblog.cn/categories/index.html
 http://suyanblog.cn/comments/index.html
 http://suyanblog.cn/link/index.html
 http://suyanblog.cn/tags/index.html
-http://suyanblog.cn/life1/
+http://suyanblog.cn/whystudy2/
+http://suyanblog.cn/daily1/
 http://suyanblog.cn/love1/
 http://suyanblog.cn/love/
 http://suyanblog.cn/game1/
@@ -17,6 +19,6 @@ http://suyanblog.cn/myblog/
 http://suyanblog.cn/
 http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/
 http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/
-http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/
 http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/%E6%B8%B8%E6%88%8F/
+http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/
 http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/
