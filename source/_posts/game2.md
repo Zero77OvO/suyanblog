@@ -1,13 +1,13 @@
 ---
 title: 极乐disco
 date: 2023-09-21 15:02:33
-updated: 
+updated: 2023-09-21 15:02:33
 type:
 categories:
 - 碎记
 - 游戏
 top_img:
-cover: 
+cover: https://s2.loli.net/2023/09/25/3TRjF1CMLpy8qam.jpg
 ---
 <br/>
 极乐迪斯科玩的好累
