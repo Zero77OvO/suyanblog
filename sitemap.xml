@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://suyanblog.cn/life1/</loc>
-    
-    <lastmod>2023-09-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://suyanblog.cn/plan/</loc>
     
     <lastmod>2023-09-25</lastmod>
@@ -20,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/comments/index.html</loc>
+    <loc>http://suyanblog.cn/categories/index.html</loc>
     
     <lastmod>2023-09-25</lastmod>
     
@@ -29,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/categories/index.html</loc>
+    <loc>http://suyanblog.cn/comments/index.html</loc>
     
     <lastmod>2023-09-25</lastmod>
     
@@ -48,6 +39,15 @@
   
   <url>
     <loc>http://suyanblog.cn/tags/index.html</loc>
+    
+    <lastmod>2023-09-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://suyanblog.cn/life1/</loc>
     
     <lastmod>2023-09-25</lastmod>
     
