@@ -281,9 +281,10 @@ aside:
       link: https://space.bilibili.com/10214649
   card_announcement:
     enable: true
-    content: 一个兴趣使然的家伙；<br/>
+    content: 本科自动化在读<br/>
+             一个兴趣使然的家伙；<br/>
              是蒂厨 会玩FPS <br/>
-             随便写点东西记录记录呼呼呼
+             随便写点东西记录记录
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
