@@ -23,5 +23,4 @@ cover: https://picss.sunbangyan.cn/2023/11/06/d6b5f07fa14608c34fa1e9db73a63314.p
 对了其实我感觉自己还是挺喜欢做饭的，等回家时候跟爹多学几手，到时候给朋友小漏一手嘿嘿
 <br/>
 其实搭博客也不全是兴趣，只是当时闲的慌想找点事干，恰好当时感觉需要一个平台去写东西，最后就有了blog哈哈哈
-   <br/>
- <a href="https://smms.app/image/2vKHh7kUubeLmrc" target="_blank"><img src="https://s2.loli.net/2023/06/29/2vKHh7kUubeLmrc.jpg" alt="sand.jpg"></a><br/>
+<br/>
