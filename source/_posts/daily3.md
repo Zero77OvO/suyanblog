@@ -8,7 +8,6 @@ categories:
 top_img:
 cover: https://s2.loli.net/2023/11/10/BXTYL7sjElUOvat.jpg
 ---
-![wuyu.jpg](https://s2.loli.net/2023/11/10/BXTYL7sjElUOvat.jpg)
 rt
 <br/>
 <br/>
