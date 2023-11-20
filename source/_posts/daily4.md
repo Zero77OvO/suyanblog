@@ -20,9 +20,9 @@ rt
 <br/>
 ![cs.png](https://s2.loli.net/2023/11/20/4ZzQicj8hSXFPty.png)
 <br/>
+还是看一下可爱的蒂蒂吧，还有新买的鼠标_(:3」∠)_
 ![dd.jpg](https://s2.loli.net/2023/11/20/HPjOqflXZBy8FM4.jpg)
 ![gpw.jpg](https://s2.loli.net/2023/11/20/zPi9YBn3g5U1Dj4.jpg)
-还是看一下可爱的蒂蒂吧，还有新买的鼠标_(:3」∠)_
 主打一手败家
 <br/>
 <br/>
