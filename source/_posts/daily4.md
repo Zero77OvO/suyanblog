@@ -5,6 +5,7 @@ updated: 2023-11-20 12:48:23
 type:
 categories:
 - 日常
+- 游戏
 top_img:
 cover: 
 ---
