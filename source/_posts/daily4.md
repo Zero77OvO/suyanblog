@@ -18,6 +18,8 @@ rt
 
 为什么现在亏钱都不觉得难受了喂，真不拿钱当钱了！！有点收入就了不起是吧！！
 <br/>
+![cs.png](https://s2.loli.net/2023/11/20/4ZzQicj8hSXFPty.png)
+<br/>
 ![dd.jpg](https://s2.loli.net/2023/11/20/HPjOqflXZBy8FM4.jpg)
 ![gpw.jpg](https://s2.loli.net/2023/11/20/zPi9YBn3g5U1Dj4.jpg)
 还是看一下可爱的蒂蒂吧，还有新买的鼠标_(:3」∠)_
