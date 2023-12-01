@@ -9,7 +9,8 @@ categories:
 top_img:
 cover: 
 ---
-
+单片机： stm32f103t8c6
+相机：OpenMV Cam H7(Stm32H743) OV5640
 
 1.卡中断，stm32死机
 ---
