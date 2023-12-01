@@ -20,11 +20,12 @@ usart1换到了usart2时候，stm会死机，debug发现卡B. 查了一下说是
 代码如下
 
 最开始一直传不进来参数，一直以为是代码问题，找了很久也没发现bug，去看了一下别人代码发现跟自己也是大差不差，debug也没发现什么问题，后来从usart1换到了usart2，自己相机还是废的，但是连了一下别人相机发现可以正常传参，排除软件问题。
-![xiangjichuancan1.jpg](https://s2.loli.net/2023/12/01/PBSwhUuKZsiJ78C.jpg)
+
+<img src="https://s2.loli.net/2023/12/01/PBSwhUuKZsiJ78C.jpg" width="40%" height="40%" />
 后来好奇用电表测了一下单片机rt tx引脚，输出3v3，嗯很对。但是openmv上的引脚只有0.3v，压根没输出啊对吧，后来用电表把引脚挨个测了一遍，就b10，b11引脚有输出，去找了一下引脚图发现这就是usart输出引脚，接上成功传参。
-![xiangjichuancan2.jpg](https://s2.loli.net/2023/12/01/iIgNewGqOnF3ZLE.jpg)
 
-
+<img src="https://s2.loli.net/2023/12/01/iIgNewGqOnF3ZLE.jpg" width="80%" height="80%" />
 
 ps:我都不知道这rx tx引脚标出来干啥的，真是害人不浅啊。
-![yinjiao.jpg](https://s2.loli.net/2023/12/01/KTru1sCk793FH2L.jpg)
+
+<img src="https://s2.loli.net/2023/12/01/KTru1sCk793FH2L.jpg" width="50%" height="50%" />
