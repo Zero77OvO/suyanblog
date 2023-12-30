@@ -5,8 +5,8 @@ http://suyanblog.cn/plan/
 http://suyanblog.cn/stm32tongxin/
 http://suyanblog.cn/categories/index.html
 http://suyanblog.cn/comments/index.html
-http://suyanblog.cn/tags/index.html
 http://suyanblog.cn/link/index.html
+http://suyanblog.cn/tags/index.html
 http://suyanblog.cn/daily5/
 http://suyanblog.cn/love3/
 http://suyanblog.cn/daily4/
