@@ -9,6 +9,7 @@ categories:
 top_img:
 cover: 
 ---
+win11
 python：3.11.5
 Anaconda Navigator：2.5.1
 
