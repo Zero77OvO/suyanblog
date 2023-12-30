@@ -9,6 +9,9 @@ categories:
 top_img:
 cover: 
 ---
+省流：用cmd启动，根据提示的报错信息进行修改，每个人环境都不一样，网上攻略也不一定都适合你
+
+
 win11
 python：3.11.5
 Anaconda Navigator：2.5.1
