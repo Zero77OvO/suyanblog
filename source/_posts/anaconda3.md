@@ -18,4 +18,4 @@ ImportError: cannot import name 'Callable' from 'collections' (E:\tools\anaconda
 <img src="https://s2.loli.net/2023/12/30/Q8xubH2YEmXNWdK.png" width="100%" height="80%" /><br/>
 然后就去手动import一下
 解决了
-<img src="https://s2.loli.net/2023/12/30/Kbz7U3qgQsmdanB.png" width="60%" height="60%" /><br/>
+<img src="https://s2.loli.net/2023/12/30/Kbz7U3qgQsmdanB.png" width="80%" height="80%" /><br/>
