@@ -122,15 +122,8 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-     - https://imgse.com/i/pijC9pD
-     - https://imgse.com/i/pij9ztK
-     - https://imgse.com/i/pijCiXd
-     - https://imgse.com/i/pij9xk6
-     - https://imgse.com/i/pijCSfO
-     - https://imgse.com/i/pijCP6H
-     - https://imgse.com/i/pijCknA
-     - https://imgse.com/i/pijCC1e
-     - https://imgse.com/i/pijCA0I
+     - https://s11.ax1x.com/2024/01/02/pijC9pD.png
+ 
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
