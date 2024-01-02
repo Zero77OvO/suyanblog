@@ -7,7 +7,7 @@ categories:
 - 解决方案
 - stm32
 top_img:
-cover: https://s2.loli.net/2023/12/01/iIgNewGqOnF3ZLE.jpg
+cover: https://www.freeimg.cn/i/2024/01/02/6593a75a0d552.jpg
 ---
 单片机型号： stm32f103t8c6 
 相机：OpenMV Cam H7(Stm32H743) OV5640
