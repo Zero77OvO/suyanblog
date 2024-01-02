@@ -123,6 +123,23 @@ cover:
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
      - https://www.freeimg.cn/i/2024/01/02/65939d4e0e9aa.jpg
+     - https://www.freeimg.cn/i/2024/01/02/6593a1fe56433.png
+     - https://www.freeimg.cn/i/2024/01/02/6593a1fe96931.png
+     - https://www.freeimg.cn/i/2024/01/02/6593a2018e764.jpg
+     - https://www.freeimg.cn/i/2024/01/02/6593a207d07be.jpg
+     - https://www.freeimg.cn/i/2024/01/02/6593a20fa56b7.png
+     - https://www.freeimg.cn/i/2024/01/02/6593a1fe81629.jpg
+     - https://www.freeimg.cn/i/2024/01/02/6593a2190882c.png
+     - https://www.freeimg.cn/i/2024/01/02/6593a2266610b.png
+
+
+
+
+
+
+
+
+
  
 
 # Replace Broken Images (替換無法顯示的圖片)
