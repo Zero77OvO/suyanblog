@@ -123,51 +123,15 @@ cover:
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
      - https://s2.loli.net/2023/07/02/rEDtg1QO42Ts5Si.jpg
-     - https://s2.loli.net/2023/05/17/U6lKeBaMDsTudnI.webp
-     - https://s2.loli.net/2023/07/02/48slkw9SRXLfqK6.jpg
-     - https://s2.loli.net/2023/07/02/aYZjm6ubw9W5LRO.jpg
-     - https://s2.loli.net/2023/07/02/tkrqE1wFO8B36sj.jpg
-     - https://s2.loli.net/2023/07/02/UAEDc9MLvw1FhPb.jpg
-     - https://s2.loli.net/2023/07/02/d5I8vaBEh4163Do.jpg
-     - https://s2.loli.net/2023/07/02/W3ymICZrBK8sFvi.jpg
-     - https://s2.loli.net/2023/07/02/jkFXDGfHhKUlOxC.jpg
-     - https://s2.loli.net/2023/07/02/LWvoCUNg8zycV7d.jpg
-     - https://s2.loli.net/2023/12/30/SplWVegt4Bqsdw1.png
-     - https://s2.loli.net/2023/12/30/gVTRd1unj7BOoSL.jpg
-     - https://s2.loli.net/2023/12/30/j2FZJfIm1EWgp3z.jpg
-     - https://s2.loli.net/2023/12/30/X9vRLPNEMBY1Vo4.png
-     - https://s2.loli.net/2023/12/30/olfT4tWkRbOMGgz.jpg
-     - https://s2.loli.net/2023/12/30/IPBJw9v2g3nGFRh.png
-     - https://s2.loli.net/2023/12/30/XY9jRhKLuvlPdpN.jpg
-     - https://s2.loli.net/2023/12/30/hrGCujxmyDkd26p.png
-     - https://s2.loli.net/2023/12/30/zQPWVJFBXtKUpbd.png
-     - https://s2.loli.net/2023/12/30/jVF3xT1LuH4GM8A.jpg
-     - https://s2.loli.net/2023/12/30/4EpMiFShrx5vWIQ.jpg
-     - https://s2.loli.net/2023/12/30/J3oGcjW5TDCMLey.jpg
-     - https://s2.loli.net/2023/12/30/9PKTulUswR7mAzE.jpg
-     - https://s2.loli.net/2023/12/30/Xkbx4Atc8vFlowQ.jpg
-     - https://s2.loli.net/2023/12/30/Z4p7IN2kRAUxFHg.jpg
-     - https://s2.loli.net/2023/12/30/wco6efhY5bLy4W1.jpg
-     - https://s2.loli.net/2023/12/30/6EGhVcnSQHDsqog.png
-     - https://s2.loli.net/2023/12/30/315RxeJydpLfFz2.png
-     - https://s2.loli.net/2023/12/30/jAzBr7md4ihqPMO.png
-     - https://s2.loli.net/2023/12/30/2wZgheRJYmP4T9q.png
-     - https://s2.loli.net/2023/12/30/ijdx4Ulm1cgT7wM.jpg
-     - https://s2.loli.net/2023/12/30/k1wlLIWcfRKU7zC.jpg
-     - https://s2.loli.net/2023/12/30/9TyQiWF2KVcIZe8.jpg
-     - https://s2.loli.net/2023/12/30/DpaVQ6P1wEB4cvM.jpg
-     - https://s2.loli.net/2023/12/30/TRfAvcmEiFYp6oB.jpg
-     - https://s2.loli.net/2023/12/30/yPdv17SqWHcVlT4.jpg
-     - https://s2.loli.net/2023/12/30/mxH7BDsQp3RqEfc.jpg
-     - https://s2.loli.net/2023/12/30/2NOsEqUSFVRL65j.jpg
-     - https://s2.loli.net/2023/12/30/dEnBwh73Lve9ixA.jpg
-     - https://s2.loli.net/2023/12/30/yIEDCM3mAPnK9Qe.jpg
-     - https://s2.loli.net/2023/12/30/ibU67JXoHfsSKaE.jpg
-     - https://s2.loli.net/2023/12/30/S4QhwXyKp39a1Vm.jpg
-     - https://s2.loli.net/2023/12/30/DnmwAhUfzRYyWNt.png
-     - https://s2.loli.net/2023/12/30/ABKOkqP8mSvCE71.png
-     - https://s2.loli.net/2023/12/30/aj6JbxOoNgZ9Ftm.jpg
-     - https://s2.loli.net/2023/12/30/O8LjlFGkSqwpy5a.jpg
+     - https://imgse.com/i/pijC9pD
+     - https://imgse.com/i/pij9ztK
+     - https://imgse.com/i/pijCiXd
+     - https://imgse.com/i/pij9xk6
+     - https://imgse.com/i/pijCSfO
+     - https://imgse.com/i/pijCP6H
+     - https://imgse.com/i/pijCknA
+     - https://imgse.com/i/pijCC1e
+     - https://imgse.com/i/pijCA0I
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
