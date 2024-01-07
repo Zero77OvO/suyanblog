@@ -6,7 +6,7 @@ type:
 categories:
 - 日常
 top_img:
-cover: https://s2.loli.net/2023/09/27/U7EarpnHMy6cjZ5.jpg
+cover: https://www.freeimg.cn/i/2024/01/07/659a4943887a9.jpg
 ---
 秋天的风不同于盛夏，多了几分柔情。不热不燥，我愿称之为温凉。<br/>
 思绪回到四年前，高中放学的那个下午，尚未适应两周一回的假制，也有了归家的心切。温凉的秋风吹过耳侧，带不走的是对家的思念。母亲的笑靥，父亲的声言，是那时的我对家的概念。<br/>
@@ -14,4 +14,4 @@ cover: https://s2.loli.net/2023/09/27/U7EarpnHMy6cjZ5.jpg
 我想现在拂过我的秋风，跟那时候的是同一缕吧。<br/>
 <br/>
 <br/>
-<img src="https://s2.loli.net/2023/09/27/aKpkj9OBYnD6AhU.jpg" width="40%" height="40%" /><br/>
+<img src="https://www.freeimg.cn/i/2024/01/07/659a4943887a9.jpg" width="40%" height="40%" /><br/>

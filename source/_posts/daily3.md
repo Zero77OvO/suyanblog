@@ -6,7 +6,7 @@ type:
 categories:
 - 日常
 top_img:
-cover: https://s2.loli.net/2023/11/10/BXTYL7sjElUOvat.jpg
+cover: https://www.freeimg.cn/i/2024/01/07/659a485c50128.jpg
 ---
 rt
 <br/>
