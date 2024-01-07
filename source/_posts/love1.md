@@ -5,8 +5,8 @@ updated: 2023-06-29 21:41
 type:
 categories:
 - 关于
-top_img: https://s2.loli.net/2023/05/17/U6lKeBaMDsTudnI.webp
-cover: https://s2.loli.net/2023/06/29/FphVB4J3WHXEo2i.jpg
+top_img: https://www.freeimg.cn/i/2024/01/02/6593a8134010b.jpg
+cover: https://www.freeimg.cn/i/2024/01/07/659a4b8e09c53.jpg
 ---
    都说人生像一场旅行，乘着名为时间的列车不可挽回地驶向终末地。
    你会邂逅很多人或事，见证很多历史。
@@ -17,4 +17,6 @@ cover: https://s2.loli.net/2023/06/29/FphVB4J3WHXEo2i.jpg
    大师段位，于我而言只是一个分数，重要的是谁和你排的，谁又能见证你的大师。
    所以很多东西本身并无意义，只是人的情感在作祟。
    <br/>
- <a href="https://smms.app/image/2vKHh7kUubeLmrc" target="_blank"><img src="https://s2.loli.net/2023/06/29/2vKHh7kUubeLmrc.jpg" alt="sand.jpg"></a><br/>
+    <img src="https://www.freeimg.cn/i/2024/01/07/659a4bb1b9824.jpg" width="100%" height="100%" /><br/>
+ 
+ 

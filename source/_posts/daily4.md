@@ -22,7 +22,7 @@ rt
 <br/>
 还是看一下可爱的蒂蒂吧，还有新买的鼠标_(:3」∠)_
 ![dd.jpg](https://www.freeimg.cn/i/2024/01/07/659a4942efb81.jpg)
-![gpw.jpg](https://s2.loli.net/2023/11/20/zPi9YBn3g5U1Dj4.jpg)
+![gpw.jpg](https://www.freeimg.cn/i/2024/01/07/659a4aa77894e.jpg)
 主打一手败家
 <br/>
 <br/>

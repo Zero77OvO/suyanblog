@@ -7,7 +7,7 @@ categories:
 description:
 tags:
 top_img: 
-cover: https://s2.loli.net/2023/09/25/CEepQrKhJmcTXRN.jpg
+cover: https://www.freeimg.cn/i/2024/01/07/659a4a67530c9.png
 ---
 <br/>
     挣一千太少，花一千太多<br/>

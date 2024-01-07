@@ -7,7 +7,7 @@ categories:
 - 碎记
 - 游戏
 top_img:
-cover: https://s2.loli.net/2023/09/25/3TRjF1CMLpy8qam.jpg
+cover: https://www.freeimg.cn/i/2024/01/07/659a4a8de707d.jpg
 ---
 
 极乐迪斯科玩的好累
