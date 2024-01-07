@@ -1,5 +1,5 @@
 ---
-title: python在vs中与cmd调用的版本不一致
+title: 解决python在vs中与cmd调用的版本不一致
 date: 2024-01-07 14:14:12
 updated: 2024-01-07 14:14:12
 tags:
