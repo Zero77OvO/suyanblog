@@ -1,10 +1,11 @@
 ---
-title: 关于时间
+title: python在vs中与cmd调用的版本不一致
 date: 2024-01-07 14:14:12
 updated: 2024-01-07 14:14:12
 tags:
 categories:
 - python
+- 解决方法
 top_img: 
 cover: 
 ---
