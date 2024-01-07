@@ -5,8 +5,8 @@ updated: 2023-11-06
 type:
 categories:
 - 关于
-top_img: https://picss.sunbangyan.cn/2023/11/06/d6b5f07fa14608c34fa1e9db73a63314.png
-cover: https://picss.sunbangyan.cn/2023/11/06/d6b5f07fa14608c34fa1e9db73a63314.png
+top_img: https://www.freeimg.cn/i/2024/01/07/659a53349ee1f.png
+cover: https://www.freeimg.cn/i/2024/01/07/659a53349ee1f.png
 ---
 
  所谓兴趣使然
