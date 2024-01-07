@@ -11,24 +11,6 @@
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/tags/index.html</loc>
-    
-    <lastmod>2024-01-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://suyanblog.cn/anaconda3/</loc>
-    
-    <lastmod>2024-01-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://suyanblog.cn/life1/</loc>
     
     <lastmod>2024-01-07</lastmod>
@@ -65,15 +47,6 @@
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/categories/index.html</loc>
-    
-    <lastmod>2024-01-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://suyanblog.cn/comments/index.html</loc>
     
     <lastmod>2024-01-07</lastmod>
@@ -83,7 +56,34 @@
   </url>
   
   <url>
+    <loc>http://suyanblog.cn/categories/index.html</loc>
+    
+    <lastmod>2024-01-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://suyanblog.cn/tags/index.html</loc>
+    
+    <lastmod>2024-01-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://suyanblog.cn/link/index.html</loc>
+    
+    <lastmod>2024-01-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://suyanblog.cn/anaconda3/</loc>
     
     <lastmod>2024-01-07</lastmod>
     
@@ -274,14 +274,14 @@
 
   
   <url>
-    <loc>http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
+    <loc>http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/</loc>
     <lastmod>2024-01-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/</loc>
+    <loc>http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
     <lastmod>2024-01-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
