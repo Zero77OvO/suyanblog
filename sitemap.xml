@@ -11,43 +11,7 @@
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/anaconda3/</loc>
-    
-    <lastmod>2024-01-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://suyanblog.cn/life1/</loc>
-    
-    <lastmod>2024-01-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://suyanblog.cn/life2/</loc>
-    
-    <lastmod>2024-01-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://suyanblog.cn/plan/</loc>
-    
-    <lastmod>2024-01-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://suyanblog.cn/stm32tongxin/</loc>
     
     <lastmod>2024-01-07</lastmod>
     
@@ -101,9 +65,27 @@
   </url>
   
   <url>
+    <loc>http://suyanblog.cn/anaconda3/</loc>
+    
+    <lastmod>2023-12-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://suyanblog.cn/daily5/</loc>
     
     <lastmod>2023-12-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://suyanblog.cn/stm32tongxin/</loc>
+    
+    <lastmod>2023-12-01</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -146,9 +128,27 @@
   </url>
   
   <url>
+    <loc>http://suyanblog.cn/life2/</loc>
+    
+    <lastmod>2023-11-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://suyanblog.cn/daily2/</loc>
     
     <lastmod>2023-09-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://suyanblog.cn/life1/</loc>
+    
+    <lastmod>2023-09-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -281,13 +281,6 @@
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2024-01-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/</loc>
     <lastmod>2024-01-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -295,14 +288,14 @@
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/</loc>
+    <loc>http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2024-01-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/%E6%B8%B8%E6%88%8F/</loc>
+    <loc>http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/</loc>
     <lastmod>2024-01-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -317,6 +310,13 @@
   
   <url>
     <loc>http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/</loc>
+    <lastmod>2024-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/%E6%B8%B8%E6%88%8F/</loc>
     <lastmod>2024-01-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
