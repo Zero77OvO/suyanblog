@@ -1,7 +1,7 @@
 ---
 title: 解决Anaconda Navigator打不开
 date: 2023-12-25 10:20:23
-updated: 
+updated: 2023-12-25 10:20:23
 type:
 categories:
 - 解决方案

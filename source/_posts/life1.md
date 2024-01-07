@@ -1,7 +1,7 @@
 ---
 title: 人生态度
 date: 2023-09-25 00:56
-updated: 
+updated: 2023-09-25 00:56
 categories:
 - 关于
 description:

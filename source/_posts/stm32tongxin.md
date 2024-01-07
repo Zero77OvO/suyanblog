@@ -1,7 +1,7 @@
 ---
 title: 记一次stm32f103t8c6+openmv实现串口通信遇到的问题
 date: 2023-12-01 15:20:23
-updated: 
+updated: 2023-12-01 15:20:23
 type:
 categories:
 - 解决方案
