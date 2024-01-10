@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://suyanblog.cn/tags/index.html</loc>
+    
+    <lastmod>2024-01-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://suyanblog.cn/plan/</loc>
     
     <lastmod>2024-01-10</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>http://suyanblog.cn/comments/index.html</loc>
-    
-    <lastmod>2024-01-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://suyanblog.cn/tags/index.html</loc>
     
     <lastmod>2024-01-10</lastmod>
     
@@ -302,13 +302,6 @@
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2024-01-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/%E6%B8%B8%E6%88%8F/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -323,7 +316,7 @@
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/</loc>
+    <loc>http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/%E6%B8%B8%E6%88%8F/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -331,6 +324,13 @@
   
   <url>
     <loc>http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/stm32/</loc>
+    <lastmod>2024-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://suyanblog.cn/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
