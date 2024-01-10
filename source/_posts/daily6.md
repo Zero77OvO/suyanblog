@@ -6,7 +6,7 @@ type:
 categories:
 - 日常
 top_img:
-cover: 
+cover: https://www.freeimg.cn/i/2024/01/02/6593a1fe96931.png
 ---
 今天是2023年的倒数第二天（其实已经是最后一天了）
 想学别人写个年终总结，但想了想自己还是那吊样，没啥好写的。
