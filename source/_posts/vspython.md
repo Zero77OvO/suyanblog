@@ -7,7 +7,7 @@ categories:
 - 解决方法
 - python
 top_img: 
-cover: 
+cover: https://www.freeimg.cn/i/2024/01/07/659a44ecc7f81.png
 ---
 python在vs中与cmd调用的版本不一致
 
