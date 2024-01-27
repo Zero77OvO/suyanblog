@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://suyanblog.cn/raspi1/</loc>
+    <loc>http://suyanblog.cn/keyboard/</loc>
     
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,7 +13,7 @@
   <url>
     <loc>http://suyanblog.cn/plan/</loc>
     
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -22,7 +22,7 @@
   <url>
     <loc>http://suyanblog.cn/categories/index.html</loc>
     
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,7 +31,7 @@
   <url>
     <loc>http://suyanblog.cn/comments/index.html</loc>
     
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -40,7 +40,7 @@
   <url>
     <loc>http://suyanblog.cn/link/index.html</loc>
     
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -48,6 +48,15 @@
   
   <url>
     <loc>http://suyanblog.cn/tags/index.html</loc>
+    
+    <lastmod>2024-01-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://suyanblog.cn/raspi1/</loc>
     
     <lastmod>2024-01-20</lastmod>
     
@@ -274,7 +283,7 @@
 
   <url>
     <loc>http://suyanblog.cn/</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -284,98 +293,98 @@
   
   <url>
     <loc>http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://suyanblog.cn/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://suyanblog.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/stm32/</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/Blog/</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://suyanblog.cn/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/python/</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2024-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
