@@ -11,24 +11,6 @@
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/plan/</loc>
-    
-    <lastmod>2024-01-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://suyanblog.cn/categories/index.html</loc>
-    
-    <lastmod>2024-01-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://suyanblog.cn/comments/index.html</loc>
     
     <lastmod>2024-01-27</lastmod>
@@ -48,6 +30,24 @@
   
   <url>
     <loc>http://suyanblog.cn/tags/index.html</loc>
+    
+    <lastmod>2024-01-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://suyanblog.cn/plan/</loc>
+    
+    <lastmod>2024-01-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://suyanblog.cn/categories/index.html</loc>
     
     <lastmod>2024-01-27</lastmod>
     
