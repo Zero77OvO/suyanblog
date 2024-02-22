@@ -17,12 +17,15 @@ cuddn：
 cudatoolkit：https://developer.nvidia.com/cuda-toolkit-archive
 
 opencv：
+~~~
 pip install opencv-python
-
+~~~
 
 pytorch：
 离线pytorch包下载：https://download.pytorch.org/whl/torch/ 
 
-pytorch 一键安装：pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu121
-
+pytorch 一键安装：
+~~~
+pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu121
+~~~
 官方网站：https://pytorch.org/get-started/previous-versions/
