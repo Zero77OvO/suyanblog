@@ -6,7 +6,7 @@
   <link href="http://suyanblog.cn/atom.xml" rel="self"/>
   
   <link href="http://suyanblog.cn/"/>
-  <updated>2024-02-07T19:53:20.000Z</updated>
+  <updated>2024-02-22T15:19:15.000Z</updated>
   <id>http://suyanblog.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>应用mpu6050时遇到的问题</title>
+    <link href="http://suyanblog.cn/mpu6050/"/>
+    <id>http://suyanblog.cn/mpu6050/</id>
+    <published>2024-02-22T15:19:15.000Z</published>
+    <updated>2024-02-22T15:19:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天在折腾mpu6050，顺带了解了一下软件iic跟硬件iic，学习了一下滴答计时器(Systick)，跟定时器延迟函数。</p><p>网上看的资料说是硬件iic会在不同频率下有卡死情况，所以建议开发还是用软件iic。</p><p>在while中调用Systick做的Delay函数就会卡中断，所以不用这个了。<br>定时器delay目前没遇到bug。</p><p>操作寄存器实现引脚GPIO状态切换</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#define MPU_SDA_IN()  &#123;GPIOB-&gt;CRH&amp;=0XFFFF0FF;GPIOB-&gt;CRH|=((uint32_t)8&lt;&lt;12);&#125;</span><br><span class="line">#define MPU_SDA_OUT() &#123;GPIOB-&gt;CRH&amp;=0XFFFF0FF;GPIOB-&gt;CRH|=((uint32_t)3&lt;&lt;12);&#125;</span><br></pre></td></tr></table></figure><p>参考:<br><a href="https://blog.csdn.net/w384829981/article/details/119766472">MPU6050移植正点原子指南和寄存器操作端口模式</a><br><a href="https://blog.csdn.net/qq_39400113/article/details/112070047">STM32端口IO方向设置问题的</a><br><a href="https://blog.csdn.net/weixin_45915259/article/details/123878323">STM32 GPIO的配置寄存器（CRL、CRH）快速学习</a><br><a href="https://blog.csdn.net/qq_22520215/article/details/72357076">STM32寄存器操作端口模式SDA_OUT()&#x2F;SDA_IN()</a><br><a href="https://blog.csdn.net/qq_34471646/article/details/81269708">IO口的输入输出与上下拉电阻</a></p><p>最后折腾一顿，各种分析bug，到最后才发现引脚没接线。接上线立刻出数了，无语子&#x3D; &#x3D;</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;今天在折腾mpu6050，顺带了解了一下软件iic跟硬件iic，学习了一下滴答计时器(Systick)，跟定时器延迟函数。&lt;/p&gt;
+&lt;p&gt;网上看的资料说是硬件iic会在不同频率下有卡死情况，所以建议开发还是用软件iic。&lt;/p&gt;
+&lt;p&gt;在while中调用Systick做的D</summary>
+      
+    
+    
+    
+    <category term="解决方案" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    
+    <category term="keil" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/keil/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>深度学习环境部署</title>
@@ -469,29 +495,6 @@
     
     
     <category term="碎记" scheme="http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>碎记</title>
-    <link href="http://suyanblog.cn/daily1/"/>
-    <id>http://suyanblog.cn/daily1/</id>
-    <published>2023-07-24T10:33:12.000Z</published>
-    <updated>2023-07-24T10:33:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>现在开车送我妈上班，感觉就像小时候送我上学似的。。。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;现在开车送我妈上班，感觉就像小时候送我上学似的。。。&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="日常" scheme="http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
   </entry>
