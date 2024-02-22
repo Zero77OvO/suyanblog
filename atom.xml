@@ -37,7 +37,7 @@
     
     <category term="解决方案" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
-    <category term="keil" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/keil/"/>
+    <category term="stm32" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/stm32/"/>
     
     
   </entry>
@@ -63,7 +63,7 @@
     
     <category term="解决方案" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
-    <category term="深度学习" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="python" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/"/>
     
     
   </entry>
@@ -145,14 +145,15 @@
     <published>2024-01-20T11:55:21.000Z</published>
     <updated>2024-01-20T11:55:21.000Z</updated>
     
-    <content type="html"><![CDATA[<p>模型：yolov5-lite<br>python：3.7.10</p><p>电脑跑的pt然后转onnx</p><p>树莓派部署只需要安装opencv+onnxruntime即可<br>安装之前记得换源<br>pip config set global.index-url <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>pip config set install.trusted-host  <a href="https://pypi.mirrors.ustc.edu.cn/">https://pypi.mirrors.ustc.edu.cn/</a></p><p>pip install opencv-python<br>pip install onnxruntime</p><p>然后就能愉快的跑模型啦<br>虽然帧数不高，但是目前来看还够用<br><img src="https://www.freeimg.cn/i/2024/01/20/65ab3b9572bff.png" alt="yololite1.png"></p>]]></content>
+    <content type="html"><![CDATA[<p>模型：yolov5-lite<br>python：3.7.10</p><p>电脑跑的pt然后转onnx</p><p>树莓派部署只需要安装opencv+onnxruntime即可<br>安装之前记得换源</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pip config set global.index-url https://pypi.mirrors.ustc.edu.cn/simple/</span><br><span class="line">pip config set install.trusted-host  https://pypi.mirrors.ustc.edu.cn/</span><br><span class="line"></span><br><span class="line">pip install opencv-python</span><br><span class="line">pip install onnxruntime</span><br></pre></td></tr></table></figure><p>然后就能愉快的跑模型啦<br>虽然帧数不高，但是目前来看还够用<br><img src="https://www.freeimg.cn/i/2024/01/20/65ab3b9572bff.png" alt="yololite1.png"></p>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;模型：yolov5-lite&lt;br&gt;python：3.7.10&lt;/p&gt;
 &lt;p&gt;电脑跑的pt然后转onnx&lt;/p&gt;
-&lt;p&gt;树莓派部署只需要安装opencv+onnxruntime即可&lt;br&gt;安装之前记得换源&lt;br&gt;pip config set global.index-url</summary>
+&lt;p&gt;树莓派部署只需要安装opencv+onnxruntime即可&lt;br&gt;安装之前记得换源&lt;/p&gt;
+&lt;figure class=&quot;highlight plain</summary>
       
     
     
@@ -182,9 +183,9 @@
     
     
     
-    <category term="解决方法" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <category term="解决方案" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
-    <category term="python" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/python/"/>
+    <category term="python" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/"/>
     
     
   </entry>
