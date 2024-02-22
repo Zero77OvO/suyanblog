@@ -5,7 +5,7 @@ updated: 2024-02-07 19:53:20
 type:
 categories:
 - 解决方案
-- 深度学习
+- python
 top_img:
 cover: 
 ---

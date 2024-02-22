@@ -4,7 +4,7 @@ date: 2024-01-07 14:14:12
 updated: 2024-01-07 14:14:12
 tags:
 categories:
-- 解决方法
+- 解决方案
 - python
 top_img: 
 cover: https://www.freeimg.cn/i/2024/01/07/659a44ecc7f81.png

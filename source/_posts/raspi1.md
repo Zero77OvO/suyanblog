@@ -16,11 +16,13 @@ python：3.7.10
 
 树莓派部署只需要安装opencv+onnxruntime即可
 安装之前记得换源
+~~~
 pip config set global.index-url https://pypi.mirrors.ustc.edu.cn/simple/
 pip config set install.trusted-host  https://pypi.mirrors.ustc.edu.cn/
 
 pip install opencv-python
 pip install onnxruntime
+~~~
 
 然后就能愉快的跑模型啦
 虽然帧数不高，但是目前来看还够用
