@@ -33,5 +33,6 @@ cover: https://www.freeimg.cn/i/2024/01/27/65b4f4afd6f46.jpg
 课是不听的，是去看书的
 技术方面可能开一手linux
 rtos跟ros
+C++跟python
 大学真好
 ---------------------
