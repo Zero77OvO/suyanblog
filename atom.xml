@@ -6,7 +6,7 @@
   <link href="http://suyanblog.cn/atom.xml" rel="self"/>
   
   <link href="http://suyanblog.cn/"/>
-  <updated>2024-02-24T18:02:33.000Z</updated>
+  <updated>2024-03-12T13:42:12.000Z</updated>
   <id>http://suyanblog.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一些常用操作集合</title>
+    <link href="http://suyanblog.cn/ku/"/>
+    <id>http://suyanblog.cn/ku/</id>
+    <published>2024-03-12T13:42:12.000Z</published>
+    <updated>2024-03-12T13:42:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/m0_46422300/article/details/104645072">Linux 常用操作命令大全（最后更新时间：2024年1月）</a><br><a href="https://blog.csdn.net/chenxy_bwave/article/details/119996001">Anaconda conda常用命令：从入门到精通</a><br><a href="https://www.cnblogs.com/startrack/p/16831402.html">Hal库</a><br><a href="https://markdown.com.cn/basic-syntax/">Markdown</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/m0_46422300/article/details/104645072&quot;&gt;Linux 常用操作命令大全（最后更新时间：2024年1月）&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://blog.csdn.ne</summary>
+      
+    
+    
+    
+    <category term="未来日记" scheme="http://suyanblog.cn/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>如何成为游戏高手</title>
@@ -472,31 +494,6 @@
     
     
     <category term="关于" scheme="http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>极乐disco</title>
-    <link href="http://suyanblog.cn/game2/"/>
-    <id>http://suyanblog.cn/game2/</id>
-    <published>2023-09-21T15:02:33.000Z</published>
-    <updated>2023-09-21T15:02:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>极乐迪斯科玩的好累<br>我总是在想 怎样的回答才能使人物结局走向更好<br>换句话说 我在追求极致。<br>说实话玩的很累。。<br/></p><p>中间曾因为不小心作出错误的回答想要回档 但又懒得再看一遍之前的内容。<br>最后也是磕磕绊绊玩了下来。<br>后来想想他也只是个游戏，体验体验罢了说不定玩几个小时不玩了，没必要追求那么完美，玩的那么累<br>结束游戏才发现游戏里的他不也是我吗。<br>游戏用来体验人生何尝不是 人生何谈完美一说<br>哪来的正确的错误 谁界定了正确错误<br>与我而言只有想与不想罢了。<br/></p><p>人生是用来体验的，而不是用来演绎完美的。<br><br/></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;极乐迪斯科玩的好累&lt;br&gt;我总是在想 怎样的回答才能使人物结局走向更好&lt;br&gt;换句话说 我在追求极致。&lt;br&gt;说实话玩的很累。。&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;中间曾因为不小心作出错误的回答想要回档 但又懒得再看一遍之前的内容。&lt;br&gt;最后也是磕磕绊绊玩了下来。&lt;br&gt;后来想想他</summary>
-      
-    
-    
-    
-    <category term="碎记" scheme="http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/"/>
-    
-    <category term="游戏" scheme="http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/%E6%B8%B8%E6%88%8F/"/>
     
     
   </entry>
