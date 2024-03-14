@@ -96,14 +96,14 @@
     <published>2024-02-07T19:53:20.000Z</published>
     <updated>2024-02-07T19:53:20.000Z</updated>
     
-    <content type="html"><![CDATA[<p>由于种种事故导致anaconda重装好几次了，每次都要翻攻略去配置环境，今天整合一下，找资源也方便</p><p>CUDA：</p><p>cuddn：<br>cudatoolkit：<a href="https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a></p><p>opencv：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install opencv-python</span><br></pre></td></tr></table></figure><p>pytorch：<br>离线pytorch包下载：<a href="https://download.pytorch.org/whl/torch/">https://download.pytorch.org/whl/torch/</a> </p><p>pytorch 一键安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu121</span><br></pre></td></tr></table></figure><p>官方网站：<a href="https://pytorch.org/get-started/previous-versions/">https://pytorch.org/get-started/previous-versions/</a><br>github：<a href="https://github.com/pytorch/vision#installation">https://github.com/pytorch/vision#installation</a></p>]]></content>
+    <content type="html"><![CDATA[<p>由于种种事故导致anaconda重装好几次了，每次都要翻攻略去配置环境，今天整合一下，找资源也方便</p><p>CUDA：</p><p>cuddn：<br><a href="https://developer.nvidia.com/cuda-toolkit-archive">cudatoolkit</a></p><p>opencv：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install opencv-python</span><br></pre></td></tr></table></figure><p>pytorch：<br><a href="https://download.pytorch.org/whl/torch/">离线pytorch包下载</a></p><p>pytorch 一键安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu121</span><br></pre></td></tr></table></figure><p><a href="https://pytorch.org/get-started/previous-versions/">官方网站</a><br><a href="https://github.com/pytorch/vision#installation">github</a></p>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;由于种种事故导致anaconda重装好几次了，每次都要翻攻略去配置环境，今天整合一下，找资源也方便&lt;/p&gt;
 &lt;p&gt;CUDA：&lt;/p&gt;
-&lt;p&gt;cuddn：&lt;br&gt;cudatoolkit：&lt;a href=&quot;https://developer.nvidia.com/cuda-to</summary>
+&lt;p&gt;cuddn：&lt;br&gt;&lt;a href=&quot;https://developer.nvidia.com/cuda-toolkit-archiv</summary>
       
     
     
