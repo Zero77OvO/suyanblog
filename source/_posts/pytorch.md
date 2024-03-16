@@ -30,3 +30,26 @@ pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https
 ~~~
 [官方网站](https://pytorch.org/get-started/previous-versions/)
 [github](https://github.com/pytorch/vision#installation)
+
+labelimg标签重置问题
+打开\venv\Lib\site-packages\labelImg\labelImg.py 文件
+在labelimg文件1252行 self.default_save_dir = dir_path 下面加入以下代码
+~~~
+        if dir_path is not None and len(dir_path) > 1:
+            self.default_save_dir = dir_path
+        
+        # 加入以下代码
+        files = os.listdir(dir_path)
+        # 判断是否存在名为 class.txt 的文件
+        if "classes.txt" in files:
+            self.label_hist.clear()  # 不清空继续打开其他标注文件不会删除原来的
+            with open(dir_path + "/classes.txt", 'r') as f:
+                for line in f.readlines():
+                    line = line.strip()
+                    if self.label_hist is None:
+                        self.label_hist = [line]
+                    else:
+                        self.label_hist.append(line)
+
+~~~
+然后每次打开记得重新选一下文件夹
