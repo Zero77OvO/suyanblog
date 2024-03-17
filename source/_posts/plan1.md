@@ -45,7 +45,7 @@ C++跟python
 
 规划：
 C/C++学一手
-把yolo视觉挂写出来 C++ YOLOV5 TRT部署
+把yolo视觉挂写出来 C++ YOLOV5 v8 TRT部署
 
 机器人战队
 嵌入式大赛往后稍稍，不打了
