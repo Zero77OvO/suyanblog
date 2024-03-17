@@ -46,6 +46,7 @@ C++跟python
 规划：
 C/C++学一手
 Freertos
+自控学完？
 把yolo视觉挂写出来 C++ YOLOV5 v8 TRT部署
 
 机器人战队
