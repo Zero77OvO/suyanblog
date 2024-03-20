@@ -19,6 +19,7 @@ CUdnn：
 tensorRT:
 [tensorRT](https://developer.nvidia.com/tensorrt) 同上，只丢include跟bin，然后配环境
 python参考：[TensorRT安装记录（8.2.5）](https://blog.csdn.net/qq_37541097/article/details/114847600)
+有时候pip装不了试试离线包
 opencv：
 ~~~
 pip install opencv-python
