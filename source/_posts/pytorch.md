@@ -13,11 +13,11 @@ cover:
 
 
 CUDA：
-[cudatoolkit](https://developer.nvidia.com/cuda-toolkit-archive)
+[cudatoolkit](https://developer.nvidia.com/cuda-toolkit-archive) 直接装
 CUdnn：
-[cudnn](https://developer.nvidia.com/rdp/cudnn-archive)
+[cudnn](https://developer.nvidia.com/rdp/cudnn-archive) 库函数，复制丢"/CUDA/v12.2/"就行
 tensorRT:
-[tensorRT](https://developer.nvidia.com/tensorrt)
+[tensorRT](https://developer.nvidia.com/tensorrt) 同上，只丢include跟bin，然后配环境
 
 opencv：
 ~~~
