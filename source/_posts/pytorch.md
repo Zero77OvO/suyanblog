@@ -11,10 +11,13 @@ cover:
 ---
 由于种种事故导致anaconda重装好几次了，每次都要翻攻略去配置环境，今天整合一下，找资源也方便
 
-CUDA：
 
-cuddn：
+CUDA：
 [cudatoolkit](https://developer.nvidia.com/cuda-toolkit-archive)
+CUdnn：
+[cudnn](https://developer.nvidia.com/rdp/cudnn-archive)
+tensorRT:
+[tensorRT](https://developer.nvidia.com/tensorrt)
 
 opencv：
 ~~~
