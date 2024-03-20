@@ -18,7 +18,7 @@ CUdnn：
 [cudnn](https://developer.nvidia.com/rdp/cudnn-archive) 库函数，复制丢"/CUDA/v12.2/"就行
 tensorRT:
 [tensorRT](https://developer.nvidia.com/tensorrt) 同上，只丢include跟bin，然后配环境
-
+python参考：[TensorRT安装记录（8.2.5）](https://blog.csdn.net/qq_37541097/article/details/114847600)
 opencv：
 ~~~
 pip install opencv-python
