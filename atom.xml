@@ -17,13 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>【yolov8】解决Try using the full path with constructor syntax.</title>
+    <title>【yolov8】Try using the full path with constructor syntax.</title>
     <link href="http://suyanblog.cn/yolo_dll/"/>
     <id>http://suyanblog.cn/yolo_dll/</id>
     <published>2024-03-20T20:44:20.000Z</published>
     <updated>2024-03-20T20:44:20.000Z</updated>
     
-    <content type="html"><![CDATA[<p>win11&#x2F;Python3.10.13<br>1<br>今天在用python调用一个c++的dll库，尝试过以下方法</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">os.add_dll_directory(&quot;xxx.dll&quot;)</span><br><span class="line"></span><br><span class="line">dll = ctypes.CDLL(&quot;xxx.dll&quot;, winmode=0)</span><br></pre></td></tr></table></figure><p>无果之后，参考以下博客解决<br><a href="https://www.cnblogs.com/weixinyu98/p/17610972.html">FileNotFoundError: Could not find module ‘xxx.dll’. Try using the full path with constructor syntax. 调用ctypes库中dll报错问题解决、以及winerr 126找不到指定模块</a><br>还有一个找DLL的网站<a href="https://www.dllme.com/">DLLME</a><br>有个软件找文件的，叫<a href="https://www.voidtools.com/zh-cn/support/everything/">everything</a>也好用</p>]]></content>
+    <content type="html"><![CDATA[<p>win11&#x2F;Python3.10.13<br>1<br>今天在用python调用一个c++的dll库，尝试过以下方法</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">os.add_dll_directory(&quot;xxx.dll&quot;)</span><br><span class="line"></span><br><span class="line">dll = ctypes.CDLL(&quot;xxx.dll&quot;, winmode=0)</span><br></pre></td></tr></table></figure><p>无果，参考以下博客解决<br><a href="https://www.cnblogs.com/weixinyu98/p/17610972.html">FileNotFoundError: Could not find module ‘xxx.dll’. Try using the full path with constructor syntax. 调用ctypes库中dll报错问题解决、以及winerr 126找不到指定模块</a><br>还有一个找DLL的网站<a href="https://www.dllme.com/">DLLME</a><br>有个软件找文件的，叫<a href="https://www.voidtools.com/zh-cn/support/everything/">everything</a>也好用</p>]]></content>
     
     
       
