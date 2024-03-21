@@ -1,5 +1,5 @@
 ---
-title: [yolov8]解决Try using the full path with constructor syntax.
+title: 【yolov8】解决Try using the full path with constructor syntax.
 date: 2024-03-20 20:44:20
 updated: 2024-03-20 20:44:20
 type:
