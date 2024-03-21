@@ -10,7 +10,7 @@ top_img:
 cover: 
 ---
 win11/Python3.10.13
-
+1
 今天在用python调用一个c++的dll库，尝试过以下方法
 ```
 os.add_dll_directory("xxx.dll")
