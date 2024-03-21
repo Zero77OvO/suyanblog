@@ -6,7 +6,7 @@
   <link href="http://suyanblog.cn/atom.xml" rel="self"/>
   
   <link href="http://suyanblog.cn/"/>
-  <updated>2024-03-12T13:42:12.000Z</updated>
+  <updated>2024-03-20T20:44:20.000Z</updated>
   <id>http://suyanblog.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【yolov8】解决Try using the full path with constructor syntax.</title>
+    <link href="http://suyanblog.cn/yolo_dll/"/>
+    <id>http://suyanblog.cn/yolo_dll/</id>
+    <published>2024-03-20T20:44:20.000Z</published>
+    <updated>2024-03-20T20:44:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>win11&#x2F;Python3.10.13<br>1<br>今天在用python调用一个c++的dll库，尝试过以下方法</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">os.add_dll_directory(&quot;xxx.dll&quot;)</span><br><span class="line"></span><br><span class="line">dll = ctypes.CDLL(&quot;xxx.dll&quot;, winmode=0)</span><br></pre></td></tr></table></figure><p>无果之后，参考以下博客解决<br><a href="https://www.cnblogs.com/weixinyu98/p/17610972.html">FileNotFoundError: Could not find module ‘xxx.dll’. Try using the full path with constructor syntax. 调用ctypes库中dll报错问题解决、以及winerr 126找不到指定模块</a><br>还有一个找DLL的网站<a href="https://www.dllme.com/">DLLME</a><br>有个软件找文件的，叫<a href="https://www.voidtools.com/zh-cn/support/everything/">everything</a>也好用</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;win11&amp;#x2F;Python3.10.13&lt;br&gt;1&lt;br&gt;今天在用python调用一个c++的dll库，尝试过以下方法&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr</summary>
+      
+    
+    
+    
+    <category term="解决方案" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    
+    <category term="python" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>一些常用操作集合</title>
@@ -467,32 +492,6 @@
     
     
     <category term="日常" scheme="http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>人生态度</title>
-    <link href="http://suyanblog.cn/life1/"/>
-    <id>http://suyanblog.cn/life1/</id>
-    <published>2023-09-25T00:56:00.000Z</published>
-    <updated>2023-09-25T00:56:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<br/>    挣一千太少，花一千太多<br/><br/>    所有人都在拼命赚钱，攒钱。在这个纸醉金迷的时代，感情的纯粹仿佛成了一种错误。生活节奏的加快麻木了人的情感，快餐式的爱情成为常态，精神不断被生活压迫化作追名逐利的动力，每个人都在拼了命的往前追，向前跑，妄想成为同龄人中的佼佼者。但是人只能活一次，错过了就没了。<br/><br/>    有人追名逐利，有人溺死情海，有人困惑一生不得其道。<br/>    <br/>    人生是多样的，是唯一，不可复制的。<br/>    <br/>    我之前看过一个采访留美华人的纪录片。在我看来，他们完全把握了自己的人生，生活完全由自己把握，不会因为社会，亦或是其他因素影响。喜欢做健身教练，那就去考个证做，喜欢骑哈雷，那就花钱去买。他们或许没有什么积蓄，但是他们都得到了自己想要的东西，做到了自己想做的事情。按他们的话说，人生最好就那么几十年，这几年不好好享受以后就没机会啦。<br/><br/>但是在国内，也包括我在内吧，都是想着如何拼命攒钱，省钱。换句话说，我的安全感只能是银行卡余额。我们未雨绸缪，忙着还房贷，车贷，为了挣老时的医药费。我们一直把钱留在未来，总是觉得这钱要是不花他可能会在未来有更大的功用。总是这么想着，无时无刻不在盘算。钱可以留到以后花，但是最好的时间留不到以后用啊。人生没有那么多如果。我不想因为所谓的钱把人生过得满是遗憾。<br/><br/>  变的世俗功利才算成长吗<br/><p>  路是自己走的<br/></p><p>  我更希望是兴趣使然。<br/><br><br/></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;br/&gt;
-    挣一千太少，花一千太多&lt;br/&gt;
-&lt;br/&gt;
-    所有人都在拼命赚钱，攒钱。在这个纸醉金迷的时代，感情的纯粹仿佛成了一种错误。生活节奏的加快麻木了人的情
-感，快餐式的爱情成为常态，精神不断被生活压迫化作追名逐利的动力，每个人都在拼了命的往前追，向前跑，妄想</summary>
-      
-    
-    
-    
-    <category term="关于" scheme="http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/"/>
     
     
   </entry>
