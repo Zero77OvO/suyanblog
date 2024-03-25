@@ -15,6 +15,8 @@ cover:
 
 效果视频:[强的不是我，是yoloV8](https://www.bilibili.com/video/BV1ux421Q7un)
 
+
+
 但这仅仅只是入门，并没有从源码或者是原理上去理解yolo与trt，还有dgxi截图的原理。
 包括神经网络的构建，以及算法的实现，工程的构成。真正的内核还没学。
 
