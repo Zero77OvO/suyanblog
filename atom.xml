@@ -43,6 +43,30 @@
   </entry>
   
   <entry>
+    <title>dgxi截图-yolov8-c++部署-trt</title>
+    <link href="http://suyanblog.cn/yolo_trt/"/>
+    <id>http://suyanblog.cn/yolo_trt/</id>
+    <published>2024-03-20T20:44:20.000Z</published>
+    <updated>2024-03-20T20:44:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>很久之前刚接触深度学习跟opencv时候，就萌生了做一个ai自瞄的想法，可惜当时很忙，计划便被搁置了<br>近日终于有了时间，便将想法变现<br>网上资料找到的最优解好像是dgxi+yolov5c++部署+trt，但是yoloV8好像也不错，便去git上找到了源码<a href="https://github.com/wang-xinyu/tensorrtx">wang-xinyu&#x2F;tensorrtx</a>，可惜后来的部署并不顺利，Cmake的使用，以及lld文件的打包，还有模型转换之间的问题。后来实在没有头绪了，便去git上找到的大佬的整合版本<a href="https://github.com/Monday-Leo/YOLOv8_Tensorrt">Monday-Leo&#x2F;YOLOv8_Tensorrt</a>。有了之前部署的经验，配合上整合包部署的很顺利。</p><p>但这仅仅只是入门，并没有从源码或者是原理上去理解yolo与trt，还有dgxi截图的原理。<br>包括神经网络的构建，以及算法的实现，工程的构成。真正的内核还没学。</p><p>等后面如果有机会的话，再去做吧</p><p>用于实战还存在许多问题，比如识别精度不高，存在识别错误的情况。</p><p>自带pt-&gt;wts-&gt;engine &#x2F;&#x2F;只能预测转官方的训练模型，自己练出来的不能进行.exe预测<br>后来就用py引导dll<br>用yolo官方pt转engine 有点问题不排除是模型问题所以 试了试pt官方转onnx，TR官方转engine&#x2F;trt  还是有问题，应该是神经网络的原因</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;很久之前刚接触深度学习跟opencv时候，就萌生了做一个ai自瞄的想法，可惜当时很忙，计划便被搁置了&lt;br&gt;近日终于有了时间，便将想法变现&lt;br&gt;网上资料找到的最优解好像是dgxi+yolov5c++部署+trt，但是yoloV8好像也不错，便去git上找到了源码&lt;a hr</summary>
+      
+    
+    
+    
+    <category term="解决方案" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    
+    <category term="python" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>一些常用操作集合</title>
     <link href="http://suyanblog.cn/ku/"/>
     <id>http://suyanblog.cn/ku/</id>
@@ -466,28 +490,6 @@
       
       
     <summary type="html">&lt;p&gt;&lt;br/&gt;今晚上找电赛国一学长看了看作业，指了很多问题。有很多问题犯得很没有技术含量，明明再检查一下原理图就能解决的东西，犯错搞得最后PCB都要重翻一遍。画PCB之前封装对不对也没有看一遍，总是感觉差不多就行。大群里的消息大多时候也只是草草看一遍，漏了很多信息。总之还是对实</summary>
-      
-    
-    
-    
-    <category term="日常" scheme="http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>秋天的风</title>
-    <link href="http://suyanblog.cn/daily2/"/>
-    <id>http://suyanblog.cn/daily2/</id>
-    <published>2023-09-27T11:55:21.000Z</published>
-    <updated>2023-09-27T11:55:21.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>秋天的风不同于盛夏，多了几分柔情。不热不燥，我愿称之为温凉。<br/><br>思绪回到四年前，高中放学的那个下午，尚未适应两周一回的假制，也有了归家的心切。温凉的秋风吹过耳侧，带不走的是对家的思念。母亲的笑靥，父亲的声言，是那时的我对家的概念。<br/><br>而我早已不是那时的自己，明日就要乘上火车去往远方，目的地不再是家，也不会再有那个她。<br/><br>我想现在拂过我的秋风，跟那时候的是同一缕吧。<br/><br><br/><br><br/><br><img src="https://www.freeimg.cn/i/2024/01/07/659a4943887a9.jpg" width="40%" height="40%" /><br/></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;秋天的风不同于盛夏，多了几分柔情。不热不燥，我愿称之为温凉。&lt;br/&gt;&lt;br&gt;思绪回到四年前，高中放学的那个下午，尚未适应两周一回的假制，也有了归家的心切。温凉的秋风吹过耳侧，带不走的是对家的思念。母亲的笑靥，父亲的声言，是那时的我对家的概念。&lt;br/&gt;&lt;br&gt;而我早已不是</summary>
       
     
     
