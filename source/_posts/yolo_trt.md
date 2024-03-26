@@ -1,7 +1,7 @@
 ---
 title: dgxi截图-yolov8-c++部署-trt
-date: 2024-03-20 20:44:20
-updated: 2024-03-20 20:44:20
+date: 2024-03-25 17:04:20
+updated: 2024-03-25 17:04:20
 type:
 categories:
 - 解决方案
