@@ -63,8 +63,13 @@ Freertos
 
 随便看看：
 计算机视觉，以及ai，控制方面的书
-Freertos
+
 
 竞赛：
-数模 电赛
+数模
+
+电赛   画一块整体板子，pid
+
+未来：
+技术栈：CV ros linux 操作系统 Freertos
 
