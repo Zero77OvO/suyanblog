@@ -39,3 +39,4 @@ cover: https://www.freeimg.cn/i/2024/04/01/660a3c494ee99.png
 中间还涉及数据采集误差的问题，比如电位器突变等，能在硬件上解决的问题就不要代码解决。
 
 视频效果：[倒立摆](https://www.bilibili.com/video/BV1JJ4m1576Y/)
+源码：[Swing](https://pan.quark.cn/s/d57c75ea0188)
