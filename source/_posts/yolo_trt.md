@@ -1,5 +1,5 @@
 ---
-title: dgxi截图-yolov8-c++部署-trt
+title: DGXI截图-YOLOv8-C++部署-trt
 date: 2024-03-25 17:04:20
 updated: 2024-03-25 17:04:20
 type:
