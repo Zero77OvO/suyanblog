@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>http://suyanblog.cn/plan/</loc>
+    
+    <lastmod>2024-04-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://suyanblog.cn/categories/index.html</loc>
     
     <lastmod>2024-04-03</lastmod>
@@ -29,15 +38,6 @@
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/link/index.html</loc>
-    
-    <lastmod>2024-04-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://suyanblog.cn/tags/index.html</loc>
     
     <lastmod>2024-04-03</lastmod>
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/plan/</loc>
+    <loc>http://suyanblog.cn/link/index.html</loc>
     
     <lastmod>2024-04-03</lastmod>
     
@@ -415,14 +415,14 @@
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/</loc>
+    <loc>http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/</loc>
     <lastmod>2024-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/</loc>
+    <loc>http://suyanblog.cn/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/</loc>
     <lastmod>2024-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
