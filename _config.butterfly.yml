@@ -823,7 +823,7 @@ beautify:
 font:
   global-font-size:
   code-font-size:
-  font-family: 20px
+  font-family: 30px
   code-font-family:
 
 # Font settings for the site title and site subtitle
