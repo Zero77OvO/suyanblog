@@ -4,8 +4,7 @@ date: 2024-02-24 18:02:33
 updated: 2024-02-24 18:02:33
 type:
 categories:
-- 碎记
-- 游戏
+- 如何
 top_img: https://www.freeimg.cn/i/2024/02/24/65d9c6f1c8686.png
 cover: https://www.freeimg.cn/i/2024/02/24/65d9c76e20cd8.png
 ---
