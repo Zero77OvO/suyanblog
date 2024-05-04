@@ -1,10 +1,10 @@
-http://suyanblog.cn/howstudy/
-http://suyanblog.cn/swing/
 http://suyanblog.cn/categories/index.html
 http://suyanblog.cn/comments/index.html
 http://suyanblog.cn/link/index.html
 http://suyanblog.cn/tags/index.html
 http://suyanblog.cn/plan/
+http://suyanblog.cn/howstudy/
+http://suyanblog.cn/swing/
 http://suyanblog.cn/yolo_trt/
 http://suyanblog.cn/yolo_dll/
 http://suyanblog.cn/ku/
