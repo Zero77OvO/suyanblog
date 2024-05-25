@@ -94,6 +94,9 @@ pip install tpu_mlir-1.7-py3-none-any.whl[all]
 ```
 再新建一个文件夹用来存放测试图片和onnx模型
 ![cam2.png](https://www.freeimg.cn/i/2024/05/25/6651b0d1664c6.png)
+
+然后就可以开始量化模型了
+
 ```
 执行下面命令ONNX 转 MLIR（记得output_names换为自己模型的输出，文件位置也需要根据自己情况来）
 model_transform \
