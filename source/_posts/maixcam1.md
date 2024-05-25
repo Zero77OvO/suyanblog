@@ -6,8 +6,8 @@ type:
 categories:
 - 嵌入式
 - maixpy
-top_img: 
-cover: 
+top_img: https://www.freeimg.cn/i/2024/05/25/6651b876660c7.jpg
+cover: https://www.freeimg.cn/i/2024/05/25/6651b876660c7.jpg
 ---
 
 YOLOv5本地部署训练
