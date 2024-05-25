@@ -25,6 +25,7 @@ pip install -r requirements.txt
 pip install onnx
 ```
 安装完成后，建议删除cpu版本的pytorch，使用gpu版本,训练会快一点
+以下为GPU版本的pytorch安装，安装前请检查cuda版本
 ```
 pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu121
 ```
