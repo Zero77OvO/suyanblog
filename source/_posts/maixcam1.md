@@ -1,17 +1,14 @@
----
-title: Maixcam本地部署训练
-date: 2024-05-25
-updated: 2024-05-25
-type:
-categories:
-- 嵌入式
-- maixpy
-top_img: https://www.freeimg.cn/i/2024/05/25/6651b876660c7.jpg
-cover: https://www.freeimg.cn/i/2024/05/25/6651b876660c7.jpg
----
+整合了多方资料，作为流程补充
+部署流程仅作参考，请多方参考寻找适合自己环境的部署方法，有问题还请斧正
 
-1.YOLOv5本地部署训练
 ---
+1.YOLOv5本地部署训练自建数据集
+---
+用的是YOLO格式的数据集，
+标注采用labelimg
+![cam7.png](https://www.freeimg.cn/i/2024/05/25/6651c365b898b.png)
+
+
 环境配置
 anaconda python 3.8.19
 cuda：12.4
@@ -25,18 +22,29 @@ pip install -r requirements.txt
 pip install onnx
 ```
 安装完成后，建议删除cpu版本的pytorch，使用gpu版本,训练会快一点
-以下为GPU版本的pytorch安装，安装前请检查cuda版本
+```
+pip uninstall torch
+pip uninstall torchvision
+```
+以下为GPU版本的pytorch安装，安装前请检查cuda版本是否适配
 ```
 pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu121
 ```
-装完运行train.py即可
-训练参数没动过，有需求的话可以调
+装完打开yolo5文件夹内train.py
+滑到最下面改一下目录，运行即可开始训练
+![cam8.png](https://www.freeimg.cn/i/2024/05/25/6651c48163c8d.png)
+
+训练参数没动过，有需求的话可以调，保证weights，cfg，data地址对就行
+具体参数其他帖子有解释了，这里不过多赘述
+
 使用export.py将.pt文件转为.onnx
-图像尺寸改为224 320 没试过其他尺寸，有兴趣可以试试
+
+图像尺寸注意改为224 320 没试过其他尺寸，有兴趣可以试试
 
 通过网址输入 netron.app 查看.onnx模型的三个输出
 这里可能每个模型都不一样，后面模型量化时候需要用
 ![cam1.png](https://www.freeimg.cn/i/2024/05/25/66519ecc6a0ed.png)
+如下，这是我自定义数据集训练模型的输出
 ```
 /model.24/m.0/Conv_output_0
 /model.24/m.1/Conv_output_0
@@ -95,7 +103,9 @@ pip install tpu_mlir-1.7-py3-none-any.whl[all]
 再新建一个文件夹用来存放测试图片和onnx模型
 ![cam2.png](https://www.freeimg.cn/i/2024/05/25/6651b0d1664c6.png)
 
+
 然后就可以开始量化模型了
+
 
 ```
 执行下面命令ONNX 转 MLIR（记得output_names换为自己模型的输出，文件位置也需要根据自己情况来）
@@ -141,7 +151,6 @@ model_deploy \
 yolov5s_num1.mud内容如下，各位别忘了改label跟model名字
 ```
 [basic]
-[basic]
 type = cvimodel
 model = yolov5s_num1_cv181x_int8_sym.cvimodel
 
@@ -180,7 +189,7 @@ while not app.need_exit():
 感觉可玩性很高啊，等期末考完猛猛把玩一手
 
 
-参考资料：
+部分参考资料：
 [MaixPy 自定义（离线训练） AI 模型和运行](https://wiki.sipeed.com/maixpy/doc/zh/vision/custmize_model.html)
 [CV18xx芯片使用指南](https://tpumlir.org/docs/quick_start/09_cv18xx_guide.html#yolov5)
 [yolov5编译ONNX模型](https://tpumlir.org/docs/quick_start/03_onnx.html)
