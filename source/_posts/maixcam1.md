@@ -34,7 +34,7 @@ pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https
 使用export.py将.pt文件转为.onnx
 图像尺寸改为224 320 没试过其他尺寸，有兴趣可以试试
 
-通过网址输入netron.app查看.onnx模型的三个输出
+通过网址输入 netron.app 查看.onnx模型的三个输出
 这里可能每个模型都不一样，后面模型量化时候需要用
 ![cam1.png](https://www.freeimg.cn/i/2024/05/25/66519ecc6a0ed.png)
 ```
