@@ -10,7 +10,7 @@ top_img: https://www.freeimg.cn/i/2024/05/25/6651b876660c7.jpg
 cover: https://www.freeimg.cn/i/2024/05/25/6651b876660c7.jpg
 ---
 
-YOLOv5本地部署训练
+1.YOLOv5本地部署训练
 ---
 环境配置
 anaconda python 3.8.19
@@ -43,7 +43,7 @@ pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https
 /model.24/m.2/Conv_output_0 
 ```
 
-Docker环境配置
+2.Docker环境配置
 ---
 
 接下来就需要在docker容器里进行操作了
@@ -76,9 +76,10 @@ newgrp docker
 ```
 docker run --privileged --name MYNAME -v $PWD:/workspace -it sophgo/tpuc_dev:latest
 ```
+![cam6.png](https://www.freeimg.cn/i/2024/05/25/6651bc4ac27f8.png)
 MYNAME 是容器名字，自己自定义就可以
 
-TPU-MLIR量化环境搭建
+3.TPU-MLIR量化环境搭建
 ---
 ```
 https://github.com/sophgo/tpu-mlir/releases/tag/v1.7
@@ -125,11 +126,13 @@ model_deploy \
 --tolerance 0.85,0.45 \
 --model yolov5s_cv181x_int8_sym.cvimodel
 ```
-yolov5s_cv181x_int8_sym.cvimodel 
+![cam5.jpg](https://www.freeimg.cn/i/2024/05/25/6651bc4aec3e8.jpg)
+
+**yolov5s_cv181x_int8_sym.cvimodel**
 
 这是我们需要的模型
 
-模型测试
+4.模型测试
 ---
 
 yolov5s_num1.mud内容如下，各位别忘了改label跟model名字
