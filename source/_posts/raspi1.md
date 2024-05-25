@@ -4,8 +4,8 @@ date: 2024-01-20 11:55:21
 updated: 2024-01-20 11:55:21
 type:
 categories:
-- 树莓派
-- 图像识别
+- 解决方案
+- 嵌入式
 top_img:
 cover: https://www.freeimg.cn/i/2024/01/20/65ab3b9572bff.png
 ---

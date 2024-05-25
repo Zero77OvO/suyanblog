@@ -4,7 +4,7 @@ date: 2024-03-31 20:26:20
 updated: 2024-04-03 11:47:20
 type:  
 categories: 
-- 解决方案
+- 嵌入式
 - 电赛
 top_img:
 cover: https://www.freeimg.cn/i/2024/04/01/660a3c494ee99.png

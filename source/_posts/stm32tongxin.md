@@ -4,7 +4,7 @@ date: 2023-12-01 15:20:23
 updated: 2023-12-01 15:20:23
 type:
 categories:
-- 解决方案
+- 嵌入式
 - stm32
 top_img:
 cover: https://www.freeimg.cn/i/2024/01/02/6593a75a0d552.jpg
