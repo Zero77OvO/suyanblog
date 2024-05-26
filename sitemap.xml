@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://suyanblog.cn/categories/index.html</loc>
+    <loc>http://suyanblog.cn/link/index.html</loc>
     
     <lastmod>2024-05-26</lastmod>
     
@@ -12,15 +12,6 @@
   
   <url>
     <loc>http://suyanblog.cn/comments/index.html</loc>
-    
-    <lastmod>2024-05-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://suyanblog.cn/link/index.html</loc>
     
     <lastmod>2024-05-26</lastmod>
     
@@ -39,6 +30,15 @@
   
   <url>
     <loc>http://suyanblog.cn/plan/</loc>
+    
+    <lastmod>2024-05-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://suyanblog.cn/categories/index.html</loc>
     
     <lastmod>2024-05-26</lastmod>
     
@@ -467,14 +467,14 @@
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/</loc>
+    <loc>http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/</loc>
     <lastmod>2024-05-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/</loc>
+    <loc>http://suyanblog.cn/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/</loc>
     <lastmod>2024-05-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -502,14 +502,14 @@
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/maixpy/</loc>
+    <loc>http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/</loc>
     <lastmod>2024-05-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/</loc>
+    <loc>http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/maixpy/</loc>
     <lastmod>2024-05-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
