@@ -6,7 +6,7 @@
   <link href="http://suyanblog.cn/atom.xml" rel="self"/>
   
   <link href="http://suyanblog.cn/"/>
-  <updated>2024-05-25T00:00:00.000Z</updated>
+  <updated>2024-06-11T16:47:33.000Z</updated>
   <id>http://suyanblog.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mqtt及阿里云物联网学习</title>
+    <link href="http://suyanblog.cn/mqtt/"/>
+    <id>http://suyanblog.cn/mqtt/</id>
+    <published>2024-05-31T16:02:33.000Z</published>
+    <updated>2024-06-11T16:47:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在准备嵌入式大赛的项目，需要用到多端的数据传输。本地可以使用usart传参，云端与设备之间则利用阿里云平台借助mqtt协议进行收发数据。<br>因为我们的项目还涉及图像传输，所以我们没有使用资料更多的esp8266模块而是选用自带摄像头的esp32-cam。</p><h2 id="1-mqtt物联网通讯"><a href="#1-mqtt物联网通讯" class="headerlink" title="1.mqtt物联网通讯"></a>1.mqtt物联网通讯</h2><p>esp32-cam端部署(c&#x2F;c++)：</p><p>通过使用<a href="https://blog.csdn.net/qq_43064082/article/details/105999645">aliyunmqtt库</a>，订阅目标产品设备的topic，从而接受来自目标产品设备发布的内容。同时通过topic可以发送json格式的信息，云端在接收以后通过格式解析出信息，从而达到收发的目的。<br>多个设备之间的传输则需要使用云产品流转，云产品流转类型的规则可以对设备上报的数据进行简单处理，并将处理后的数据流转到其他 Topic 或阿里云产品。<br>发送端则需要通过处理数据topic发送信息，而接收端则需要订阅转发数据topic从而接收发送信息。<br><img src="https://www.freeimg.cn/i/2024/06/11/66680c7169c11.png" alt="1.png"><br>概念理解：<br>产品：<br>设备：<br>topic订阅：<br>产品云流转：</p><h2 id="maixcam端-python"><a href="#maixcam端-python" class="headerlink" title="maixcam端(python):"></a>maixcam端(python):</h2><p>1.阿里云物联网平台提供的python sdk 第三方库 aliyun-iot-linkkit，可惜由于不明原因，本地部署一直无法跟云端连接，即使是用官方例程也不行，遂放弃。<br><a href="https://help.aliyun.com/zh/iot/developer-reference/python-link-sdk-1">阿里云Python Link SDK</a></p><p>刚才才看到，官方要求1.61，可能是paho-mqtt版本问题，当时没注意装的最新的2.10。</p><p>2.后来用paho-mqtt，版本是1.61，内容比阿里云官方的更简洁，配置完三个参数即可使用，<a href="https://help.aliyun.com/zh/iot/use-cases/use-the-paho-mqtt-library-for-python-to-connect-a-device-to-iot-platform">Paho-MQTT Python接入示例</a></p><h2 id="上位机-微信小程序-："><a href="#上位机-微信小程序-：" class="headerlink" title="上位机(微信小程序)："></a>上位机(微信小程序)：</h2><p>我们的重点并不在前端上，所以为了节约开发时间与成本，我们选择了微信小程序作为我们的上位机。<br>mqtt部署资料参考<a href="https://blog.csdn.net/ngl272/article/details/87887885">微信小程序使用MQTT.js连接阿里云IoT物联网平台</a>。</p><p>2.图传</p><p>最开始是espcam做图传，因为自带摄像头，价格相对也比较亲民，资料相对也多，开发(抄)的成本会低很多。<br>包括图传，esp跟微信小程序都有例程可以直接用。</p><p>功能都实现之后，感觉ov2640的摄像头太糊了，打算转用maixcam，这时候我才发现图传涉及的知识太多了。<br>flask，flv，rtmp，http流，以及图像数据的解析与发送，与上位机之间的交换等等。<br>图传内容太多了，挖个坑后面填</p><p>等后面都做完了，会把代码开源学习。</p><h2 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h2><p><a href="https://blog.csdn.net/qq_43064082/article/details/105999645">ESP32 arduino方式连接阿里云</a><br><a href="www.bilibili.com/video/BV1EC411z71i">【3.微信小程序部分(已更完)】毕设：STM32+ESP8266-01S+阿里云+微信小程序 实现智能家居</a><br><a href="https://blog.csdn.net/ngl272/article/details/87887885">微信小程序使用MQTT.js连接阿里云IoT物联网平台</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;最近在准备嵌入式大赛的项目，需要用到多端的数据传输。本地可以使用usart传参，云端与设备之间则利用阿里云平台借助mqtt协议进行收发数据。&lt;br&gt;因为我们的项目还涉及图像传输，所以我们没有使用资料更多的esp8266模块而是选用自带摄像头的esp32-cam。&lt;/p&gt;
+&lt;</summary>
+      
+    
+    
+    
+    <category term="嵌入式" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+    <category term="物联网" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    <category term="图传" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%89%A9%E8%81%94%E7%BD%91/%E5%9B%BE%E4%BC%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Maixcam本地部署训练</title>
@@ -471,31 +498,6 @@
     <category term="解决方案" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
     <category term="python" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>我是任黑</title>
-    <link href="http://suyanblog.cn/daily5/"/>
-    <id>http://suyanblog.cn/daily5/</id>
-    <published>2023-12-17T22:48:23.000Z</published>
-    <updated>2023-12-17T22:48:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>xbox手柄竟然不能连switch？？竟然还要买一个国产的接收器？？就非得买pro手柄是吧？？<br>真受不了我草</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;xbox手柄竟然不能连switch？？竟然还要买一个国产的接收器？？就非得买pro手柄是吧？？&lt;br&gt;真受不了我草&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="日常" scheme="http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    <category term="游戏" scheme="http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/%E6%B8%B8%E6%88%8F/"/>
     
     
   </entry>
