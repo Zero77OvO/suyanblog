@@ -5,7 +5,7 @@ updated: 2024-06-12 22:42:13
 type:
 categories:
 - 关于
-top_img:
+top_img: 
 cover: 
 ---
 其实无论是做饭，读书，考试，玩游戏，c语言，画画，唱歌，跳舞这些都可以统称为 技能
