@@ -6,7 +6,7 @@
   <link href="http://suyanblog.cn/atom.xml" rel="self"/>
   
   <link href="http://suyanblog.cn/"/>
-  <updated>2024-06-15T18:08:21.000Z</updated>
+  <updated>2025-04-16T10:02:33.000Z</updated>
   <id>http://suyanblog.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Tips</title>
+    <link href="http://suyanblog.cn/tips/"/>
+    <id>http://suyanblog.cn/tips/</id>
+    <published>2025-04-16T10:02:33.000Z</published>
+    <updated>2025-04-16T10:02:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="使用以下命令，提交代码到远程仓库时，遇到如下问题：解决方法："><a href="#使用以下命令，提交代码到远程仓库时，遇到如下问题：解决方法：" class="headerlink" title="使用以下命令，提交代码到远程仓库时，遇到如下问题：解决方法："></a>使用以下命令，提交代码到远程仓库时，<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><br>遇到如下问题：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: unable to access &#x27;https://github.com/xxx/&#x27;: Failed to connect to github.com port 443: Timed out</span><br></pre></td></tr></table></figure><br>解决方法：</h2><p>设置代理再取消代理</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global https.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure><p>再次提交</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;使用以下命令，提交代码到远程仓库时，遇到如下问题：解决方法：&quot;&gt;&lt;a href=&quot;#使用以下命令，提交代码到远程仓库时，遇到如下问题：解决方法：&quot; class=&quot;headerlink&quot; title=&quot;使用以下命令，提交代码到远程仓库时，遇到如下问题：解决方法：&quot;&gt;</summary>
+      
+    
+    
+    
+    <category term="未来日记" scheme="http://suyanblog.cn/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>关于考试</title>
@@ -469,34 +491,9 @@
     
     
     
-    <category term="解决方案" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <category term="嵌入式" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
     
-    <category term="嵌入式" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>解决python在vs中与cmd调用的版本不一致</title>
-    <link href="http://suyanblog.cn/vspython/"/>
-    <id>http://suyanblog.cn/vspython/</id>
-    <published>2024-01-07T14:14:12.000Z</published>
-    <updated>2024-01-07T14:14:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>python在vs中与cmd调用的版本不一致</p><p>现象：在anaconda配的环境里通过cmd装tensorflow-gpu时，终端显示配置成功了，但是在vs里不能正常运行，检查版本号也不一样。查阅资料后发现vs默认运行powershell终端，改成cmd后执行正常了。</p><p>python环境是用anaconda配置的</p><p>vs默认终端使用powershell，所以问题应该是Powershell(ps)与Command prompt (cmd)输入python调用的版本不一致的问题了。</p><p>目测ps调用python路径是按环境配置路径来的，而cmd则是按anaconda配置来的，所以出现了在两个终端python调用版本不一致的情况。</p><p>测试后发现，在cmd中使用conda activate指令是可以正常切py环境的，但是ps还是调用默认base环境(本机为3.11.5)。所以是powershell出了问题。<br><img src="https://www.freeimg.cn/i/2024/01/07/659a44ecc2cd2.png" width="50%" height="50%" /><br><img src="https://www.freeimg.cn/i/2024/01/07/659a44ecc7f81.png" width="50%" height="50%" /></p><p>参考<a href="https://blog.csdn.net/weixin_43681778/article/details/109206108">Powershell中激活Anaconda环境无效的解决办法</a>后解决<br><img src="https://www.freeimg.cn/i/2024/01/07/659a44ecc79f6.png" width="50%" height="50%" /></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;python在vs中与cmd调用的版本不一致&lt;/p&gt;
-&lt;p&gt;现象：在anaconda配的环境里通过cmd装tensorflow-gpu时，终端显示配置成功了，但是在vs里不能正常运行，检查版本号也不一样。查阅资料后发现vs默认运行powershell终端，改成cmd后执行正</summary>
-      
-    
-    
-    
-    <category term="解决方案" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    
-    <category term="python" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/"/>
+    <category term="树莓派" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
     
     
   </entry>
