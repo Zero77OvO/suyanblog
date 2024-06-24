@@ -1,7 +1,7 @@
 ---
 title: GitHub：[亲测方法简单+有效] 成功解决 Failed to connect to github.com port 443: Timed out
-date: 2024-16-16 10:02:33
-updated: 2024-16-16 10:02:33
+date: 2024-06-16 10:02:33
+updated: 2024-06-16 10:02:33
 type:
 categories:
 - 解决方案
