@@ -1,10 +1,9 @@
-http://suyanblog.cn/tips/
-http://suyanblog.cn/CHV307/
 http://suyanblog.cn/plan/
 http://suyanblog.cn/categories/index.html
 http://suyanblog.cn/comments/index.html
 http://suyanblog.cn/link/index.html
 http://suyanblog.cn/tags/index.html
+http://suyanblog.cn/CHV307/
 http://suyanblog.cn/six_test/
 http://suyanblog.cn/plan1/
 http://suyanblog.cn/skill/
