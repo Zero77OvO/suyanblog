@@ -160,7 +160,9 @@ CAM:
 
 ti板子
 
-msp?
+msp? 
+
+usart DMA? 还有什么fifo？
 
 其他：
 
