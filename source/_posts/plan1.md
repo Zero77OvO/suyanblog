@@ -163,6 +163,7 @@ ti板子
 msp? 
 
 usart DMA? 还有什么fifo？
+can总线 lin总线
 
 其他：
 
