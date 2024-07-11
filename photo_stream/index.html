@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>flask框架下的http图传 | 素颜的博客~</title><meta name="author" content="素颜"><meta name="copyright" content="素颜"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Flask介绍：Flask是一个使用python编写的轻量化web应用框架，它的作用主要用于开发Web应用程序。Web框架（Flask）致力于如何生成HTML代码，而Web服务器（nginx）用于处理和响应HTTP请求。Socket则提供了一种网络通信的底层接口，允许开发人员直接访问网络协议栈，它提供了对网络套接字的编程接口，允许应用程序直接发送和接收数据包。 HTTP图传:关于实时视频传输，业界">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flask框架下的http图传">
+<meta property="og:url" content="http://suyanblog.cn/photo_stream/index.html">
+<meta property="og:site_name" content="素颜的博客~">
+<meta property="og:description" content="Flask介绍：Flask是一个使用python编写的轻量化web应用框架，它的作用主要用于开发Web应用程序。Web框架（Flask）致力于如何生成HTML代码，而Web服务器（nginx）用于处理和响应HTTP请求。Socket则提供了一种网络通信的底层接口，允许开发人员直接访问网络协议栈，它提供了对网络套接字的编程接口，允许应用程序直接发送和接收数据包。 HTTP图传:关于实时视频传输，业界">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.freeimg.cn/i/2024/01/02/6593a4b14c0ab.jpg">
+<meta property="article:published_time" content="2024-07-10T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-07-10T00:00:00.000Z">
+<meta property="article:author" content="素颜">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.freeimg.cn/i/2024/01/02/6593a4b14c0ab.jpg"><link rel="shortcut icon" href="https://s2.loli.net/2023/05/19/qHTUzYPQnmvOo6h.png"><link rel="canonical" href="http://suyanblog.cn/photo_stream/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'flask框架下的http图传',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-10 00:00:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="素颜的博客~" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.freeimg.cn/i/2024/05/25/6651be587b17b.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">47</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://www.freeimg.cn/i/2024/01/02/6593a4b14c0ab.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="素颜的博客~"><span class="site-name">素颜的博客~</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">flask框架下的http图传</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-10T00:00:00.000Z" title="发表于 2024-07-10 00:00:00">2024-07-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-10T00:00:00.000Z" title="更新于 2024-07-10 00:00:00">2024-07-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%89%A9%E8%81%94%E7%BD%91/">物联网</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%89%A9%E8%81%94%E7%BD%91/%E5%9B%BE%E4%BC%A0/">图传</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">866</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Flask介绍："><a href="#Flask介绍：" class="headerlink" title="Flask介绍："></a>Flask介绍：</h2><p>Flask是一个使用python编写的轻量化web应用框架，它的作用主要用于开发Web应用程序。Web框架（Flask）致力于如何生成HTML代码，而Web服务器（nginx）用于处理和响应HTTP请求。<br>Socket则提供了一种网络通信的底层接口，允许开发人员直接访问网络协议栈，它提供了对网络套接字的编程接口，允许应用程序直接发送和接收数据包。</p>
+<h2 id="HTTP图传"><a href="#HTTP图传" class="headerlink" title="HTTP图传:"></a>HTTP图传:</h2><p>关于实时视频传输，业界已经有非常多成熟方案，分别应用在不同需求场景。<br>例如RTMP 、RTSP、hls 、FFMPEG 、nginx-rtmp服务器<br>同时还会涉及到时音视频的底层传输协议问题（TCP，UDP，QUIC）<br>基本上原理就是有一个中转服务器（比如Nginx），FFMPEGD推流，html拉流。那Django干啥？控制页面拉流。或者说python干啥？拉流。还有一些是用opencv做推流的，</p>
+<p>通过 stream 形式，将图片通过 http 协议输出到客户端。只要客户端支持 multipart&#x2F;x-mixed-replace 头，就可以从响应中读取视频帧，chrome、Firefox 在这一点上有比较好的支持，只要使用 <img /> 标签就可以实现视频流效果：</p>
+<p>下面是源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import os</span><br><span class="line">import re</span><br><span class="line">import threading as th</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">from iot import iRGB,cam</span><br><span class="line">from maix import image,app</span><br><span class="line"></span><br><span class="line">from flask import Flask, Response, redirect, url_for</span><br><span class="line">from werkzeug.serving import make_server</span><br><span class="line"></span><br><span class="line">flask_app = Flask(__name__)  # Flask app</span><br><span class="line"></span><br><span class="line">pause_event = th.Event()</span><br><span class="line">show_fps = False</span><br><span class="line">quality = 70</span><br><span class="line"></span><br><span class="line">class Server(object):</span><br><span class="line">    </span><br><span class="line">    def __init__(self) -&gt; None:</span><br><span class="line">        self.image_event = th.Event()</span><br><span class="line">        self.running = False</span><br><span class="line">        self.fpc = FPSCounter()</span><br><span class="line">        flask_app.route(&quot;/&quot;)(self.http_index)</span><br><span class="line">        flask_app.route(&quot;/stream&quot;)(self.http_stream)</span><br><span class="line">        flask_app.route(&quot;/snapshot&quot;)(self.http_snapshot)</span><br><span class="line"></span><br><span class="line">    def http_index(self):</span><br><span class="line">        return redirect(url_for(&quot;http_stream&quot;))</span><br><span class="line"></span><br><span class="line">    def stream_worker(self):</span><br><span class="line">        while self.running:</span><br><span class="line">            while pause_event.is_set():</span><br><span class="line">                time.sleep(1)</span><br><span class="line">            self.img = cam.read()</span><br><span class="line">            if show_fps:</span><br><span class="line">                self.img.draw_string(</span><br><span class="line">                    10, 10, f&quot;&#123;self.fpc.get():.3f&#125;&quot;, color=iRGB(255, 0, 0), scale=2</span><br><span class="line">                )</span><br><span class="line">            self.jpg = self.img.to_jpeg(quality)</span><br><span class="line">            if self.jpg is None:</span><br><span class="line">                print(&quot;Encoding error!&quot;)</span><br><span class="line">                app.set_exit_flag(True)</span><br><span class="line">            self.image_event.set()</span><br><span class="line"></span><br><span class="line">    def get_stream(self):</span><br><span class="line">        while self.running:</span><br><span class="line">            self.image_event.wait()</span><br><span class="line">            self.image_event.clear()</span><br><span class="line">            if self.jpg is None:</span><br><span class="line">                continue</span><br><span class="line">            self.fpc.update()</span><br><span class="line">            yield (</span><br><span class="line">                b&quot;Content-Type: data/jpeg\r\n\r\n&quot;</span><br><span class="line">                + self.jpg.to_bytes(False)</span><br><span class="line">                + b&quot;\r\n\r\n--frame\r\n&quot;</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">    def get_snapshot(self):</span><br><span class="line">        self.image_event.wait()</span><br><span class="line">        self.image_event.clear()</span><br><span class="line">        self.png = self.img.to_format(image.Format.FMT_PNG)</span><br><span class="line">        return self.png.to_bytes()</span><br><span class="line"></span><br><span class="line">    def http_stream(self):</span><br><span class="line">        return Response(</span><br><span class="line">            self.get_stream(), mimetype=&quot;multipart/x-mixed-replace; boundary=frame&quot;</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def http_snapshot(self):</span><br><span class="line">        return Response(self.get_snapshot(), mimetype=&quot;image/png&quot;)</span><br><span class="line"></span><br><span class="line">    def start_server(self, host, port, block=False):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        Start the server non-blocking</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        assert not self.running, &quot;Server already running&quot;</span><br><span class="line">        self.running = True</span><br><span class="line">        self.stream_thread = th.Thread(target=self.stream_worker, daemon=True)</span><br><span class="line">        self.stream_thread.start()</span><br><span class="line">        self.server = make_server(host, port, flask_app, threaded=True, processes=1)</span><br><span class="line">        self.server.log_startup()</span><br><span class="line">        if block:</span><br><span class="line">            self.server.serve_forever()</span><br><span class="line">        else:</span><br><span class="line">            self.server_thread = th.Thread(</span><br><span class="line">                target=self.server.serve_forever, daemon=True</span><br><span class="line">            )</span><br><span class="line">            self.server_thread.start()</span><br><span class="line"></span><br><span class="line">    def stop_server(self):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        Stop the server</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        assert self.running, &quot;Server not running&quot;</span><br><span class="line">        self.running = False</span><br><span class="line">        self.server.shutdown()</span><br><span class="line">        self.server_thread.join()</span><br><span class="line">        self.stream_thread.join()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def get_ip_list():</span><br><span class="line">    lst = []</span><br><span class="line">    try:</span><br><span class="line">        content = os.popen(&quot;ifconfig&quot;).read()</span><br><span class="line">        for line in content.splitlines():</span><br><span class="line">            if line.strip().startswith(&quot;inet&quot;):</span><br><span class="line">                res = re.search(r&quot;addr:(\d+\.\d+\.\d+\.\d+)&quot;, line)</span><br><span class="line">                if res:</span><br><span class="line">                    lst.append(res.group(1))</span><br><span class="line">    except Exception:</span><br><span class="line">        pass</span><br><span class="line">    return lst if lst else [&quot;0.0.0.0&quot;]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018563132">使用 multipart&#x2F;x-mixed-replace 实现 http 实时视频流</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhong1213/article/details/103982782">（python）【学习记录】http传输图片</a><br><a target="_blank" rel="noopener" href="https://maixhub.com/app/19">简易HTTP串流服务器2.0</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/blgpb/article/details/86642522">低延迟视频传输 UDP JPEG图像压缩 opencv</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lisicn/p/14582688.html">关于摄像头推流拉流的一些内容</a><br><a target="_blank" rel="noopener" href="https://sinnammanyo.cn/stack/cv/opencv/apply/opencv-nginx-rtmp-pull-stream">OpenCV Nginx 实现局域网视频推流&#x2F;拉流</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42688495/article/details/108279618">TCP实时图像传输</a></p>
+<p><a target="_blank" rel="noopener" href="https://sinnammanyo.cn/stack/cs/network/computer-network-architecture">计算机网络体系结构</a><br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000044953712">HTTP 和 TCP 我知道，但是套接字是什么鬼？</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_74209411/article/details/137247093">HTTP协议格式详解之报头(HTTP header)、请求正文(body)</a><br><a target="_blank" rel="noopener" href="https://xie.infoq.cn/article/acb47cd99090db5779bb2012f">HTTP Multipart 概述：一步步理解复杂数据传输</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://suyanblog.cn">素颜</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://suyanblog.cn/photo_stream/">http://suyanblog.cn/photo_stream/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://suyanblog.cn" target="_blank">素颜的博客~</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://www.freeimg.cn/i/2024/01/02/6593a4b14c0ab.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/CHV307/" title="关于HX711返回值为8388607"><img class="cover" src="https://www.freeimg.cn/i/2024/06/19/6672d08810ee4.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">关于HX711返回值为8388607</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.freeimg.cn/i/2024/05/25/6651be587b17b.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">素颜</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">47</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Zero77OvO" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:suyan770v0@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://space.bilibili.com/10214649" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #BC8F8F;"></i></a><a class="social-icon" href="https://qm.qq.com/cgi-bin/qm/qr?k=nBl0CgQSPT6Yv_xyqDgsCoLPdlRfQ8cP&amp;noverify=0&amp;personal_qrcode_source=1" target="_blank" title="QQ"><i class="fa-brands fa-qq" style="color: #000000;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">本科自动化在读<br/> 一个兴趣使然的家伙；<br/> 摆烂大王<br/> 是蒂厨 会玩游戏(吗？ <br/> 随便写点东西记录记录</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Flask%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">Flask介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E5%9B%BE%E4%BC%A0"><span class="toc-number">2.</span> <span class="toc-text">HTTP图传:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="toc-number">2.1.</span> <span class="toc-text">参考文章</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/photo_stream/" title="flask框架下的http图传"><img src="https://www.freeimg.cn/i/2024/01/02/6593a4b14c0ab.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="flask框架下的http图传"/></a><div class="content"><a class="title" href="/photo_stream/" title="flask框架下的http图传">flask框架下的http图传</a><time datetime="2024-07-10T00:00:00.000Z" title="发表于 2024-07-10 00:00:00">2024-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/CHV307/" title="关于HX711返回值为8388607"><img src="https://www.freeimg.cn/i/2024/06/19/6672d08810ee4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于HX711返回值为8388607"/></a><div class="content"><a class="title" href="/CHV307/" title="关于HX711返回值为8388607">关于HX711返回值为8388607</a><time datetime="2024-06-19T20:28:23.000Z" title="发表于 2024-06-19 20:28:23">2024-06-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/git1/" title="GitHub Failed to connect to github.com port 443Timed out"><img src="https://www.freeimg.cn/i/2024/01/02/6593a207d07be.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GitHub Failed to connect to github.com port 443Timed out"/></a><div class="content"><a class="title" href="/git1/" title="GitHub Failed to connect to github.com port 443Timed out">GitHub Failed to connect to github.com port 443Timed out</a><time datetime="2024-06-16T10:02:33.000Z" title="发表于 2024-06-16 10:02:33">2024-06-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/six_test/" title="关于考试"><img src="https://www.freeimg.cn/i/2024/01/02/6593a2b04d8a3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于考试"/></a><div class="content"><a class="title" href="/six_test/" title="关于考试">关于考试</a><time datetime="2024-06-15T18:08:21.000Z" title="发表于 2024-06-15 18:08:21">2024-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/skill/" title="关于技能"><img src="https://www.freeimg.cn/i/2024/01/02/6593a4d14d07f.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于技能"/></a><div class="content"><a class="title" href="/skill/" title="关于技能">关于技能</a><time datetime="2024-06-11T14:22:42.000Z" title="发表于 2024-06-11 14:22:42">2024-06-11</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://www.freeimg.cn/i/2024/01/02/6593a4b14c0ab.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 素颜</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+
+  const initWaline = (Fn) => {
+    const waline = Fn(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://www.suyanblog.eu.org/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+
+    const destroyWaline = () => {
+      waline.destroy()
+    }
+
+    btf.addGlobalFn('pjax', destroyWaline, 'destroyWaline')
+  }
+
+  const loadWaline = async () => {
+    if (initFn) initWaline(initFn)
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+      const { init } = await import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js')
+      initFn = init || Waline.init
+      initWaline(initFn)
+      window.walineFn = initFn
+    }
+  }
+
+  if ('Waline' === 'Waline' || !true) {
+    if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div></div></body></html>
