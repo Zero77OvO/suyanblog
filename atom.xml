@@ -6,7 +6,7 @@
   <link href="http://suyanblog.cn/atom.xml" rel="self"/>
   
   <link href="http://suyanblog.cn/"/>
-  <updated>2024-07-10T00:00:00.000Z</updated>
+  <updated>2024-07-16T00:00:00.000Z</updated>
   <id>http://suyanblog.cn/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在定时器中断与while中执行代码效果不同记录</title>
+    <link href="http://suyanblog.cn/stm32_1/"/>
+    <id>http://suyanblog.cn/stm32_1/</id>
+    <published>2024-07-16T00:00:00.000Z</published>
+    <updated>2024-07-16T00:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="省流："><a href="#省流：" class="headerlink" title="省流："></a>省流：</h2><p>函数使用了多个其他.c文件中的变量，使用extern声明变量。<br>当多个.c文件使用extern 声明变量，导致正确的参数无法被引用，导致返回值错误。<br>以后在定义变量时，尽量把extern都写在.h文件中，并把所有的.h文件集合在一个.h文件中，调用只需要include一个.h文件，避免使用多个extern 声明同一个变量</p><p>在定时器与while中使用结构体，在main里有pid的初始化，所以定时器里只放了声明与函数，导致返回值一直不对</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">   //定时器</span><br><span class="line"></span><br><span class="line"> IncrementalPID ver;</span><br><span class="line">IncrementalPID hor;</span><br><span class="line"></span><br><span class="line"> IncrementalPID_init(&amp;ver, 0.4, 0.01, 0.0);// 设置PID参数</span><br><span class="line"> IncrementalPID_init(&amp;hor, 0.4, 0.01, 0.0);// 设置PID参数</span><br><span class="line"></span><br><span class="line">Servo_pid_move(&amp;ver, &amp;hor,  y1,  y_green,  x1,  x_green);</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>结构体的书写要规范，在定时器中使用时候</p><p>声明、初始化、函数使用都不能少</p><p>代码书写一定要严谨，思路清晰。</p><p>参考：<br><a href="https://blog.csdn.net/weixin_51370842/article/details/127679618">keil中的extern的使用</a><br><a href="https://blog.csdn.net/z5z5z5z56/article/details/105982306">关于extern声明后，变量值和定义值不一样的问题及解决办法</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;省流：&quot;&gt;&lt;a href=&quot;#省流：&quot; class=&quot;headerlink&quot; title=&quot;省流：&quot;&gt;&lt;/a&gt;省流：&lt;/h2&gt;&lt;p&gt;函数使用了多个其他.c文件中的变量，使用extern声明变量。&lt;br&gt;当多个.c文件使用extern 声明变量，导致正确的参数无法被</summary>
+      
+    
+    
+    
+    <category term="嵌入式" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+    <category term="stm32" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>msp3507板子跑飞</title>
+    <link href="http://suyanblog.cn/ti1/"/>
+    <id>http://suyanblog.cn/ti1/</id>
+    <published>2024-07-16T00:00:00.000Z</published>
+    <updated>2024-07-16T00:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>至今没有解决，具体体现在 <strong>引用变量</strong> 进行 <strong>运算</strong> 时候就会内存跑飞，可能跟extern变量也有关系<br>等后面有时间了再解决一下</p><h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="https://blog.csdn.net/xinyz4104/article/details/118611065">STM32 Keil静态全局变量值被修改</a><br><a href="https://blog.csdn.net/phker/article/details/134056670">单片机的变量竟然被无故修改了.</a><br><a href="https://blog.csdn.net/weixin_47221359/article/details/109390145">全局变量被未知原因改变的解决方法</a><br><a href="https://zhidao.baidu.com/question/397854115.html">为什么我的DS18B20总是乱跳呢</a><br><a href="https://cn.bing.com/search?pglt=161&q=%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AE%BE%E7%BD%AE%E4%B8%BA0+%E6%95%B0%E5%AD%97%E4%BC%9A%E4%B9%B1%E8%B7%B3&cvid=bb5ef59d9c634b349ac9fbe393e2c7e0&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQABhAMgYIAhAAGEAyBggDEAAYQDIGCAQQABhAMgYIBRAAGEAyBggGEAAYQDIGCAcQABhAMgYICBAAGEDSAQkxMDEzOWowajGoAgiwAgE&FORM=ANNTA1&adppc=EDGEESS&PC=ASTS">初始化设置为0 数字会乱跳</a><br><a href="https://shequ.stmicroelectronics.cn/thread-622719-1-1.html">又是一个奇葩问题——stm32 全局变量自己乱变</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;至今没有解决，具体体现在 &lt;strong&gt;引用变量&lt;/strong&gt; 进行 &lt;strong&gt;运算&lt;/strong&gt; 时候就会内存跑飞，可能跟extern变量也有关系&lt;br&gt;等后面有时间了再解决一下&lt;/p&gt;
+&lt;h2 id=&quot;参考：&quot;&gt;&lt;a href=&quot;#参考：&quot; class=</summary>
+      
+    
+    
+    
+    <category term="嵌入式" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+    <category term="TI" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/TI/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>flask框架下的http图传</title>
@@ -449,52 +498,6 @@
     <category term="解决方案" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
     <category term="python" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>软件记录</title>
-    <link href="http://suyanblog.cn/daily7/"/>
-    <id>http://suyanblog.cn/daily7/</id>
-    <published>2024-02-07T11:53:20.000Z</published>
-    <updated>2024-02-07T11:53:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>昨天水论坛看到硬盘0e问题，发现自己一年前买的致钛5000也有0e，于是就想换块盘。换盘多少还是麻烦的，好多要用的工作软件都在上面，一折腾估计又是半天。<br>整理一下要用的软件吧</p><p>大学:<br>考试客户端<br>有道翻译<br>腾讯会议</p><p>工具:<br>Adobe-GenP 破解adobe<br>CClean 清理<br>Dism++<br>大白菜装机<br>图吧工具箱<br>百度&#x2F;夸克&#x2F;阿里云盘<br>WinScp 连服务器<br>G-Menu AOC显示器驱动<br>Sakura联机&#x2F;Radmin据说不错</p><p>奎享雕刻 记得换一下电脑</p><p>音视影听:<br>剪映<br>JJDown<br>OBS<br>Potplayer 看片子用的<br>直播姬<br>网易云&#x2F;QQ音乐</p><p>娱乐:<br>R星<br>暴雪战网<br>EA<br>EPIC<br>STEAM<br>WeGame<br>兰博玩对战平台</p><p>5E&#x2F;完美<br>Kook<br>UU&#x2F;雷神&#x2F;VK加速器<br>雷电&#x2F;mumu模拟器</p><p>工作:<br>Anaconda 环境要重新配了 记得备份<br>Arduino<br>VNC 连树莓派的，没用过<br>Vofa<br>VM虚拟机 win7&#x2F;linux  </p><p>Openmv<br>MounRiver Studio 写代码用的<br>Blender 估计以后也用不到了- -<br>AutoCAD<br>AD22<br>嘉立创EDA<br>Keil<br>Cubemx以及工程备份</p><p>mingw64 c编译器，到时候大概还要重装一下<br>opencv 库函数</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;昨天水论坛看到硬盘0e问题，发现自己一年前买的致钛5000也有0e，于是就想换块盘。换盘多少还是麻烦的，好多要用的工作软件都在上面，一折腾估计又是半天。&lt;br&gt;整理一下要用的软件吧&lt;/p&gt;
-&lt;p&gt;大学:&lt;br&gt;考试客户端&lt;br&gt;有道翻译&lt;br&gt;腾讯会议&lt;/p&gt;
-&lt;p&gt;工具:</summary>
-      
-    
-    
-    
-    <category term="日常" scheme="http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>小改一手键盘</title>
-    <link href="http://suyanblog.cn/keyboard/"/>
-    <id>http://suyanblog.cn/keyboard/</id>
-    <published>2024-01-27T20:11:22.000Z</published>
-    <updated>2024-01-27T20:11:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>爆改键盘c口，只能说以后就不用带那个大黑长线了，很爽的感觉<br>虽然花了点时间<br>但是<br>生命在于折腾<br>顺便换了几个轴<br>感觉键盘还是太旧了啊，现在的键盘基本都是热插拔无线三模自带c口，而且都比较小巧，也不会这么占桌面，还好看<br>主打一手折腾<br>有机会的话看看能不能加个蓝牙？虽然这把键盘正常只打游戏用&#x3D; &#x3D; 日常使用还是k380<br><img src="https://www.freeimg.cn/i/2024/01/27/65b4f3b9d18b7.jpg" width="40%" height="40%" /><br/><br><img src="https://www.freeimg.cn/i/2024/01/27/65b4f3ba7bc34.jpg" width="40%" height="40%" /><br/></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;爆改键盘c口，只能说以后就不用带那个大黑长线了，很爽的感觉&lt;br&gt;虽然花了点时间&lt;br&gt;但是&lt;br&gt;生命在于折腾&lt;br&gt;顺便换了几个轴&lt;br&gt;感觉键盘还是太旧了啊，现在的键盘基本都是热插拔无线三模自带c口，而且都比较小巧，也不会这么占桌面，还好看&lt;br&gt;主打一手折腾&lt;br&gt;</summary>
-      
-    
-    
-    
-    <category term="日常" scheme="http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
   </entry>
