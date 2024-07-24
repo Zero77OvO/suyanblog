@@ -47,15 +47,15 @@
     <link href="http://suyanblog.cn/ti1/"/>
     <id>http://suyanblog.cn/ti1/</id>
     <published>2024-07-16T00:00:00.000Z</published>
-    <updated>2024-07-16T00:00:00.000Z</updated>
+    <updated>2024-07-21T00:00:00.000Z</updated>
     
-    <content type="html"><![CDATA[<p>至今没有解决，具体体现在 <strong>引用变量</strong> 进行 <strong>运算</strong> 时候就会内存跑飞，可能跟extern变量也有关系<br>等后面有时间了再解决一下</p><h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="https://blog.csdn.net/xinyz4104/article/details/118611065">STM32 Keil静态全局变量值被修改</a><br><a href="https://blog.csdn.net/phker/article/details/134056670">单片机的变量竟然被无故修改了.</a><br><a href="https://blog.csdn.net/weixin_47221359/article/details/109390145">全局变量被未知原因改变的解决方法</a><br><a href="https://zhidao.baidu.com/question/397854115.html">为什么我的DS18B20总是乱跳呢</a><br><a href="https://cn.bing.com/search?pglt=161&q=%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AE%BE%E7%BD%AE%E4%B8%BA0+%E6%95%B0%E5%AD%97%E4%BC%9A%E4%B9%B1%E8%B7%B3&cvid=bb5ef59d9c634b349ac9fbe393e2c7e0&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQABhAMgYIAhAAGEAyBggDEAAYQDIGCAQQABhAMgYIBRAAGEAyBggGEAAYQDIGCAcQABhAMgYICBAAGEDSAQkxMDEzOWowajGoAgiwAgE&FORM=ANNTA1&adppc=EDGEESS&PC=ASTS">初始化设置为0 数字会乱跳</a><br><a href="https://shequ.stmicroelectronics.cn/thread-622719-1-1.html">又是一个奇葩问题——stm32 全局变量自己乱变</a></p>]]></content>
+    <content type="html"><![CDATA[<p>至今没有解决，具体体现在 <strong>引用变量</strong> 进行 <strong>运算</strong> 时候就会内存跑飞，可能跟extern变量也有关系<br>等后面有时间了再解决一下</p><h2 id="7月21日更新"><a href="#7月21日更新" class="headerlink" title="7月21日更新"></a>7月21日更新</h2><p>据说是编译器的问题，尽量不要用keil，使用ccs进行工程配置使用，到目前来说没有遇到奇怪的现象</p><p>这块板子布局本身也不太合理。。但是必须要用啊- -</p><h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="https://blog.csdn.net/xinyz4104/article/details/118611065">STM32 Keil静态全局变量值被修改</a><br><a href="https://blog.csdn.net/phker/article/details/134056670">单片机的变量竟然被无故修改了.</a><br><a href="https://blog.csdn.net/weixin_47221359/article/details/109390145">全局变量被未知原因改变的解决方法</a><br><a href="https://zhidao.baidu.com/question/397854115.html">为什么我的DS18B20总是乱跳呢</a><br><a href="https://cn.bing.com/search?pglt=161&q=%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AE%BE%E7%BD%AE%E4%B8%BA0+%E6%95%B0%E5%AD%97%E4%BC%9A%E4%B9%B1%E8%B7%B3&cvid=bb5ef59d9c634b349ac9fbe393e2c7e0&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQABhAMgYIAhAAGEAyBggDEAAYQDIGCAQQABhAMgYIBRAAGEAyBggGEAAYQDIGCAcQABhAMgYICBAAGEDSAQkxMDEzOWowajGoAgiwAgE&FORM=ANNTA1&adppc=EDGEESS&PC=ASTS">初始化设置为0 数字会乱跳</a><br><a href="https://shequ.stmicroelectronics.cn/thread-622719-1-1.html">又是一个奇葩问题——stm32 全局变量自己乱变</a></p>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;至今没有解决，具体体现在 &lt;strong&gt;引用变量&lt;/strong&gt; 进行 &lt;strong&gt;运算&lt;/strong&gt; 时候就会内存跑飞，可能跟extern变量也有关系&lt;br&gt;等后面有时间了再解决一下&lt;/p&gt;
-&lt;h2 id=&quot;参考：&quot;&gt;&lt;a href=&quot;#参考：&quot; class=</summary>
+&lt;h2 id=&quot;7月21日更新&quot;&gt;&lt;a href=&quot;#7月21日更新</summary>
       
     
     
