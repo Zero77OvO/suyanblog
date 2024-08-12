@@ -6,7 +6,7 @@
   <link href="http://suyanblog.cn/atom.xml" rel="self"/>
   
   <link href="http://suyanblog.cn/"/>
-  <updated>2024-08-05T00:00:00.000Z</updated>
+  <updated>2024-08-13T02:52:22.000Z</updated>
   <id>http://suyanblog.cn/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>三个大坑</title>
+    <link href="http://suyanblog.cn/plan2/"/>
+    <id>http://suyanblog.cn/plan2/</id>
+    <published>2024-08-13T02:52:22.000Z</published>
+    <updated>2024-08-13T02:52:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>哎，时间不等人啊<br>大学上半赛季已经结算了</p><p>社恐性格，或多或少有点改变吧，奇怪的社交经验增加了</p><p>关于人脉，其实也就那样，都是互利而已，哎<br>但是必须得有，面上得有，也没必要细究那么多</p><p>读了闲书几本，感觉还是颇有裨益的，能学到很多日常接触不到的知识，如果现实环境已经无法提供新的经验来源时<br>读书是个很好的选择</p><p>比赛 省一 省二，其实奖项倒是其次了，这个过程能学很多东西的，在实验室里，学技术，交朋友，还有工作上的关系处理之类的，感觉确实经历不少东西</p><p>技术栈的话，倒没必要搞太满，兴趣使然罢了，要啥学啥才是常态</p><p>下半赛季喽，马上毕业力</p><h1 id="8月13日更新"><a href="#8月13日更新" class="headerlink" title="8月13日更新"></a>8月13日更新</h1><p>假期的话</p><p>学做几个菜试试<br>（比如可乐鸡腿&#x2F;鸡翅</p><p>单词继续背吧，听力，还有作文也只能看油管了</p><p>书的话，可能也要读一点</p><p>更新一下博客，加点名言警句，顺便把文章归档一下</p><p>开学的话</p><p>据说还有考试</p><p>控制方向的书得猛看了，daily的看，</p><p>如果是技术栈方向的话 c++，试试写驱动？给maixcam做做开发</p><p>看看rtos，香橙派边缘ai开发，linux嵌入式</p><p>把cam边缘ai图像识别弄明白，做点开源项目</p><p>如果是比赛的话，cv也要学，python还是不太熟，舵机代码之类的还要看</p><p>小猫还有必要优化吗？需要的话再做</p><p>usart DMA? 还有什么fifo？<br>can总线 lin总线<br>Delay函数</p><p>试试写一个简历</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;哎，时间不等人啊&lt;br&gt;大学上半赛季已经结算了&lt;/p&gt;
+&lt;p&gt;社恐性格，或多或少有点改变吧，奇怪的社交经验增加了&lt;/p&gt;
+&lt;p&gt;关于人脉，其实也就那样，都是互利而已，哎&lt;br&gt;但是必须得有，面上得有，也没必要细究那么多&lt;/p&gt;
+&lt;p&gt;读了闲书几本，感觉还是颇有裨益的，能学到</summary>
+      
+    
+    
+    
+    <category term="未来日记" scheme="http://suyanblog.cn/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于心态 评价 表现</title>
+    <link href="http://suyanblog.cn/aboutmindheart/"/>
+    <id>http://suyanblog.cn/aboutmindheart/</id>
+    <published>2024-08-13T01:44:22.000Z</published>
+    <updated>2024-08-13T01:44:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="关于评价"><a href="#关于评价" class="headerlink" title="关于评价"></a>关于评价</h2><p>其实很早之前，就听别人说，高考是人生中相对比较公平的平台了。</p><p>做比赛的，几个月的心血凝聚成评审的10分钟，你是牛是马全凭人家的一句话。</p><p>搞研究的不也一样，写了一万年的刊，退回改了又改</p><p>就算是送外卖也要别人帮忙点点好评嘞</p><p>似乎我们都需要别人的评价，活在别人的评价之下</p><p>哎这小伙长得真帅吧</p><p>我趣真虾头</p><p>玩原神的是这样的</p><p>派克真得K头吧</p><p>我们似乎无时不刻不在被评价，同时也在评价他人</p><p>再极端点，量化你的表现，通过量化分数给你们排个号呢</p><p>自上学开始，按成绩挨个排号，教室座位都有三六九等之分</p><p>甚至玩个游戏，系统都会按你对局表现给你评个小分</p><p>到了结婚也要看看你的收入存款，父母职业都要被量化成分进行排名评价</p><p>但是数据是冰冷的，没有一丝情感。</p><p>分数你可以作弊，可以通过吸血队友，或者是全力依父。</p><p>只通过分数来评价这是很不客观的一件事情</p><p>分数低，排名靠后，只能说明你没有重视这个事情，或者是你性格，行事方式，使得你不适合从事这种事情</p><p>毕竟你不能要求一个瘦子猛猛搬砖吧</p><p>同时数据是直观的，这是评价事物最方便，最简单，最节省精力的方式。</p><p>毕竟世界上吊人这么多，谁知道你是牛是马，大就是好</p><p>世界上没有任何人能够像你一样知道你的缺点，知道你为什么犯错，理解你的错误（如果有的话就娶了吧hhh）</p><p>哎好钩 这钩真准吧</p><p>你怎么又e上去了，派克不能e起手啊</p><p>好晕，好开</p><p>没有人会帮你手把手复盘，总结错误，帮你成长</p><p>你只能去尽可能的总结错误，听取他人的意见，改变自己，从而得到他人尽可能高的评价</p><p>如果是在一些很特殊的评价场景的话，比如考试，面试</p><p>你可能只会有一次机会，你连复盘改错的机会都没有</p><p>所以在这种时候，我们只能尽可能的未雨绸缪，做到万无一失</p><p>评价是无处不在的，我们只能去顺从，去适应这种机制</p><h2 id="关于心态"><a href="#关于心态" class="headerlink" title="关于心态"></a>关于心态</h2><p>如上已经提到了及其特殊的评价场景，这种场景往往出现在你的沉没成本较高，且评价周期较长，评价影响较大时。</p><p>比如高考，考研，考公这种大型考试当中。</p><p>由于不可避免的不可抗力事件发生(运气也是实力的一部分)</p><p>评价结果可能不会尽人意</p><p>这时候玉玉是很正常的，事情已经发生，俗话说，该认命认命，有些东西该放就放</p><p>但是你更得想好你的下一步要去做什么</p><p>是总结错误再试一次，还是直接换地方</p><p>如上已经提到，排名靠后只能说明你不擅长或者是没有用心</p><p>查缺补漏是很重要的一件事情，不管是评价前还是评价后</p><p>前可以叫做未雨绸缪，后就叫给予反馈，总结修正了</p><h2 id="关于表现"><a href="#关于表现" class="headerlink" title="关于表现"></a>关于表现</h2><p>前面的世界，以后再来探索吧XD</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;关于评价&quot;&gt;&lt;a href=&quot;#关于评价&quot; class=&quot;headerlink&quot; title=&quot;关于评价&quot;&gt;&lt;/a&gt;关于评价&lt;/h2&gt;&lt;p&gt;其实很早之前，就听别人说，高考是人生中相对比较公平的平台了。&lt;/p&gt;
+&lt;p&gt;做比赛的，几个月的心血凝聚成评审的10分钟，你是</summary>
+      
+    
+    
+    
+    <category term="关于" scheme="http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>生活是一块很苦很苦的糖</title>
@@ -450,51 +498,6 @@
     <category term="解决方案" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
     <category term="python" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>一些常用操作集合</title>
-    <link href="http://suyanblog.cn/ku/"/>
-    <id>http://suyanblog.cn/ku/</id>
-    <published>2024-03-12T13:42:12.000Z</published>
-    <updated>2024-03-12T13:42:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/m0_46422300/article/details/104645072">Linux 常用操作命令大全（最后更新时间：2024年1月）</a><br><a href="https://blog.csdn.net/chenxy_bwave/article/details/119996001">Anaconda conda常用命令：从入门到精通</a><br><a href="https://www.cnblogs.com/startrack/p/16831402.html">Hal库</a><br><a href="https://markdown.com.cn/basic-syntax/">Markdown</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/m0_46422300/article/details/104645072&quot;&gt;Linux 常用操作命令大全（最后更新时间：2024年1月）&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://blog.csdn.ne</summary>
-      
-    
-    
-    
-    <category term="未来日记" scheme="http://suyanblog.cn/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>如何成为游戏高手</title>
-    <link href="http://suyanblog.cn/howgame1/"/>
-    <id>http://suyanblog.cn/howgame1/</id>
-    <published>2024-02-24T18:02:33.000Z</published>
-    <updated>2024-02-24T18:02:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="如何成为游戏高手"><a href="#如何成为游戏高手" class="headerlink" title="如何成为游戏高手"></a>如何成为游戏高手</h1><p>在接触一款游戏时，为什么有人上手快有人上手慢，花同样的时间总会有人厉害有人菜。</p><p>不管是什么类型的游戏，那些游戏高手总是打的比其他人好。而人们总是把玩的好的原因归结为内在的天赋，抑或是外在可见的努力，天赋+努力变成了公式，但是很少有人去做更深一层的分析，总结。<br>首先，我们作为第三者，更多时候看到的只是他人的一个结果，一个段位，分数，亦或是一系列数据。<br>你不是本人，你只能看到结果。根据结果去进行一系列分析，可以说是很不负责任的，就是纯在想象。我也一样。</p><p>在我观察之下，成为游戏高手，有下面几点原因：</p><p>首先这个游戏得足够<em><strong>有趣</strong></em>，能吸引你去购买然后进行游玩，在游玩的过程中你总得花点心思通关吧，总得动动脑子，打打配合。 当你能够根据游戏提示流畅的做到通关时候，就说明你已经<em><strong>熟悉</strong></em>这个游戏了，大多数玩家都只是停留在这个阶段，这也是大多数人的所谓的上限，或者是瓶颈。但是，这对一个游戏高手来说这还远远不够。当普通玩家还在按shift加速时候，他们就研究出了滑铲跳，普通玩家还在苦练压枪时候，他们就在用抖枪术了。</p><p>当然，无论是滑铲挑跟抖枪，在发现这种游戏技巧的背后肯定少不了夜以继日的尝试跟练习。而这种练习，燃烧的必然是你的时间与热爱。</p><p>花时间的人有很多啊，我们都在花时间为什么他能打上钻，我只能在下三徘徊啊。</p><p>在我看来，这就是一个认知水平差异的例子。很多人只是用简简单单的<em><strong>天赋</strong></em>二字便将其概括。</p><p>天赋确实不错，那我问你，天赋又是什么，天赋就是你的内在，是别人看不到的东西，天赋就是你的<em><strong>认知能力</strong></em>，在数背包大电时候有人就是2+2+2，游戏高手就想到2*3了。</p><p>你又想问，为什么呢？我们都只会加法，他为啥就会乘了呢？</p><p>他见过乘法，他见过有人在类似的问题上用过乘法。自然而然的就想到了。你只见过加法，所以你一辈子都想不到还有乘法这种东西。</p><p>不同的认知水平，造就了你对游戏不同的看法，玩游戏的方式也不一样。不同的人看我这篇文章，能看到的东西也不一样，每个人阅读的侧重点都不一样。一千个读者就有一千个哈姆雷特。</p><p>那么，如何提升认知水平呢？那只能是，多玩多想，多接触新游戏咯。没有<em><strong>尝试</strong></em>就会进步的很慢，所以要多尝试新东西咯，顶尖AI不也是一轮一轮用负反馈训练出来的，游戏高手应该也差不多吧。。。</p><p>普通玩家到游戏高手的蜕变中间最常见的就是所谓的瓶颈，上限。这时候就需要借鉴一下别人的打法，找佬给你开开思路，都是不错的方法，千万不要闭门造车。</p><h2 id="总结一下就是，多玩，多想，多练"><a href="#总结一下就是，多玩，多想，多练" class="headerlink" title="总结一下就是，多玩，多想，多练"></a>总结一下就是，多玩，多想，多练</h2><p>突然想起来小时候看过的一个叫《如果高三是一款游戏》的漫画。。。再去看一遍XD</p><p><strong>思路来源：</strong><br><a href="https://www.bilibili.com/video/BV1K64y1A7FD">【清玉】APEX從零到頂獵！保母級萬字心得分享！| 質疑手把&gt;理解手把&gt;加入手把</a><br>以及我之前玩游戏的一些经验</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;如何成为游戏高手&quot;&gt;&lt;a href=&quot;#如何成为游戏高手&quot; class=&quot;headerlink&quot; title=&quot;如何成为游戏高手&quot;&gt;&lt;/a&gt;如何成为游戏高手&lt;/h1&gt;&lt;p&gt;在接触一款游戏时，为什么有人上手快有人上手慢，花同样的时间总会有人厉害有人菜。&lt;/p&gt;
-&lt;p</summary>
-      
-    
-    
-    
-    <category term="如何" scheme="http://suyanblog.cn/categories/%E5%A6%82%E4%BD%95/"/>
     
     
   </entry>
