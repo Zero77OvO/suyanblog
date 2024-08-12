@@ -46,6 +46,8 @@ cover:
 
 如果是技术栈方向的话 c++，试试写驱动？给maixcam做做开发
 
+c# qt?
+
 看看rtos，香橙派边缘ai开发，linux嵌入式
 
 把cam边缘ai图像识别弄明白，做点开源项目
@@ -58,6 +60,7 @@ usart DMA? 还有什么fifo？
 can总线 lin总线
 Delay函数
 
+可以玩3d打印机
 
 
 试试写一个简历
