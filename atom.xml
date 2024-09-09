@@ -6,7 +6,7 @@
   <link href="http://suyanblog.cn/atom.xml" rel="self"/>
   
   <link href="http://suyanblog.cn/"/>
-  <updated>2024-08-13T02:52:22.000Z</updated>
+  <updated>2024-09-09T00:00:00.000Z</updated>
   <id>http://suyanblog.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows 11修改C盘用户文件夹名称</title>
+    <link href="http://suyanblog.cn/windows1/"/>
+    <id>http://suyanblog.cn/windows1/</id>
+    <published>2024-09-09T00:00:00.000Z</published>
+    <updated>2024-09-09T00:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://izumi.pub/Windows/change-windows-username/">https://izumi.pub/Windows/change-windows-username/</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://izumi.pub/Windows/change-windows-username/&quot;&gt;https://izumi.pub/Windows/change-windows-username/&lt;/a&gt;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="关于" scheme="http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>三个大坑</title>
@@ -465,32 +488,6 @@
       
       
     <summary type="html">&lt;p&gt;很久之前刚接触深度学习跟opencv时候，就萌生了做一个ai自瞄的想法，可惜当时很忙，计划便被搁置了&lt;br&gt;近日终于有了时间，便将想法变现&lt;br&gt;网上资料找到的最优解好像是dgxi+yolov5c++部署+trt，但是yoloV8好像也不错，便去git上找到了源码&lt;a hr</summary>
-      
-    
-    
-    
-    <category term="解决方案" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    
-    <category term="python" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>【yolov8】Try using the full path with constructor syntax.</title>
-    <link href="http://suyanblog.cn/yolo_dll/"/>
-    <id>http://suyanblog.cn/yolo_dll/</id>
-    <published>2024-03-20T20:44:20.000Z</published>
-    <updated>2024-03-20T20:44:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>环境：<br>win11&#x2F;Python3.10.13</p><p>今天在用python调用一个c++的dll库，尝试过以下方法</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">os.add_dll_directory(&quot;xxx.dll&quot;)</span><br><span class="line"></span><br><span class="line">dll = ctypes.CDLL(&quot;xxx.dll&quot;, winmode=0)</span><br></pre></td></tr></table></figure><p>无果，参考以下博客解决</p><p>使用开发者命令工具 Developer CMD Prompt for vs</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dumpbin /DEPENDENTS D:\sofeware\anaconda\envs\python38\Lib\site-packages\PySmartCard\ReaderLib_64.dll</span><br></pre></td></tr></table></figure><p>会显示缺少的dll文件，去C:\Windows\System32 目录下找找，没有就去下一个</p><p><a href="https://www.cnblogs.com/weixinyu98/p/17610972.html">FileNotFoundError: Could not find module ‘xxx.dll’. Try using the full path with constructor syntax. 调用ctypes库中dll报错问题解决、以及winerr 126找不到指定模块</a><br>还有一个找DLL的网站<a href="https://www.dllme.com/">DLLME</a><br>有个软件找文件的，叫<a href="https://www.voidtools.com/zh-cn/support/everything/">everything</a>也好用</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;环境：&lt;br&gt;win11&amp;#x2F;Python3.10.13&lt;/p&gt;
-&lt;p&gt;今天在用python调用一个c++的dll库，尝试过以下方法&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutte</summary>
       
     
     
