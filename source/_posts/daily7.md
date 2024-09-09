@@ -71,3 +71,31 @@ Cubemx以及工程备份
 
 mingw64 c编译器，到时候大概还要重装一下
 opencv 库函数
+
+## 9月3日更新
+
+### C：
+
+环境得重新配了
+
+工具：
+pr ps
+vscode
+vstudio
+
+python 好像只有anaconda也可以
+CUDA
+git
+java
+
+wechat
+
+bandzip  解压缩用的
+bitcomet 下种子
+谷歌浏览器
+
+logi驱动
+
+考试客户端
+
+还有各种项目代码备份
