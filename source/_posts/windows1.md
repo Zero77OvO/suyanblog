@@ -4,7 +4,7 @@ date: 2024-09-09
 updated: 2024-09-09 
 type:
 categories:
-- 关于
+- 解决方案
 top_img:
 cover: 
 ---
