@@ -1,7 +1,7 @@
 ---
 title: 关于py控制台输入与直接赋值，导致执行结果不一致的
 date: 2024-10-06 20:33:20
-updated: 2024-10-06 20:33:20
+updated: 2024-10-06 21:37:20
 type:
 categories:
 - 解决方案
@@ -79,3 +79,31 @@ def choose(
 ```python
 select = "5"
 ```
+
+---
+
+后来发现根本不是整数与字符串的问题，很莫名其妙，后来在菜单选择之前加了一个sleep后，功能就正常了= =
+有点玄学
+
+```
+    def run(self, default_mode: list):
+        self.default_mode = default_mode
+        with suppress(ValueError):
+            while self.running:
+                if not (select := safe_pop(self.default_mode)):
+                    select = choose(
+                        "请选择采集功能",
+                        [i for i, _ in self.__function],
+                        self.console)
+                    # select=5
+                    # print(select)
+                if select in {"Q", "q"}:
+                    self.running = False
+                elif not select:
+                    break
+                elif (n := int(select) - 1) in range(len(self.__function)):
+                    
+                    time.sleep(0.5)
+                    
+                    self.__function[n][1](safe_pop(self.default_mode))
+```                    
