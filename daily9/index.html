@@ -5,28 +5,118 @@
 <meta property="og:site_name" content="素颜的博客~">
 <meta property="og:description" content="今天是五月四号下午一点，按照计划，现在的我应该在上海回青岛的路上但是事实上，我现在刚躺在床上睡醒，不知所措的对着电脑讲述这段故事早上赶车时候，本以为一个小时满满当当，因为只需要坐八站地铁，但事实是，因为疏忽大意，在换乘时候反方向坐了一站，再加上本身地铁跟高铁站也有一段距离，导致我直接错过了火车。最遗憾的是前一分钟坐扶梯大厅屏幕上还在检票，当我到检票口时候，刚好停检。 只能说，差一点就差很多。于事无">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.freeimg.cn/i/2024/01/02/6593a1fe96931.png">
+<meta property="og:image" content="https://www.freeimg.cn/i/2024/01/02/6593a38cb31c7.jpg">
 <meta property="article:published_time" content="2024-05-04T13:12:32.000Z">
 <meta property="article:modified_time" content="2024-05-04T13:12:32.000Z">
 <meta property="article:author" content="素颜">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.freeimg.cn/i/2024/01/02/6593a1fe96931.png"><link rel="shortcut icon" href="https://s2.loli.net/2023/05/19/qHTUzYPQnmvOo6h.png"><link rel="canonical" href="http://suyanblog.cn/daily9/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+<meta name="twitter:image" content="https://www.freeimg.cn/i/2024/01/02/6593a38cb31c7.jpg"><link rel="shortcut icon" href="https://s2.loli.net/2023/05/19/qHTUzYPQnmvOo6h.png"><link rel="canonical" href="http://suyanblog.cn/daily9/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
   localSearch: undefined,
   translate: undefined,
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
   copy: {
     success: '复制成功',
-    error: '复制错误',
+    error: '复制失败',
     noSupport: '浏览器不支持'
   },
   relativeDate: {
     homepage: false,
     post: false
   },
-  runtime: '天',
+  runtime: '',
   dateSuffix: {
     just: '刚刚',
     min: '分钟前',
@@ -35,7 +125,7 @@
     month: '个月前'
   },
   copyright: undefined,
-  lightbox: 'fancybox',
+  lightbox: 'null',
   Snackbar: undefined,
   infinitegrid: {
     js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
@@ -55,139 +145,62 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2024-05-04 13:12:32'
-}</script><script>(win=>{
-      win.saveToLocal = {
-        set: (key, value, ttl) => {
-          if (ttl === 0) return
-          const now = Date.now()
-          const expiry = now + ttl * 86400000
-          const item = {
-            value,
-            expiry
-          }
-          localStorage.setItem(key, JSON.stringify(item))
-        },
-      
-        get: key => {
-          const itemStr = localStorage.getItem(key)
-      
-          if (!itemStr) {
-            return undefined
-          }
-          const item = JSON.parse(itemStr)
-          const now = Date.now()
-      
-          if (now > item.expiry) {
-            localStorage.removeItem(key)
-            return undefined
-          }
-          return item.value
-        }
-      }
-    
-      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        script.onerror = reject
-        script.onload = script.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          script.onload = script.onreadystatechange = null
-          resolve()
-        }
-
-        Object.keys(attr).forEach(key => {
-          script.setAttribute(key, attr[key])
-        })
-
-        document.head.appendChild(script)
-      })
-    
-      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onerror = reject
-        link.onload = link.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          link.onload = link.onreadystatechange = null
-          resolve()
-        }
-        document.head.appendChild(link)
-      })
-    
-      win.activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-        if (t === 'dark') activateDarkMode()
-        else if (t === 'light') activateLightMode()
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-      const detectApple = () => {
-        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-          document.documentElement.classList.add('apple')
-        }
-      }
-      detectApple()
-    })(window)</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="素颜的博客~" type="application/atom+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.freeimg.cn/i/2024/05/25/6651be587b17b.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://www.freeimg.cn/i/2024/01/02/6593a1fe96931.png')"><nav id="nav"><span id="blog-info"><a href="/" title="素颜的博客~"><span class="site-name">素颜的博客~</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">差一点就差很多啊</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-04T13:12:32.000Z" title="发表于 2024-05-04 13:12:32">2024-05-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-04T13:12:32.000Z" title="更新于 2024-05-04 13:12:32">2024-05-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">519</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>今天是五月四号下午一点，按照计划，现在的我应该在上海回青岛的路上<br>但是事实上，我现在刚躺在床上睡醒，不知所措的对着电脑讲述这段故事<br>早上赶车时候，本以为一个小时满满当当，因为只需要坐八站地铁，但事实是，因为疏忽大意，在换乘时候反方向坐了一站，再加上本身地铁跟高铁站也有一段距离，导致我直接错过了火车。<br>最遗憾的是前一分钟坐扶梯大厅屏幕上还在检票，当我到检票口时候，刚好停检。</p>
+  postUpdate: '2024-05-04 13:12:32',
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="素颜的博客~" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://www.freeimg.cn/i/2024/05/25/6651be587b17b.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://www.freeimg.cn/i/2024/01/02/6593a38cb31c7.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">素颜的博客~</span></a><a class="nav-page-title" href="/"><span class="site-name">差一点就差很多啊</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">差一点就差很多啊</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-04T13:12:32.000Z" title="发表于 2024-05-04 13:12:32">2024-05-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-04T13:12:32.000Z" title="更新于 2024-05-04 13:12:32">2024-05-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">519</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>今天是五月四号下午一点，按照计划，现在的我应该在上海回青岛的路上<br>但是事实上，我现在刚躺在床上睡醒，不知所措的对着电脑讲述这段故事<br>早上赶车时候，本以为一个小时满满当当，因为只需要坐八站地铁，但事实是，因为疏忽大意，在换乘时候反方向坐了一站，再加上本身地铁跟高铁站也有一段距离，导致我直接错过了火车。<br>最遗憾的是前一分钟坐扶梯大厅屏幕上还在检票，当我到检票口时候，刚好停检。</p>
 <p>只能说，差一点就差很多。于事无补只能改签六号的票<br>假如我早上出门早点，假如我没有坐错一站，假如我直接坐四号线不去等三号线..我事后这样想</p>
 <p>但其实这些都是导致迟到的客观因素，我再怎么想也不会改变结果。<br>我们应该去想，如何避免这种事情发生，总结出规律性的经验。</p>
 <p>比如在接触陌生环境时，请一定要留够<strong>容错</strong>，毕竟很多时候我们对事物的认识并不充分，它的发展不一定就会按照我们的想法。当出现意料之外的事情时候可能就被打个措手不及，所以一定要留好<strong>犯错</strong>的空间。<br>资料也要常常备份，东西买双不买单，尽量减少意外带来的损失。</p>
 <p>差一点的事情有很多啊，<br>高中时候考试，差一点考过谁，有道题差一点做对，或者是游戏差一点就打过了。<br>生活中充满了差一点，所以我们每时每刻都是要做好，杜绝敷衍，至少在失败之后，告诉自己至少努力过了。</p>
 <p>其实就算是改签了，又有什么关系呢，生活总还得过下去对吧，坐下来休息休息，计划好下一步吧。</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://suyanblog.cn">素颜</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://suyanblog.cn/daily9/">http://suyanblog.cn/daily9/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://suyanblog.cn" target="_blank">素颜的博客~</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://www.freeimg.cn/i/2024/01/02/6593a1fe96931.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/daily8/" title="木了"><img class="cover" src="https://www.freeimg.cn/i/2024/01/02/6593a39934bff.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">木了</div></div></a></div><div class="next-post pull-right"><a href="/daily10/" title="警惕消费主义陷阱"><img class="cover" src="https://www.freeimg.cn/i/2024/01/02/6593a4b313feb.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">警惕消费主义陷阱</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.freeimg.cn/i/2024/05/25/6651be587b17b.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">素颜</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Zero77OvO" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:suyan770v0@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://space.bilibili.com/10214649" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #BC8F8F;"></i></a><a class="social-icon" href="https://qm.qq.com/cgi-bin/qm/qr?k=nBl0CgQSPT6Yv_xyqDgsCoLPdlRfQ8cP&amp;noverify=0&amp;personal_qrcode_source=1" target="_blank" title="QQ"><i class="fa-brands fa-qq" style="color: #000000;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">本科自动化在读<br/> 一个兴趣使然的家伙；<br/> 摆烂大王<br/> 是蒂厨 会玩游戏(吗？ <br/> 随便写点东西记录记录</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/alone/" title="Always be alone"><img src="https://www.freeimg.cn/i/2024/01/02/6593a4b313feb.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Always be alone"/></a><div class="content"><a class="title" href="/alone/" title="Always be alone">Always be alone</a><time datetime="2024-09-09T15:46:23.000Z" title="发表于 2024-09-09 15:46:23">2024-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/windows1/" title="Windows 11修改C盘用户文件夹名称"><img src="https://www.freeimg.cn/i/2024/01/02/6593a2018e764.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Windows 11修改C盘用户文件夹名称"/></a><div class="content"><a class="title" href="/windows1/" title="Windows 11修改C盘用户文件夹名称">Windows 11修改C盘用户文件夹名称</a><time datetime="2024-09-09T00:00:00.000Z" title="发表于 2024-09-09 00:00:00">2024-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/plan2/" title="三个大坑"><img src="https://www.freeimg.cn/i/2024/01/02/6593a4af243ae.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="三个大坑"/></a><div class="content"><a class="title" href="/plan2/" title="三个大坑">三个大坑</a><time datetime="2024-08-13T02:52:22.000Z" title="发表于 2024-08-13 02:52:22">2024-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/aboutmindheart/" title="关于心态 评价 表现"><img src="https://www.freeimg.cn/i/2024/01/02/6593a1fe81629.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于心态 评价 表现"/></a><div class="content"><a class="title" href="/aboutmindheart/" title="关于心态 评价 表现">关于心态 评价 表现</a><time datetime="2024-08-13T01:44:22.000Z" title="发表于 2024-08-13 01:44:22">2024-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/daily11/" title="生活是一块很苦很苦的糖"><img src="https://www.freeimg.cn/i/2024/01/02/6593a1fe81629.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="生活是一块很苦很苦的糖"/></a><div class="content"><a class="title" href="/daily11/" title="生活是一块很苦很苦的糖">生活是一块很苦很苦的糖</a><time datetime="2024-08-05T00:00:00.000Z" title="发表于 2024-08-05 00:00:00">2024-08-05</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://www.freeimg.cn/i/2024/01/02/6593a1fe96931.png')"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 素颜</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://suyanblog.cn">素颜</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://suyanblog.cn/daily9/">http://suyanblog.cn/daily9/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://suyanblog.cn" target="_blank">素颜的博客~</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="https://www.freeimg.cn/i/2024/01/02/6593a38cb31c7.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/daily8/" title="木了"><img class="cover" src="https://www.freeimg.cn/i/2024/01/02/6593a39a26028.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">木了</div></div><div class="info-2"><div class="info-item-1">最近基本都在高强度调项目，调的人有点麻突然就感觉到上班的感觉，真的很差。 无论是精神还是身体，都很疲惫。没有其他的想法了，最近一段时间想法都没了，博客都没更。现在只想快做完早下班，玩会游戏早休息。拿着奶头乐与压力对冲，圈子渐渐固化，想法越来越少，然后成了自己嗤之以鼻思维固化的中年人。被生活绑架？被社会绑架，你不干有的是人干 我有时候就在想，既然就业前景都这么烂了，工作当一辈子房奴，为什么不把大学四年all in 在创业上呢？ 是沉没成本太高了吗？是有效信息拿的太少了吗？  –你都没参与过，哪来的信息。是资金问题吗？ –钱其实好像是最不需要的东西。是资源太少吗？ –资源是一步一步积累起来的，人脉，渠道。是没机会吗？...</div></div></div></a><a class="pagination-related" href="/daily10/" title="警惕消费主义陷阱"><img class="cover" src="https://www.freeimg.cn/i/2024/01/02/6593a39a26028.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">警惕消费主义陷阱</div></div><div class="info-2"><div class="info-item-1">尤其是电子产品车子房子贬值太快了 </div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://www.freeimg.cn/i/2024/05/25/6651be587b17b.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">素颜</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Zero77OvO" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:suyan770v0@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://space.bilibili.com/10214649" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #BC8F8F;"></i></a><a class="social-icon" href="https://qm.qq.com/cgi-bin/qm/qr?k=nBl0CgQSPT6Yv_xyqDgsCoLPdlRfQ8cP&amp;noverify=0&amp;personal_qrcode_source=1" target="_blank" title="QQ"><i class="fa-brands fa-qq" style="color: #000000;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">本科自动化在读<br/> 一个兴趣使然的家伙；<br/> 摆烂大王<br/> 是蒂厨 会玩游戏(吗？ <br/> 随便写点东西记录记录</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/master/" title="学校选择"><img src="https://www.freeimg.cn/i/2024/01/02/6593a39934bff.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="学校选择"/></a><div class="content"><a class="title" href="/master/" title="学校选择">学校选择</a><time datetime="2024-10-09T20:39:20.000Z" title="发表于 2024-10-09 20:39:20">2024-10-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/pydaily/" title="关于py控制台输入与直接赋值，导致执行结果不一致的"><img src="https://www.freeimg.cn/i/2024/01/02/6593a2b1d0222.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于py控制台输入与直接赋值，导致执行结果不一致的"/></a><div class="content"><a class="title" href="/pydaily/" title="关于py控制台输入与直接赋值，导致执行结果不一致的">关于py控制台输入与直接赋值，导致执行结果不一致的</a><time datetime="2024-10-06T20:33:20.000Z" title="发表于 2024-10-06 20:33:20">2024-10-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/alone/" title="Always be alone"><img src="https://www.freeimg.cn/i/2024/01/02/6593a2b0118b3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Always be alone"/></a><div class="content"><a class="title" href="/alone/" title="Always be alone">Always be alone</a><time datetime="2024-09-09T15:46:23.000Z" title="发表于 2024-09-09 15:46:23">2024-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/windows1/" title="Windows 11修改C盘用户文件夹名称"><img src="https://www.freeimg.cn/i/2024/01/02/6593a2018e764.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Windows 11修改C盘用户文件夹名称"/></a><div class="content"><a class="title" href="/windows1/" title="Windows 11修改C盘用户文件夹名称">Windows 11修改C盘用户文件夹名称</a><time datetime="2024-09-09T00:00:00.000Z" title="发表于 2024-09-09 00:00:00">2024-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/plan2/" title="三个大坑"><img src="https://www.freeimg.cn/i/2024/01/02/6593a3933fbf0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="三个大坑"/></a><div class="content"><a class="title" href="/plan2/" title="三个大坑">三个大坑</a><time datetime="2024-08-13T02:52:22.000Z" title="发表于 2024-08-13 02:52:22">2024-08-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 素颜</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
   let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = null
 
-  const initWaline = (Fn) => {
-    const waline = Fn(Object.assign({
-      el: '#waline-wrap',
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
       serverURL: 'https://www.suyanblog.eu.org/',
       pageview: false,
       dark: 'html[data-theme="dark"]',
-      path: window.location.pathname,
       comment: false,
-    }, null))
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
 
-    const destroyWaline = () => {
-      waline.destroy()
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
     }
-
-    btf.addGlobalFn('pjax', destroyWaline, 'destroyWaline')
   }
 
-  const loadWaline = async () => {
-    if (initFn) initWaline(initFn)
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
     else {
-      await getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
-      const { init } = await import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js')
-      initFn = init || Waline.init
-      initWaline(initFn)
-      window.walineFn = initFn
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
     }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
   }
 
   if ('Waline' === 'Waline' || !true) {

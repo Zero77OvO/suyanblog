@@ -6,23 +6,113 @@
 <meta property="og:image" content="https://www.freeimg.cn/i/2024/05/25/6651be587b17b.jpg">
 <meta property="article:author" content="素颜">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.freeimg.cn/i/2024/05/25/6651be587b17b.jpg"><link rel="shortcut icon" href="https://s2.loli.net/2023/05/19/qHTUzYPQnmvOo6h.png"><link rel="canonical" href="http://suyanblog.cn/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+<meta name="twitter:image" content="https://www.freeimg.cn/i/2024/05/25/6651be587b17b.jpg"><link rel="shortcut icon" href="https://s2.loli.net/2023/05/19/qHTUzYPQnmvOo6h.png"><link rel="canonical" href="http://suyanblog.cn/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
   localSearch: undefined,
   translate: undefined,
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
   copy: {
     success: '复制成功',
-    error: '复制错误',
+    error: '复制失败',
     noSupport: '浏览器不支持'
   },
   relativeDate: {
     homepage: false,
     post: false
   },
-  runtime: '天',
+  runtime: '',
   dateSuffix: {
     just: '刚刚',
     min: '分钟前',
@@ -31,7 +121,7 @@
     month: '个月前'
   },
   copyright: undefined,
-  lightbox: 'fancybox',
+  lightbox: 'null',
   Snackbar: undefined,
   infinitegrid: {
     js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
@@ -51,180 +141,77 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2024-09-13 03:20:22'
-}</script><script>(win=>{
-      win.saveToLocal = {
-        set: (key, value, ttl) => {
-          if (ttl === 0) return
-          const now = Date.now()
-          const expiry = now + ttl * 86400000
-          const item = {
-            value,
-            expiry
-          }
-          localStorage.setItem(key, JSON.stringify(item))
-        },
-      
-        get: key => {
-          const itemStr = localStorage.getItem(key)
-      
-          if (!itemStr) {
-            return undefined
-          }
-          const item = JSON.parse(itemStr)
-          const now = Date.now()
-      
-          if (now > item.expiry) {
-            localStorage.removeItem(key)
-            return undefined
-          }
-          return item.value
-        }
-      }
-    
-      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        script.onerror = reject
-        script.onload = script.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          script.onload = script.onreadystatechange = null
-          resolve()
-        }
-
-        Object.keys(attr).forEach(key => {
-          script.setAttribute(key, attr[key])
-        })
-
-        document.head.appendChild(script)
-      })
-    
-      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onerror = reject
-        link.onload = link.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          link.onload = link.onreadystatechange = null
-          resolve()
-        }
-        document.head.appendChild(link)
-      })
-    
-      win.activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-        if (t === 'dark') activateDarkMode()
-        else if (t === 'light') activateLightMode()
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-      const detectApple = () => {
-        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-          document.documentElement.classList.add('apple')
-        }
-      }
-      detectApple()
-    })(window)</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="素颜的博客~" type="application/atom+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.freeimg.cn/i/2024/05/25/6651be587b17b.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://www.freeimg.cn/i/2024/01/02/6593a8134010b.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="素颜的博客~"><span class="site-name">素颜的博客~</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">素颜的博客~</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/Zero77OvO" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:suyan770v0@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://space.bilibili.com/10214649" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #BC8F8F;"></i></a><a class="social-icon" href="https://qm.qq.com/cgi-bin/qm/qr?k=nBl0CgQSPT6Yv_xyqDgsCoLPdlRfQ8cP&amp;noverify=0&amp;personal_qrcode_source=1" target="_blank" title="QQ"><i class="fa-brands fa-qq" style="color: #000000;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/alone/" title="Always be alone"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a4b313feb.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Always be alone"></a></div><div class="recent-post-info"><a class="article-title" href="/alone/" title="Always be alone">Always be alone</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-09T15:46:23.000Z" title="发表于 2024-09-09 15:46:23">2024-09-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-09T15:46:23.000Z" title="更新于 2024-09-09 15:46:23">2024-09-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%85%B3%E4%BA%8E/">关于</a></span></div><div class="content">
-其实结不结婚都会后悔，巷子里的猫很自由，却没有归宿；围墙里的狗有归宿，终生都得低头；人生这道题怎么选都会有遗憾。               —-林徽因（民国诗人）
-
-</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/windows1/" title="Windows 11修改C盘用户文件夹名称"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a2018e764.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Windows 11修改C盘用户文件夹名称"></a></div><div class="recent-post-info"><a class="article-title" href="/windows1/" title="Windows 11修改C盘用户文件夹名称">Windows 11修改C盘用户文件夹名称</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-09T00:00:00.000Z" title="发表于 2024-09-09 00:00:00">2024-09-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-09T00:00:00.000Z" title="更新于 2024-09-09 00:00:00">2024-09-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">解决方案</a></span></div><div class="content">https://izumi.pub/Windows/change-windows-username/
-</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/plan2/" title="三个大坑"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a4af243ae.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="三个大坑"></a></div><div class="recent-post-info"><a class="article-title" href="/plan2/" title="三个大坑">三个大坑</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-13T02:52:22.000Z" title="发表于 2024-08-13 02:52:22">2024-08-13</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-13T02:52:22.000Z" title="更新于 2024-08-13 02:52:22">2024-08-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/">未来日记</a></span></div><div class="content">哎，时间不等人啊大学上半赛季已经结算了
-社恐性格，或多或少有点改变吧，奇怪的社交经验增加了
-关于人脉，其实也就那样，都是互利而已，哎但是必须得有，面上得有，也没必要细究那么多
-读了闲书几本，感觉还是颇有裨益的，能学到很多日常接触不到的知识，如果现实环境已经无法提供新的经验来源时读书是个很好的选择
-比赛 省一 省二，其实奖项倒是其次了，这个过程能学很多东西的，在实验室里，学技术，交朋友，还有工作上的关系处理之类的，感觉确实经历不少东西
-技术栈的话，倒没必要搞太满，兴趣使然罢了，要啥学啥才是常态
-下半赛季喽，马上毕业力
-8月13日更新假期的话
-学做几个菜试试（比如可乐鸡腿&#x2F;鸡翅
-单词继续背吧，听力，还有作文也只能看油管了
-书的话，可能也要读一点
-更新一下博客，加点名言警句，顺便把文章归档一下
-开学的话
-据说还有考试
-控制方向的书得猛看了，daily的看，
-如果是技术栈方向的话 c++，试试写驱动？给maixcam做做开发
-c# qt?
-看看rtos，香橙派边缘ai开发，linux嵌入式
-把cam边缘ai图像识别弄明白，做点开源项目
-如果是比赛的话，cv也要学，python还是不太 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/aboutmindheart/" title="关于心态 评价 表现"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a1fe81629.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于心态 评价 表现"></a></div><div class="recent-post-info"><a class="article-title" href="/aboutmindheart/" title="关于心态 评价 表现">关于心态 评价 表现</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-13T01:44:22.000Z" title="发表于 2024-08-13 01:44:22">2024-08-13</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-13T01:44:22.000Z" title="更新于 2024-08-13 01:44:22">2024-08-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></span></div><div class="content">关于评价其实很早之前，就听别人说，高考是人生中相对比较公平的平台了。
-做比赛的，几个月的心血凝聚成评审的10分钟，你是牛是马全凭人家的一句话。
-搞研究的不也一样，写了一万年的刊，退回改了又改
-就算是送外卖也要别人帮忙点点好评嘞
-似乎我们都需要别人的评价，活在别人的评价之下
-哎这小伙长得真帅吧
-我趣真虾头
-玩原神的是这样的
-派克真得K头吧
-我们似乎无时不刻不在被评价，同时也在评价他人
-再极端点，量化你的表现，通过量化分数给你们排个号呢
-自上学开始，按成绩挨个排号，教室座位都有三六九等之分
-甚至玩个游戏，系统都会按你对局表现给你评个小分
-到了结婚也要看看你的收入存款，父母职业都要被量化成分进行排名评价
-但是数据是冰冷的，没有一丝情感。
-分数你可以作弊，可以通过吸血队友，或者是全力依父。
-只通过分数来评价这是很不客观的一件事情
-分数低，排名靠后，只能说明你没有重视这个事情，或者是你性格，行事方式，使得你不适合从事这种事情
-毕竟你不能要求一个瘦子猛猛搬砖吧
-同时数据是直观的，这是评价事物最方便，最简单，最节省精力的方式。
-毕竟世界上吊人这么多，谁知道你是牛是马，大就是好
-世界上没有任何人能够像 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/daily11/" title="生活是一块很苦很苦的糖"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a1fe81629.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="生活是一块很苦很苦的糖"></a></div><div class="recent-post-info"><a class="article-title" href="/daily11/" title="生活是一块很苦很苦的糖">生活是一块很苦很苦的糖</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-05T00:00:00.000Z" title="发表于 2024-08-05 00:00:00">2024-08-05</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-05T00:00:00.000Z" title="更新于 2024-08-05 00:00:00">2024-08-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></span></div><div class="content">rt
-</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/alwayslearn/" title="终身学习"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a2b1d0222.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="终身学习"></a></div><div class="recent-post-info"><a class="article-title" href="/alwayslearn/" title="终身学习">终身学习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-26T23:37:23.000Z" title="发表于 2024-07-26 23:37:23">2024-07-26</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-26T23:37:23.000Z" title="更新于 2024-07-26 23:37:23">2024-07-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%85%B3%E4%BA%8E/">关于</a></span></div><div class="content">24年7月26日 于杭州写下
-学习是贯彻人生始终的。在读书时候，那时候总认为考上了好大学，学习的任务就结束了，一辈子就舒舒服服了。自然不明白为什么总是讲究终身学习。后来才发现，高考既是开始，也是结束。结束的是你的童年，是你的青春，它更像是一个包装精美的礼物，你明明都知道里面装的是什么，但还是忍不住去打开。回忆也是这样。
-读书不等同于学习。学会社交，学会技能，学会如何与他人和解，与自己和解。或者是学会当一个职员，当一个老板。学会爱人爱己。学会独立，学会自己对抗生活。
-学习总是贯穿人生始终的，失败也是。
-人生不总是顺风顺水。我们永远在路上。
-</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/stm32_1/" title="在定时器中断与while中执行代码效果不同记录"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a1fe96931.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在定时器中断与while中执行代码效果不同记录"></a></div><div class="recent-post-info"><a class="article-title" href="/stm32_1/" title="在定时器中断与while中执行代码效果不同记录">在定时器中断与while中执行代码效果不同记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-16T00:00:00.000Z" title="发表于 2024-07-16 00:00:00">2024-07-16</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-16T00:00:00.000Z" title="更新于 2024-07-16 00:00:00">2024-07-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/">stm32</a></span></div><div class="content">省流：1.函数使用了多个其他.c文件中的变量，使用extern声明变量。
-
-当多个.c文件使用extern 声明变量，导致正确的参数无法被引用，导致返回值错误。以后在定义变量时，尽量把extern都写在.h文件中，并把所有的.h文件集合在一个.h文件中，调用只需要include一个.h文件，避免使用多个extern 声明同一个变量
-2. 在参数传入时候，float int类型要保证规范，否则会导致数据溢出或者是其他很奇怪的问题
-
-3.在定时器与while中使用结构体，在main里有pid的初始化，所以定时器里只放了声明与函数，导致返回值一直不对
-
-12345678910   //定时器 	IncrementalPID ver;IncrementalPID hor;	 	IncrementalPID_init(&amp;ver, 0.4, 0.01, 0.0);// 设置PID参数 	IncrementalPID_init(&amp;hor, 0.4, 0.01, 0.0);// 设置PID参数Servo_pid_move(&amp;ver, &amp;hor,  y1,  y_gree ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/ti1/" title="msp3507板子跑飞"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a2b0118b3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="msp3507板子跑飞"></a></div><div class="recent-post-info"><a class="article-title" href="/ti1/" title="msp3507板子跑飞">msp3507板子跑飞</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-16T00:00:00.000Z" title="发表于 2024-07-16 00:00:00">2024-07-16</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-21T00:00:00.000Z" title="更新于 2024-07-21 00:00:00">2024-07-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/TI/">TI</a></span></div><div class="content">至今没有解决，具体体现在 引用变量 进行 运算 时候就会内存跑飞，可能跟extern变量也有关系等后面有时间了再解决一下
-7月21日更新据说是编译器的问题，尽量不要用keil，使用ccs进行工程配置使用，到目前来说没有遇到奇怪的现象
-这块板子布局本身也不太合理。。但是必须要用啊- -
-参考：STM32 Keil静态全局变量值被修改单片机的变量竟然被无故修改了.全局变量被未知原因改变的解决方法为什么我的DS18B20总是乱跳呢初始化设置为0 数字会乱跳又是一个奇葩问题——stm32 全局变量自己乱变
-</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/photo_stream/" title="flask框架下的http图传"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a1fe96931.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="flask框架下的http图传"></a></div><div class="recent-post-info"><a class="article-title" href="/photo_stream/" title="flask框架下的http图传">flask框架下的http图传</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-10T00:00:00.000Z" title="发表于 2024-07-10 00:00:00">2024-07-10</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-10T00:00:00.000Z" title="更新于 2024-07-10 00:00:00">2024-07-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%89%A9%E8%81%94%E7%BD%91/">物联网</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%89%A9%E8%81%94%E7%BD%91/%E5%9B%BE%E4%BC%A0/">图传</a></span></div><div class="content">Flask介绍：Flask是一个使用python编写的轻量化web应用框架，它的作用主要用于开发Web应用程序。Web框架（Flask）致力于如何生成HTML代码，而Web服务器（nginx）用于处理和响应HTTP请求。Socket则提供了一种网络通信的底层接口，允许开发人员直接访问网络协议栈，它提供了对网络套接字的编程接口，允许应用程序直接发送和接收数据包。
-HTTP图传:关于实时视频传输，业界已经有非常多成熟方案，分别应用在不同需求场景。例如RTMP 、RTSP、hls 、FFMPEG 、nginx-rtmp服务器同时还会涉及到时音视频的底层传输协议问题（TCP，UDP，QUIC）基本上原理就是有一个中转服务器（比如Nginx），FFMPEGD推流，html拉流。那Django干啥？控制页面拉流。或者说python干啥？拉流。还有一些是用opencv做推流的，
-通过 stream 形式，将图片通过 http 协议输出到客户端。只要客户端支持 multipart&#x2F;x-mixed-replace 头，就可以从响应中读取视频帧，chrome、Firefox 在这一点上有比较好的 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/CHV307/" title="关于HX711返回值为8388607"><img class="post-bg" src="https://www.freeimg.cn/i/2024/06/19/6672d08810ee4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于HX711返回值为8388607"></a></div><div class="recent-post-info"><a class="article-title" href="/CHV307/" title="关于HX711返回值为8388607">关于HX711返回值为8388607</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-19T20:28:23.000Z" title="发表于 2024-06-19 20:28:23">2024-06-19</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-19T20:28:23.000Z" title="更新于 2024-06-19 20:28:23">2024-06-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E6%B2%81%E6%81%92/">沁恒</a></span></div><div class="content">在沁恒板上用HX711来测重时，返回值一直是8388607。
-换用F407时，也是如此，上网搜索发现，可能是延时不够精确，导致返回值错误。
-8388608或8388607，换算为十六进制就是80000和7FFFFF，就是表示采集值无效，可以理解为0，如果始终出现，表示传感器输出或电路出错。
-换了一个延时函数，测重正常了。
-
-下面是代码延时函数‘’’uint32_t fac_us;
-void HAL_Delay_us_init(uint8_t SYSCLK)&#x2F;&#x2F;里面参数为自己单片机的时钟主频，我的项目目前为168MHZ，即填写169即可{     fac_us&#x3D;SYSCLK;}
-void HAL_Delay_us(uint32_t nus){    uint32_t ticks;    uint32_t told,tnow,tcnt&#x3D;0;    uint32_t reload&#x3D;SysTick-&gt;LOAD;    ticks&#x3D;nus*fac_us;    told&#x3D;SysTick-&gt;VAL;    while ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/#content-inner">6</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.freeimg.cn/i/2024/05/25/6651be587b17b.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">素颜</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Zero77OvO" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:suyan770v0@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://space.bilibili.com/10214649" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #BC8F8F;"></i></a><a class="social-icon" href="https://qm.qq.com/cgi-bin/qm/qr?k=nBl0CgQSPT6Yv_xyqDgsCoLPdlRfQ8cP&amp;noverify=0&amp;personal_qrcode_source=1" target="_blank" title="QQ"><i class="fa-brands fa-qq" style="color: #000000;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">本科自动化在读<br/> 一个兴趣使然的家伙；<br/> 摆烂大王<br/> 是蒂厨 会玩游戏(吗？ <br/> 随便写点东西记录记录</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/alone/" title="Always be alone"><img src="https://www.freeimg.cn/i/2024/01/02/6593a4b313feb.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Always be alone"/></a><div class="content"><a class="title" href="/alone/" title="Always be alone">Always be alone</a><time datetime="2024-09-09T15:46:23.000Z" title="发表于 2024-09-09 15:46:23">2024-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/windows1/" title="Windows 11修改C盘用户文件夹名称"><img src="https://www.freeimg.cn/i/2024/01/02/6593a2018e764.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Windows 11修改C盘用户文件夹名称"/></a><div class="content"><a class="title" href="/windows1/" title="Windows 11修改C盘用户文件夹名称">Windows 11修改C盘用户文件夹名称</a><time datetime="2024-09-09T00:00:00.000Z" title="发表于 2024-09-09 00:00:00">2024-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/plan2/" title="三个大坑"><img src="https://www.freeimg.cn/i/2024/01/02/6593a4af243ae.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="三个大坑"/></a><div class="content"><a class="title" href="/plan2/" title="三个大坑">三个大坑</a><time datetime="2024-08-13T02:52:22.000Z" title="发表于 2024-08-13 02:52:22">2024-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/aboutmindheart/" title="关于心态 评价 表现"><img src="https://www.freeimg.cn/i/2024/01/02/6593a1fe81629.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于心态 评价 表现"/></a><div class="content"><a class="title" href="/aboutmindheart/" title="关于心态 评价 表现">关于心态 评价 表现</a><time datetime="2024-08-13T01:44:22.000Z" title="发表于 2024-08-13 01:44:22">2024-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/daily11/" title="生活是一块很苦很苦的糖"><img src="https://www.freeimg.cn/i/2024/01/02/6593a1fe81629.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="生活是一块很苦很苦的糖"/></a><div class="content"><a class="title" href="/daily11/" title="生活是一块很苦很苦的糖">生活是一块很苦很苦的糖</a><time datetime="2024-08-05T00:00:00.000Z" title="发表于 2024-08-05 00:00:00">2024-08-05</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+  postUpdate: '2024-11-04 03:01:43',
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="素颜的博客~" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://www.freeimg.cn/i/2024/05/25/6651be587b17b.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://www.freeimg.cn/i/2024/01/02/6593a8134010b.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">素颜的博客~</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">素颜的博客~</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/Zero77OvO" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:suyan770v0@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://space.bilibili.com/10214649" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #BC8F8F;"></i></a><a class="social-icon" href="https://qm.qq.com/cgi-bin/qm/qr?k=nBl0CgQSPT6Yv_xyqDgsCoLPdlRfQ8cP&amp;noverify=0&amp;personal_qrcode_source=1" target="_blank" title="QQ"><i class="fa-brands fa-qq" style="color: #000000;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/master/" title="学校选择"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a39934bff.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="学校选择"></a></div><div class="recent-post-info"><a class="article-title" href="/master/" title="学校选择">学校选择</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-10-09T20:39:20.000Z" title="发表于 2024-10-09 20:39:20">2024-10-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-09T21:37:20.000Z" title="更新于 2024-10-09 21:37:20">2024-10-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/">未来日记</a></span></div><div class="content">南京东南大学东南大学2024年招收攻读硕士学位研究生专业目录东南大学2025年硕士研究生招生章程 方向自动化学院：081100（学术学位）控制科学与工程招生54人考试科目 11934(电路)+自控 085403（专业学位）集成电路工程招生173人考试科目 11928(电子技术基础，数模)+580半导体物理与器件 计算机科学与工程学院： 081200（学术学位）计算机科学与技术招生58人考试科目 11935(计算机专业基础)+C++程序设计 软件学院：085405（专业学位）软件工程招生46人考试科目 11935(计算机专业基础)+C++程序设计 南京理工大学2025 年攻读硕士学位研究生招生专业目录 方向106 计算机科学与工程学院:（0811）控制科学与工程（0812）计算机科学与技术（0835）软件工程（1405）智能科学与技术 均为11408+①程序设计（C++上机操作）②编译原理与算法设计 0854 电子信息22408+编译原理与算法设计 总招生人数305 110 自动化学院 ： （0808）电气工程    11837（电路）+电力电子技术（0811）控制科学与工程  ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/pydaily/" title="关于py控制台输入与直接赋值，导致执行结果不一致的"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a2b1d0222.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于py控制台输入与直接赋值，导致执行结果不一致的"></a></div><div class="recent-post-info"><a class="article-title" href="/pydaily/" title="关于py控制台输入与直接赋值，导致执行结果不一致的">关于py控制台输入与直接赋值，导致执行结果不一致的</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-10-06T20:33:20.000Z" title="发表于 2024-10-06 20:33:20">2024-10-06</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-06T21:37:20.000Z" title="更新于 2024-10-06 21:37:20">2024-10-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">解决方案</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/">python</a></span></div><div class="content">RT 涉案代码 1234567891011121314151617#这是一个用于显示菜单，并进行选择的代码def choose(        title: str,        options: tuple | list,        console: &quot;ColorfulConsole&quot;,        separate=None) -&gt; str:    screen = f&quot;&#123;title&#125;:\n&quot;    row = 0    for i, j in enumerate(options, start=1):        screen += f&quot;&#123;i: &gt;2d&#125;. &#123;j&#125;\n&quot;        if separate and row in separate:            screen += f&quot;&#123;&#x27;=&#x27; * 25&#125;\n&quot;        row += 1    return...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/alone/" title="Always be alone"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a2b0118b3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Always be alone"></a></div><div class="recent-post-info"><a class="article-title" href="/alone/" title="Always be alone">Always be alone</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-09T15:46:23.000Z" title="发表于 2024-09-09 15:46:23">2024-09-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-09T15:46:23.000Z" title="更新于 2024-09-09 15:46:23">2024-09-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%85%B3%E4%BA%8E/">关于</a></span></div><div class="content"> 其实结不结婚都会后悔，巷子里的猫很自由，却没有归宿；围墙里的狗有归宿，终生都得低头；人生这道题怎么选都会有遗憾。               —-林徽因（民国诗人）  </div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/windows1/" title="Windows 11修改C盘用户文件夹名称"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a2018e764.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Windows 11修改C盘用户文件夹名称"></a></div><div class="recent-post-info"><a class="article-title" href="/windows1/" title="Windows 11修改C盘用户文件夹名称">Windows 11修改C盘用户文件夹名称</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-09T00:00:00.000Z" title="发表于 2024-09-09 00:00:00">2024-09-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-09T00:00:00.000Z" title="更新于 2024-09-09 00:00:00">2024-09-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">解决方案</a></span></div><div class="content">https://izumi.pub/Windows/change-windows-username/ </div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/plan2/" title="三个大坑"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a3933fbf0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="三个大坑"></a></div><div class="recent-post-info"><a class="article-title" href="/plan2/" title="三个大坑">三个大坑</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-13T02:52:22.000Z" title="发表于 2024-08-13 02:52:22">2024-08-13</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-13T02:52:22.000Z" title="更新于 2024-08-13 02:52:22">2024-08-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/">未来日记</a></span></div><div class="content">哎，时间不等人啊大学上半赛季已经结算了 社恐性格，或多或少有点改变吧，奇怪的社交经验增加了 关于人脉，其实也就那样，都是互利而已，哎但是必须得有，面上得有，也没必要细究那么多 读了闲书几本，感觉还是颇有裨益的，能学到很多日常接触不到的知识，如果现实环境已经无法提供新的经验来源时读书是个很好的选择 比赛 省一 省二，其实奖项倒是其次了，这个过程能学很多东西的，在实验室里，学技术，交朋友，还有工作上的关系处理之类的，感觉确实经历不少东西 技术栈的话，倒没必要搞太满，兴趣使然罢了，要啥学啥才是常态 下半赛季喽，马上毕业力 8月13日更新假期的话 学做几个菜试试（比如可乐鸡腿&#x2F;鸡翅 单词继续背吧，听力，还有作文也只能看油管了 书的话，可能也要读一点 更新一下博客，加点名言警句，顺便把文章归档一下 开学的话 据说还有考试 控制方向的书得猛看了，daily的看， 如果是技术栈方向的话 c++，试试写驱动？给maixcam做做开发 c#...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/aboutmindheart/" title="关于心态 评价 表现"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a2b1d0222.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于心态 评价 表现"></a></div><div class="recent-post-info"><a class="article-title" href="/aboutmindheart/" title="关于心态 评价 表现">关于心态 评价 表现</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-13T01:44:22.000Z" title="发表于 2024-08-13 01:44:22">2024-08-13</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-13T01:44:22.000Z" title="更新于 2024-08-13 01:44:22">2024-08-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></span></div><div class="content">...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/daily11/" title="生活是一块很苦很苦的糖"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a1fe56433.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="生活是一块很苦很苦的糖"></a></div><div class="recent-post-info"><a class="article-title" href="/daily11/" title="生活是一块很苦很苦的糖">生活是一块很苦很苦的糖</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-05T00:00:00.000Z" title="发表于 2024-08-05 00:00:00">2024-08-05</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-05T00:00:00.000Z" title="更新于 2024-08-05 00:00:00">2024-08-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></span></div><div class="content">rt </div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/alwayslearn/" title="终身学习"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a207d07be.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="终身学习"></a></div><div class="recent-post-info"><a class="article-title" href="/alwayslearn/" title="终身学习">终身学习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-26T23:37:23.000Z" title="发表于 2024-07-26 23:37:23">2024-07-26</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-26T23:37:23.000Z" title="更新于 2024-07-26 23:37:23">2024-07-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%85%B3%E4%BA%8E/">关于</a></span></div><div class="content">24年7月26日 于杭州写下 学习是贯彻人生始终的。在读书时候，那时候总认为考上了好大学，学习的任务就结束了，一辈子就舒舒服服了。自然不明白为什么总是讲究终身学习。后来才发现，高考既是开始，也是结束。结束的是你的童年，是你的青春，它更像是一个包装精美的礼物，你明明都知道里面装的是什么，但还是忍不住去打开。回忆也是这样。 读书不等同于学习。学会社交，学会技能，学会如何与他人和解，与自己和解。或者是学会当一个职员，当一个老板。学会爱人爱己。学会独立，学会自己对抗生活。 学习总是贯穿人生始终的，失败也是。 人生不总是顺风顺水。我们永远在路上。 </div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/stm32_1/" title="在定时器中断与while中执行代码效果不同记录"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a39934bff.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在定时器中断与while中执行代码效果不同记录"></a></div><div class="recent-post-info"><a class="article-title" href="/stm32_1/" title="在定时器中断与while中执行代码效果不同记录">在定时器中断与while中执行代码效果不同记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-16T00:00:00.000Z" title="发表于 2024-07-16 00:00:00">2024-07-16</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-16T00:00:00.000Z" title="更新于 2024-07-16 00:00:00">2024-07-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/">stm32</a></span></div><div class="content">省流：1.函数使用了多个其他.c文件中的变量，使用extern声明变量。  当多个.c文件使用extern 声明变量，导致正确的参数无法被引用，导致返回值错误。以后在定义变量时，尽量把extern都写在.h文件中，并把所有的.h文件集合在一个.h文件中，调用只需要include一个.h文件，避免使用多个extern 声明同一个变量 2. 在参数传入时候，float int类型要保证规范，否则会导致数据溢出或者是其他很奇怪的问题  3.在定时器与while中使用结构体，在main里有pid的初始化，所以定时器里只放了声明与函数，导致返回值一直不对  12345678910   //定时器 	IncrementalPID ver;IncrementalPID hor;	 	IncrementalPID_init(&amp;ver, 0.4, 0.01, 0.0);// 设置PID参数 	IncrementalPID_init(&amp;hor, 0.4, 0.01, 0.0);// 设置PID参数Servo_pid_move(&amp;ver, &amp;hor,  y1, ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/ti1/" title="msp3507板子跑飞"><img class="post-bg" src="https://www.freeimg.cn/i/2024/01/02/6593a1fe56433.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="msp3507板子跑飞"></a></div><div class="recent-post-info"><a class="article-title" href="/ti1/" title="msp3507板子跑飞">msp3507板子跑飞</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-16T00:00:00.000Z" title="发表于 2024-07-16 00:00:00">2024-07-16</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-21T00:00:00.000Z" title="更新于 2024-07-21 00:00:00">2024-07-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/TI/">TI</a></span></div><div class="content">至今没有解决，具体体现在 引用变量 进行 运算 时候就会内存跑飞，可能跟extern变量也有关系等后面有时间了再解决一下 7月21日更新据说是编译器的问题，尽量不要用keil，使用ccs进行工程配置使用，到目前来说没有遇到奇怪的现象 这块板子布局本身也不太合理。。但是必须要用啊- - 参考：STM32 Keil静态全局变量值被修改单片机的变量竟然被无故修改了.全局变量被未知原因改变的解决方法为什么我的DS18B20总是乱跳呢初始化设置为0 数字会乱跳又是一个奇葩问题——stm32 全局变量自己乱变 </div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/#content-inner">6</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://www.freeimg.cn/i/2024/05/25/6651be587b17b.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">素颜</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Zero77OvO" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:suyan770v0@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://space.bilibili.com/10214649" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #BC8F8F;"></i></a><a class="social-icon" href="https://qm.qq.com/cgi-bin/qm/qr?k=nBl0CgQSPT6Yv_xyqDgsCoLPdlRfQ8cP&amp;noverify=0&amp;personal_qrcode_source=1" target="_blank" title="QQ"><i class="fa-brands fa-qq" style="color: #000000;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">本科自动化在读<br/> 一个兴趣使然的家伙；<br/> 摆烂大王<br/> 是蒂厨 会玩游戏(吗？ <br/> 随便写点东西记录记录</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/master/" title="学校选择"><img src="https://www.freeimg.cn/i/2024/01/02/6593a39934bff.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="学校选择"/></a><div class="content"><a class="title" href="/master/" title="学校选择">学校选择</a><time datetime="2024-10-09T20:39:20.000Z" title="发表于 2024-10-09 20:39:20">2024-10-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/pydaily/" title="关于py控制台输入与直接赋值，导致执行结果不一致的"><img src="https://www.freeimg.cn/i/2024/01/02/6593a2b1d0222.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于py控制台输入与直接赋值，导致执行结果不一致的"/></a><div class="content"><a class="title" href="/pydaily/" title="关于py控制台输入与直接赋值，导致执行结果不一致的">关于py控制台输入与直接赋值，导致执行结果不一致的</a><time datetime="2024-10-06T20:33:20.000Z" title="发表于 2024-10-06 20:33:20">2024-10-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/alone/" title="Always be alone"><img src="https://www.freeimg.cn/i/2024/01/02/6593a2b0118b3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Always be alone"/></a><div class="content"><a class="title" href="/alone/" title="Always be alone">Always be alone</a><time datetime="2024-09-09T15:46:23.000Z" title="发表于 2024-09-09 15:46:23">2024-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/windows1/" title="Windows 11修改C盘用户文件夹名称"><img src="https://www.freeimg.cn/i/2024/01/02/6593a2018e764.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Windows 11修改C盘用户文件夹名称"/></a><div class="content"><a class="title" href="/windows1/" title="Windows 11修改C盘用户文件夹名称">Windows 11修改C盘用户文件夹名称</a><time datetime="2024-09-09T00:00:00.000Z" title="发表于 2024-09-09 00:00:00">2024-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/plan2/" title="三个大坑"><img src="https://www.freeimg.cn/i/2024/01/02/6593a3933fbf0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="三个大坑"/></a><div class="content"><a class="title" href="/plan2/" title="三个大坑">三个大坑</a><time datetime="2024-08-13T02:52:22.000Z" title="发表于 2024-08-13 02:52:22">2024-08-13</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             
-            </div>
-            <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%85%B3%E4%BA%8E/"><span class="card-category-list-name">关于</span><span class="card-category-list-count">10</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%A6%82%E4%BD%95/"><span class="card-category-list-name">如何</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"><span class="card-category-list-name">嵌入式</span><span class="card-category-list-count">10</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/TI/"><span class="card-category-list-name">TI</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/maixpy/"><span class="card-category-list-name">maixpy</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/"><span class="card-category-list-name">stm32</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E6%A0%91%E8%8E%93%E6%B4%BE/"><span class="card-category-list-name">树莓派</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E6%B2%81%E6%81%92/"><span class="card-category-list-name">沁恒</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%89%A9%E8%81%94%E7%BD%91/"><span class="card-category-list-name">物联网</span><span class="card-category-list-count">2</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%89%A9%E8%81%94%E7%BD%91/%E5%9B%BE%E4%BC%A0/"><span class="card-category-list-name">图传</span><span class="card-category-list-count">2</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%94%B5%E8%B5%9B/"><span class="card-category-list-name">电赛</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/"><span class="card-category-list-name">日常</span><span class="card-category-list-count">14</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/%E6%B8%B8%E6%88%8F/"><span class="card-category-list-name">游戏</span><span class="card-category-list-count">2</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/"><span class="card-category-list-name">未来日记</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%A2%8E%E8%AE%B0/"><span class="card-category-list-name">碎记</span><span class="card-category-list-count">6</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%A2%8E%E8%AE%B0/%E6%B8%B8%E6%88%8F/"><span class="card-category-list-name">游戏</span><span class="card-category-list-count">2</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"><span class="card-category-list-name">解决方案</span><span class="card-category-list-count">8</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/Blog/"><span class="card-category-list-name">Blog</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/"><span class="card-category-list-name">python</span><span class="card-category-list-count">5</span></a></li></ul></li>
-            </ul></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">八月 2024</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><span class="card-archive-list-count">4</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">55</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-05-11T00:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">25.5k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-09-13T03:20:21.880Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://www.freeimg.cn/i/2024/01/02/6593a8134010b.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 素颜</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div></div></body></html>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%85%B3%E4%BA%8E/"><span class="card-category-list-name">关于</span><span class="card-category-list-count">10</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%A6%82%E4%BD%95/"><span class="card-category-list-name">如何</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"><span class="card-category-list-name">嵌入式</span><span class="card-category-list-count">10</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/TI/"><span class="card-category-list-name">TI</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/maixpy/"><span class="card-category-list-name">maixpy</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/"><span class="card-category-list-name">stm32</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E6%A0%91%E8%8E%93%E6%B4%BE/"><span class="card-category-list-name">树莓派</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E6%B2%81%E6%81%92/"><span class="card-category-list-name">沁恒</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%89%A9%E8%81%94%E7%BD%91/"><span class="card-category-list-name">物联网</span><span class="card-category-list-count">2</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%89%A9%E8%81%94%E7%BD%91/%E5%9B%BE%E4%BC%A0/"><span class="card-category-list-name">图传</span><span class="card-category-list-count">2</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%94%B5%E8%B5%9B/"><span class="card-category-list-name">电赛</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/"><span class="card-category-list-name">日常</span><span class="card-category-list-count">14</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/%E6%B8%B8%E6%88%8F/"><span class="card-category-list-name">游戏</span><span class="card-category-list-count">2</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/"><span class="card-category-list-name">未来日记</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%A2%8E%E8%AE%B0/"><span class="card-category-list-name">碎记</span><span class="card-category-list-count">6</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%A2%8E%E8%AE%B0/%E6%B8%B8%E6%88%8F/"><span class="card-category-list-name">游戏</span><span class="card-category-list-count">2</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"><span class="card-category-list-name">解决方案</span><span class="card-category-list-count">9</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/Blog/"><span class="card-category-list-name">Blog</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/"><span class="card-category-list-name">python</span><span class="card-category-list-count">6</span></a></li></ul></li>
+          </ul></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/" title="查看更多"><i class="fas fa-angle-right"></i></a>
+    </div>
+    <ul class="card-archive-list">
+  
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/10/">
+          <span class="card-archive-list-date">十月 2024</span>
+          <span class="card-archive-list-count">2</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/09/">
+          <span class="card-archive-list-date">九月 2024</span>
+          <span class="card-archive-list-count">2</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/08/">
+          <span class="card-archive-list-date">八月 2024</span>
+          <span class="card-archive-list-count">3</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/07/">
+          <span class="card-archive-list-date">七月 2024</span>
+          <span class="card-archive-list-count">4</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/06/">
+          <span class="card-archive-list-date">六月 2024</span>
+          <span class="card-archive-list-count">4</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/05/">
+          <span class="card-archive-list-date">五月 2024</span>
+          <span class="card-archive-list-count">4</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/04/">
+          <span class="card-archive-list-date">四月 2024</span>
+          <span class="card-archive-list-count">2</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/03/">
+          <span class="card-archive-list-date">三月 2024</span>
+          <span class="card-archive-list-count">4</span>
+        </a>
+      </li>
+    </ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">57</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">27k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-11-04T03:01:43.043Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 素颜</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div></div></body></html>

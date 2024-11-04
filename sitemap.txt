@@ -3,6 +3,8 @@ http://suyanblog.cn/categories/index.html
 http://suyanblog.cn/comments/index.html
 http://suyanblog.cn/link/index.html
 http://suyanblog.cn/tags/index.html
+http://suyanblog.cn/master/
+http://suyanblog.cn/pydaily/
 http://suyanblog.cn/alone/
 http://suyanblog.cn/windows1/
 http://suyanblog.cn/plan2/
