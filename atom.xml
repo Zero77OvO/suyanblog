@@ -6,7 +6,7 @@
   <link href="http://suyanblog.cn/atom.xml" rel="self"/>
   
   <link href="http://suyanblog.cn/"/>
-  <updated>2024-12-25T15:02:33.000Z</updated>
+  <updated>2025-01-06T23:18:12.000Z</updated>
   <id>http://suyanblog.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>25年的年度总结？</title>
+    <link href="http://suyanblog.cn/plan3/"/>
+    <id>http://suyanblog.cn/plan3/</id>
+    <published>2025-01-06T23:18:12.000Z</published>
+    <updated>2025-01-06T23:18:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>好像是25年的第一坑，经典回首过往，又是一年，是的又过了一年的一年<br>快乐的瞬间总是转瞬即逝，藏匿在记忆碎片中，或许某个偶然，又在某个角落拾起，可能又会触景生情，怀念起某个时间吧<br>我不知道写这种东西会给我带来什么，可能只是为了许多年后，让我记起，一块玩泰拉瑞亚，赶期末考试，吃韭菜鸡蛋饺子，畅聊以后的这段时间吧<br>可能游戏再也不会打开，饺子也不会再吃，人也不会再聚<br>我以后会以什么姿势打开这篇文章，或者是以一种什么样的心态<br>还是想要记住更多东西</p><p>其实本来是想做成一个年度总结的，但是感觉又总结不出啥来，总之总之，新的一年还是得好好干啊，努力赚钱打工，努力学习，享受生活:P</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;好像是25年的第一坑，经典回首过往，又是一年，是的又过了一年的一年&lt;br&gt;快乐的瞬间总是转瞬即逝，藏匿在记忆碎片中，或许某个偶然，又在某个角落拾起，可能又会触景生情，怀念起某个时间吧&lt;br&gt;我不知道写这种东西会给我带来什么，可能只是为了许多年后，让我记起，一块玩泰拉瑞亚，赶</summary>
+      
+    
+    
+    
+    <category term="未来日记" scheme="http://suyanblog.cn/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Apex的一些交流术语</title>
@@ -166,7 +188,7 @@
     <published>2024-08-13T02:52:22.000Z</published>
     <updated>2024-12-23T11:18:22.000Z</updated>
     
-    <content type="html"><![CDATA[<p>哎，时间不等人啊<br>大学上半赛季已经结算了</p><p>社恐性格，或多或少有点改变吧，奇怪的社交经验增加了</p><p>关于人脉，其实也就那样，都是互利而已，哎<br>但是必须得有，面上得有，也没必要细究那么多</p><p>读了闲书几本，感觉还是颇有裨益的，能学到很多日常接触不到的知识，如果现实环境已经无法提供新的经验来源时<br>读书是个很好的选择</p><p>比赛 省一 省二，其实奖项倒是其次了，这个过程能学很多东西的，在实验室里，学技术，交朋友，还有工作上的关系处理之类的，感觉确实经历不少东西</p><p>技术栈的话，倒没必要搞太满，兴趣使然罢了，要啥学啥才是常态</p><p>下半赛季喽，马上毕业力</p><h1 id="8月13日更新"><a href="#8月13日更新" class="headerlink" title="8月13日更新"></a>8月13日更新</h1><p>假期的话</p><p>学做几个菜试试<br>（比如可乐鸡腿&#x2F;鸡翅</p><p>单词继续背吧，听力，还有作文也只能看油管了</p><p>书的话，可能也要读一点</p><p>更新一下博客，加点名言警句，顺便把文章归档一下</p><p>开学的话</p><p>据说还有考试</p><p>控制方向的书得猛看了，daily的看，</p><p>如果是技术栈方向的话 c++，试试写驱动？给maixcam做做开发</p><p>c# qt?</p><p>看看rtos，香橙派边缘ai开发，linux嵌入式</p><p>把cam边缘ai图像识别弄明白，做点开源项目</p><p>如果是比赛的话，cv也要学，python还是不太熟，舵机代码之类的还要看</p><p>小猫还有必要优化吗？需要的话再做</p><p>usart DMA? 还有什么fifo？<br>can总线 lin总线<br>Delay函数</p><p>可以玩3d打印机</p><p>试试写一个简历</p><h1 id="8月26日更新"><a href="#8月26日更新" class="headerlink" title="8月26日更新"></a>8月26日更新</h1><h2 id="所想"><a href="#所想" class="headerlink" title="所想"></a>所想</h2><p>1.关于运气 实力<br>2.如何理财<br>3.亚当斯密 商鞅，卢梭？</p><p>4.输入少了，看看油管，多水群</p><h2 id="闲暇"><a href="#闲暇" class="headerlink" title="闲暇"></a>闲暇</h2><p>1.虐完黑吗喽<br>2.打印机也可以玩，但是现在属实没想法</p><h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><p>1.cv作为工具，小看一手<br>2.c++ 方向的岗位？ qt做上位机的应该不少，c#呢，或者是lua<br>3.maixcam 开发，应该也能学很多东西，好像是</p><h3 id="嵌入式"><a href="#嵌入式" class="headerlink" title="嵌入式"></a>嵌入式</h3><p>1.rtos？<br>2.linux开发<br>3.驱动开发<br>4.fpga<br>5.或者是其他的交叉领域，网安？<br>6.arm芯片</p><h2 id="学校"><a href="#学校" class="headerlink" title="学校"></a>学校</h2><p>1.四六级，英语还得看，写作部分，听力部分<br>2.控制方面的书籍</p><h2 id="小项目"><a href="#小项目" class="headerlink" title="小项目"></a>小项目</h2><ol><li>fps ai锁完善一手<br> 虐一手c++，甚至还想开发内存挂<br> yolo也是大有可为，复盘一下这个项目吧</li></ol><p>2.复刻一个maa自动化程序<br>3.自动化考试软件</p><h2 id="杂七杂八"><a href="#杂七杂八" class="headerlink" title="杂七杂八"></a>杂七杂八</h2><p>1.卖课去</p><h1 id="9月13日更新"><a href="#9月13日更新" class="headerlink" title="9月13日更新"></a>9月13日更新</h1><p>byd最近一直在玩派克，沉迷派克，稍微花点心思就很容易进步，每次击杀胜利带来的正反馈太足了，所以才有了沉迷一说，但是学习大抵是没有的，所以显得很无聊。</p><p>知行合一，有想法就要去做，做到底</p><p>十月一要出去小旅一手，往北边走走，看看北京天津，东北</p><p>1.看院校，想想以后要去哪吧<br>2.这月就背单词看英语文章先<br>3.看控制课程<br>4.把kvm做出来捏</p><h1 id="10月9日更新"><a href="#10月9日更新" class="headerlink" title="10月9日更新"></a>10月9日更新</h1><h2 id="杂谈："><a href="#杂谈：" class="headerlink" title="杂谈："></a>杂谈：</h2><p>其实很多东西，也就是自己做着玩而已，兴趣当作借口，打发时间而已，也不指望以后能用上多少</p><p>至于思考以后做什么，不如先把眼前的事情做好，比如看好未来的城市，学校，以及考研方向</p><p>至于游戏。。感觉后面大部分时间只会玩单机了，lol玩的多少有点晕，都玩的难受了那为啥还得玩这b游戏，这不是纯纯吗。。。</p><p>研究生好像每年都在缩招，选择方面，也得多看看了</p><p>其实要出去玩的，但是也不知道去哪，其实还是没去，还是不够想去</p><h2 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h2><p>1.后面这几天 研究研究学校，以及分数之类的，加群进去水</p><p>2.上午还是看英语</p><p>3.看控制课吧，把笔记做好，或者说，偷个笔记看</p><p>4.实在无聊，就想想出去哪玩，可能心情会好一点</p><p>5.得换个环境，宿舍，心不平，神不宁，没法专注学习- -</p><ol start="5"><li>always be alone</li></ol><h1 id="11月4日更新"><a href="#11月4日更新" class="headerlink" title="11月4日更新"></a>11月4日更新</h1><h2 id="杂谈：-1"><a href="#杂谈：-1" class="headerlink" title="杂谈："></a>杂谈：</h2><ol><li><p>白天还是日常英语+控制，控制看课还是其次的，还是要花点时间看题</p></li><li><p>好像马上快考试了，得注意考试时间，提前看知识点复习，过了就行</p></li><li><p>小虐一手游戏，还是得</p></li><li><p>整点cv小项目看看，熟悉熟悉cv</p></li></ol><h2 id="目标："><a href="#目标：" class="headerlink" title="目标："></a>目标：</h2><ol><li><p>放假之前争取把控制过一遍，寒假就虐高数了</p></li><li><p>学校得多看看，水水群</p></li><li><p>六级提前拿两周出来复习，虐作文跟听力</p></li><li><p>寒假再多虐点菜 炒个鸡炖个鱼，红烧肉之类的 整点大菜</p></li></ol><h1 id="11月25日更新"><a href="#11月25日更新" class="headerlink" title="11月25日更新"></a>11月25日更新</h1><h2 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h2><ol><li><p>时间其实是有点空的，可以考虑把 数学 塞进来，最近好多课应该是结课了，得注意点考试时间</p></li><li><p>英语现在就可以开始做了，12月14日就得考六级了，刚好三周</p></li></ol><p>明天下午先开始准备一手，得打印往年题， 找作文材料，看看考试结构</p><p>虐一手听力，先一天一套，加上复盘时间，加上复听，</p><p>作文也是，得看课整理，第二天早上背一会，晚上再看看</p><p>阅读等题来猛搓完事了，搓不晕算我输</p><p>后面做题就得去教室了，卡时间模拟环境</p><ol start="3"><li><p>自控前面几章最起码都过了一遍<br>二三五章，题是还得二刷的，然后校正还得开<br>明天开始虐一手校正，把校正过完一遍之后把前面题都二刷，一路刷过来先<br>如果快的话我感觉这周应该是差不多了</p></li><li><p>杂事，可能就是项目课 实验课 还有悠悠了吧</p></li></ol><p>还是做不到吗？</p><h1 id="12月06日更新"><a href="#12月06日更新" class="headerlink" title="12月06日更新"></a>12月06日更新</h1><h2 id="最近-1"><a href="#最近-1" class="headerlink" title="最近"></a>最近</h2><p>1.这一个月都是考试，还有几科考试都挨在最底，所以可以抽空把 数学 或者是其他要考的课塞进来。<br>2.下午固定刷英语就完事了<br>3.周末把讨论课还有杂七杂八作业交一交，都过一遍，或者说是今下午。先看看作文整理一下，然后整理杂事。</p><h1 id="12月10日更新"><a href="#12月10日更新" class="headerlink" title="12月10日更新"></a>12月10日更新</h1><h2 id="最近-2"><a href="#最近-2" class="headerlink" title="最近"></a>最近</h2><p>1.还是高估了自己的执行力，还是不够严格<br>未来的一个月可能会制定一个行而有效的学习计划，尽量让自己稳定的进行学习<br>2.早上起来看看翻译跟作文句子，稍微背一背，然后做点阅读题，后面还是每天下午一套真题，出去做。<br>3.尽量调整作息成 118或者129，中午1点多点补个觉，两点多点出宿舍就行<br>晚上灵活安排吧，打会游戏看课</p><h1 id="12月23日更新"><a href="#12月23日更新" class="headerlink" title="12月23日更新"></a>12月23日更新</h1><h2 id="学校计划"><a href="#学校计划" class="headerlink" title="学校计划"></a>学校计划</h2><p>1.还有几门考试，每天都得看点英语，然后虐自控</p><h2 id="寒假的话"><a href="#寒假的话" class="headerlink" title="寒假的话"></a>寒假的话</h2><p>1.直接开高数，狠狠的搓课，看完课一定要跟上做题</p><p>2.顺便看看学校考的侧重点，可能得多买几本书看？电子书也行吧，加群水一水</p><p>3.可以学一手做菜，多学几手，什么铁锅炖，还有豆腐之类的，可以做点硬菜，多看多学，甚至可以掌勺</p><p>4.把球拍带回去，可以偶尔打打球</p><p>5.回去请吃饭，然后买个大榴莲，据说今年榴莲挺便宜的</p><p>来年一定要好好加油啊:p</p>]]></content>
+    <content type="html"><![CDATA[<p>哎，时间不等人啊<br>大学上半赛季已经结算了</p><p>社恐性格，或多或少有点改变吧，奇怪的社交经验增加了</p><p>关于人脉，其实也就那样，都是互利而已，哎<br>但是必须得有，面上得有，也没必要细究那么多</p><p>读了闲书几本，感觉还是颇有裨益的，能学到很多日常接触不到的知识，如果现实环境已经无法提供新的经验来源时<br>读书是个很好的选择</p><p>比赛 省一 省二，其实奖项倒是其次了，这个过程能学很多东西的，在实验室里，学技术，交朋友，还有工作上的关系处理之类的，感觉确实经历不少东西</p><p>技术栈的话，倒没必要搞太满，兴趣使然罢了，要啥学啥才是常态</p><p>下半赛季喽，马上毕业力</p><h1 id="8月13日更新"><a href="#8月13日更新" class="headerlink" title="8月13日更新"></a>8月13日更新</h1><p>假期的话</p><p>学做几个菜试试<br>（比如可乐鸡腿&#x2F;鸡翅</p><p>单词继续背吧，听力，还有作文也只能看油管了</p><p>书的话，可能也要读一点</p><p>更新一下博客，加点名言警句，顺便把文章归档一下</p><p>开学的话</p><p>据说还有考试</p><p>控制方向的书得猛看了，daily的看，</p><p>如果是技术栈方向的话 c++，试试写驱动？给maixcam做做开发</p><p>c# qt?</p><p>看看rtos，香橙派边缘ai开发，linux嵌入式</p><p>把cam边缘ai图像识别弄明白，做点开源项目</p><p>如果是比赛的话，cv也要学，python还是不太熟，舵机代码之类的还要看</p><p>小猫还有必要优化吗？需要的话再做</p><p>usart DMA? 还有什么fifo？<br>can总线 lin总线<br>Delay函数</p><p>可以玩3d打印机</p><p>试试写一个简历</p><h1 id="8月26日更新"><a href="#8月26日更新" class="headerlink" title="8月26日更新"></a>8月26日更新</h1><h2 id="所想"><a href="#所想" class="headerlink" title="所想"></a>所想</h2><p>1.关于运气 实力<br>2.如何理财<br>3.亚当斯密 商鞅，卢梭？</p><p>4.输入少了，看看油管，多水群</p><h2 id="闲暇"><a href="#闲暇" class="headerlink" title="闲暇"></a>闲暇</h2><p>1.虐完黑吗喽<br>2.打印机也可以玩，但是现在属实没想法</p><h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><p>1.cv作为工具，小看一手<br>2.c++ 方向的岗位？ qt做上位机的应该不少，c#呢，或者是lua<br>3.maixcam 开发，应该也能学很多东西，好像是</p><h3 id="嵌入式"><a href="#嵌入式" class="headerlink" title="嵌入式"></a>嵌入式</h3><p>1.rtos？<br>2.linux开发<br>3.驱动开发<br>4.fpga<br>5.或者是其他的交叉领域，网安？<br>6.arm芯片</p><h2 id="学校"><a href="#学校" class="headerlink" title="学校"></a>学校</h2><p>1.四六级，英语还得看，写作部分，听力部分<br>2.控制方面的书籍</p><h2 id="小项目"><a href="#小项目" class="headerlink" title="小项目"></a>小项目</h2><ol><li>fps ai锁完善一手<br> 虐一手c++，甚至还想开发内存挂<br> yolo也是大有可为，复盘一下这个项目吧</li></ol><p>2.复刻一个maa自动化程序<br>3.自动化考试软件</p><h2 id="杂七杂八"><a href="#杂七杂八" class="headerlink" title="杂七杂八"></a>杂七杂八</h2><p>1.卖课去</p><h1 id="9月13日更新"><a href="#9月13日更新" class="headerlink" title="9月13日更新"></a>9月13日更新</h1><p>byd最近一直在玩派克，沉迷派克，稍微花点心思就很容易进步，每次击杀胜利带来的正反馈太足了，所以才有了沉迷一说，但是学习大抵是没有的，所以显得很无聊。</p><p>知行合一，有想法就要去做，做到底</p><p>十月一要出去小旅一手，往北边走走，看看北京天津，东北</p><p>1.看院校，想想以后要去哪吧<br>2.这月就背单词看英语文章先<br>3.看控制课程<br>4.把kvm做出来捏</p><h1 id="10月9日更新"><a href="#10月9日更新" class="headerlink" title="10月9日更新"></a>10月9日更新</h1><h2 id="杂谈："><a href="#杂谈：" class="headerlink" title="杂谈："></a>杂谈：</h2><p>其实很多东西，也就是自己做着玩而已，兴趣当作借口，打发时间而已，也不指望以后能用上多少</p><p>至于思考以后做什么，不如先把眼前的事情做好，比如看好未来的城市，学校，以及考研方向</p><p>至于游戏。。感觉后面大部分时间只会玩单机了，lol玩的多少有点晕，都玩的难受了那为啥还得玩这b游戏，这不是纯纯吗。。。</p><p>研究生好像每年都在缩招，选择方面，也得多看看了</p><p>其实要出去玩的，但是也不知道去哪，其实还是没去，还是不够想去</p><h2 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h2><p>1.后面这几天 研究研究学校，以及分数之类的，加群进去水</p><p>2.上午还是看英语</p><p>3.看控制课吧，把笔记做好，或者说，偷个笔记看</p><p>4.实在无聊，就想想出去哪玩，可能心情会好一点</p><p>5.得换个环境，宿舍，心不平，神不宁，没法专注学习- -</p><ol start="5"><li>always be alone</li></ol><h1 id="11月4日更新"><a href="#11月4日更新" class="headerlink" title="11月4日更新"></a>11月4日更新</h1><h2 id="杂谈：-1"><a href="#杂谈：-1" class="headerlink" title="杂谈："></a>杂谈：</h2><ol><li><p>白天还是日常英语+控制，控制看课还是其次的，还是要花点时间看题</p></li><li><p>好像马上快考试了，得注意考试时间，提前看知识点复习，过了就行</p></li><li><p>小虐一手游戏，还是得</p></li><li><p>整点cv小项目看看，熟悉熟悉cv</p></li></ol><h2 id="目标："><a href="#目标：" class="headerlink" title="目标："></a>目标：</h2><ol><li><p>放假之前争取把控制过一遍，寒假就虐高数了</p></li><li><p>学校得多看看，水水群</p></li><li><p>六级提前拿两周出来复习，虐作文跟听力</p></li><li><p>寒假再多虐点菜 炒个鸡炖个鱼，红烧肉之类的 整点大菜</p></li></ol><h1 id="11月25日更新"><a href="#11月25日更新" class="headerlink" title="11月25日更新"></a>11月25日更新</h1><h2 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h2><ol><li><p>时间其实是有点空的，可以考虑把 数学 塞进来，最近好多课应该是结课了，得注意点考试时间</p></li><li><p>英语现在就可以开始做了，12月14日就得考六级了，刚好三周</p></li></ol><p>明天下午先开始准备一手，得打印往年题， 找作文材料，看看考试结构</p><p>虐一手听力，先一天一套，加上复盘时间，加上复听，</p><p>作文也是，得看课整理，第二天早上背一会，晚上再看看</p><p>阅读等题来猛搓完事了，搓不晕算我输</p><p>后面做题就得去教室了，卡时间模拟环境</p><ol start="3"><li><p>自控前面几章最起码都过了一遍<br>二三五章，题是还得二刷的，然后校正还得开<br>明天开始虐一手校正，把校正过完一遍之后把前面题都二刷，一路刷过来先<br>如果快的话我感觉这周应该是差不多了</p></li><li><p>杂事，可能就是项目课 实验课 还有悠悠了吧</p></li></ol><p>还是做不到吗？</p><h1 id="12月06日更新"><a href="#12月06日更新" class="headerlink" title="12月06日更新"></a>12月06日更新</h1><h2 id="最近-1"><a href="#最近-1" class="headerlink" title="最近"></a>最近</h2><p>1.这一个月都是考试，还有几科考试都挨在最底，所以可以抽空把 数学 或者是其他要考的课塞进来。<br>2.下午固定刷英语就完事了<br>3.周末把讨论课还有杂七杂八作业交一交，都过一遍，或者说是今下午。先看看作文整理一下，然后整理杂事。</p><h1 id="12月10日更新"><a href="#12月10日更新" class="headerlink" title="12月10日更新"></a>12月10日更新</h1><h2 id="最近-2"><a href="#最近-2" class="headerlink" title="最近"></a>最近</h2><p>1.还是高估了自己的执行力，还是不够严格<br>未来的一个月可能会制定一个行而有效的学习计划，尽量让自己稳定的进行学习<br>2.早上起来看看翻译跟作文句子，稍微背一背，然后做点阅读题，后面还是每天下午一套真题，出去做。<br>3.尽量调整作息成 118或者129，中午1点多点补个觉，两点多点出宿舍就行<br>晚上灵活安排吧，打会游戏看课</p><h1 id="12月23日更新"><a href="#12月23日更新" class="headerlink" title="12月23日更新"></a>12月23日更新</h1><h2 id="学校计划"><a href="#学校计划" class="headerlink" title="学校计划"></a>学校计划</h2><p>1.还有几门考试，每天都得看点英语，然后虐自控</p><h2 id="寒假的话"><a href="#寒假的话" class="headerlink" title="寒假的话"></a>寒假的话</h2><p>1.直接开高数，狠狠的搓课，看完课一定要跟上做题</p><p>2.顺便看看学校考的侧重点，可能得多买几本书看？电子书也行吧，加群水一水</p><p>3.可以学一手做菜，多学几手，什么铁锅炖，还有豆腐之类的，可以做点硬菜，多看多学，甚至可以掌勺</p><p>4.把球拍带回去，可以偶尔打打球</p><p>5.回去请吃饭，然后买个大榴莲，据说今年榴莲挺便宜的</p><p>来年一定要好好加油啊:p</p><h1 id="1月4日更新"><a href="#1月4日更新" class="headerlink" title="1月4日更新"></a>1月4日更新</h1><h2 id="寒假"><a href="#寒假" class="headerlink" title="寒假"></a>寒假</h2><p>1.英语不能丢，得每天看点sciencedaily</p><p>2.看高数</p>]]></content>
     
     
       
@@ -363,12 +385,13 @@
     <published>2024-06-16T10:02:33.000Z</published>
     <updated>2024-06-16T10:02:33.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="使用以下命令，提交代码到远程仓库时，遇到如下问题：解决方法："><a href="#使用以下命令，提交代码到远程仓库时，遇到如下问题：解决方法：" class="headerlink" title="使用以下命令，提交代码到远程仓库时，遇到如下问题：解决方法："></a>使用以下命令，提交代码到远程仓库时，<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><br>遇到如下问题：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: unable to access &#x27;https://github.com/xxx/&#x27;: Failed to connect to github.com port 443: Timed out</span><br></pre></td></tr></table></figure><br>解决方法：</h2><p>设置代理再取消代理</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global https.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure><p>再次提交</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>使用以下命令，提交代码到远程仓库时，</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><p>遇到如下问题：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: unable to access &#x27;https://github.com/xxx/&#x27;: Failed to connect to github.com port 443: Timed out</span><br></pre></td></tr></table></figure><h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>设置代理再取消代理</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global https.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure><p>再次提交</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;使用以下命令，提交代码到远程仓库时，遇到如下问题：解决方法：&quot;&gt;&lt;a href=&quot;#使用以下命令，提交代码到远程仓库时，遇到如下问题：解决方法：&quot; class=&quot;headerlink&quot; title=&quot;使用以下命令，提交代码到远程仓库时，遇到如下问题：解决方法：&quot;&gt;</summary>
+    <summary type="html">&lt;p&gt;使用以下命令，提交代码到远程仓库时，&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;</summary>
       
     
     
@@ -474,29 +497,6 @@
     <category term="嵌入式" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
     
     <category term="maixpy" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/maixpy/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>木了</title>
-    <link href="http://suyanblog.cn/daily8/"/>
-    <id>http://suyanblog.cn/daily8/</id>
-    <published>2024-05-16T17:48:32.000Z</published>
-    <updated>2024-05-16T17:48:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近基本都在高强度调项目，调的人有点麻<br>突然就感觉到上班的感觉，真的很差。</p><p>无论是精神还是身体，都很疲惫。没有其他的想法了，最近一段时间想法都没了，博客都没更。现在只想快做完早下班，玩会游戏早休息。拿着奶头乐与压力对冲，圈子渐渐固化，想法越来越少，然后成了自己嗤之以鼻思维固化的中年人。<br>被生活绑架？被社会绑架，你不干有的是人干</p><p>我有时候就在想，既然就业前景都这么烂了，工作当一辈子房奴，为什么不把大学四年all in 在创业上呢？</p><p>是沉没成本太高了吗？<br>是有效信息拿的太少了吗？  –你都没参与过，哪来的信息。<br>是资金问题吗？ –钱其实好像是最不需要的东西。<br>是资源太少吗？ –资源是一步一步积累起来的，人脉，渠道。<br>是没机会吗？ –但其实机会是需要自己去找的，就跟对象一样，连找都没找哪来的机会。<br>是执行力问题吧，总是觉得，要是失败的话，花在这个项目上的时间不就全部浪费了，所以宁愿把时间花在教育，这种看起来稳定收益的行业上。</p><p>有人有资源，但不知道怎么卖出去<br>有人有需求，但不知道去哪找人做</p><p>我们有时候就得把握这种关系。有时候总得往下看，做下沉市场。</p><p>总是想着以后做，因为以后时间的我，一定比现在的我更有经验，更有可能成功，所以有了一个想法之后，就一直 拖啊拖，就拖忘了。所以想法一定要记下来，一定要去做做试试！！</p><p>感觉教育行业是暴利啊，高考，专升本，考研，考公。在蛋糕进一步分割的未来，孩子们只能更卷，我们刚好可以去卖铲子，在教育，或者是自己的专业领域，就像朋友圈的那位。<br>有人不会宣传包装，有人没有技术。我都可以做，我可以整合我的资源做到这一点，这不就行了。</p><p>先相信</p><p>一定要多去接触新鲜事物，固步自封就完犊子了。<br>就得改变，谁不在改变啊，我也在改变，改变就得应该，而不是不改变。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;最近基本都在高强度调项目，调的人有点麻&lt;br&gt;突然就感觉到上班的感觉，真的很差。&lt;/p&gt;
-&lt;p&gt;无论是精神还是身体，都很疲惫。没有其他的想法了，最近一段时间想法都没了，博客都没更。现在只想快做完早下班，玩会游戏早休息。拿着奶头乐与压力对冲，圈子渐渐固化，想法越来越少，然后成</summary>
-      
-    
-    
-    
-    <category term="日常" scheme="http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
   </entry>
