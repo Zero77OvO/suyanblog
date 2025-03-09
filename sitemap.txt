@@ -1,7 +1,8 @@
-http://suyanblog.cn/categories/index.html
-http://suyanblog.cn/link/index.html
-http://suyanblog.cn/comments/index.html
+http://suyanblog.cn/aboutmindheart/
 http://suyanblog.cn/tags/index.html
+http://suyanblog.cn/categories/index.html
+http://suyanblog.cn/comments/index.html
+http://suyanblog.cn/link/index.html
 http://suyanblog.cn/plan/
 http://suyanblog.cn/plan3/
 http://suyanblog.cn/year25/
@@ -12,7 +13,6 @@ http://suyanblog.cn/master/
 http://suyanblog.cn/pydaily/
 http://suyanblog.cn/alone/
 http://suyanblog.cn/windows1/
-http://suyanblog.cn/aboutmindheart/
 http://suyanblog.cn/daily11/
 http://suyanblog.cn/alwayslearn/
 http://suyanblog.cn/ti1/
