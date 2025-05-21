@@ -7,7 +7,7 @@ categories:
 - 嵌入式
 - 树莓派
 top_img:
-cover: https://www.freeimg.cn/i/2024/01/20/65ab3b9572bff.png
+cover: /pic/post/yololite1.png
 ---
 模型：yolov5-lite
 python：3.7.10
@@ -26,4 +26,4 @@ pip install onnxruntime
 
 然后就能愉快的跑模型啦
 虽然帧数不高，但是目前来看还够用
-![yololite1.png](https://www.freeimg.cn/i/2024/01/20/65ab3b9572bff.png)
+![yololite1.png](/pic/post/yololite1.png)

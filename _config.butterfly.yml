@@ -125,6 +125,8 @@ cover:
      - /pic/wallpaper/1.jpg
      - /pic/wallpaper/2.jpg
      - /pic/wallpaper/3.jpg
+    #  - https://s2.loli.net/2023/05/16/iQM1D72EfuKBeJx.jpg
+    #  - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
 
 
 
@@ -168,7 +170,7 @@ post_meta:
 # false: do not show the article introduction
 index_post_content:
   method: 3
-  length: 500 # if you set method to 2 or 3, the length need to config
+  length: 30 # if you set method to 2 or 3, the length need to config
 
 # anchor
 anchor:

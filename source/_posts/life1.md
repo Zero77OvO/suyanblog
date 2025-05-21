@@ -7,7 +7,7 @@ categories:
 description:
 tags:
 top_img: 
-cover: https://www.freeimg.cn/i/2024/01/07/659a4a67530c9.png
+cover: /pic/post/scenery1.jpg
 ---
 <br/>
     挣一千太少，花一千太多<br/>

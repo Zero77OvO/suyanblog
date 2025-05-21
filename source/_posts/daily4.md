@@ -18,11 +18,11 @@ rt
 
 为什么现在亏钱都不觉得难受了喂，真不拿钱当钱了！！有点收入就了不起是吧！！
 <br/>
-![cs.png](https://www.freeimg.cn/i/2024/01/07/659a494243365.png)
+![cs.png](/pic/post/cs.png)
 <br/>
 还是看一下可爱的蒂蒂吧，还有新买的鼠标_(:3」∠)_
-![dd.jpg](https://www.freeimg.cn/i/2024/01/07/659a4942efb81.jpg)
-![gpw.jpg](https://www.freeimg.cn/i/2024/01/07/659a4aa77894e.jpg)
+![dd.jpg](/pic/post/didi.jpg)
+![gpw.jpg](/pic/post/gpw.jpg)
 主打一手败家
 <br/>
 <br/>

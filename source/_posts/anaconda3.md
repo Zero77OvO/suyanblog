@@ -20,7 +20,7 @@ Anaconda Navigator：2.5.1
 ```
 ImportError: cannot import name 'Callable' from 'collections' (E:\tools\anaconda3\Lib\collections\__init__.py)
 ```
-<img src="https://www.freeimg.cn/i/2024/01/07/659a466300a28.png" width="100%" height="80%" /><br/>
+<img src="/pic/post/ada.png" width="100%" height="80%" /><br/>
 然后就去手动import一下
 解决了
-<img src="https://www.freeimg.cn/i/2024/01/07/659a4663200a7.png" width="80%" height="80%" /><br/>
+<img src="/pic/post/ada2.png" width="80%" height="80%" /><br/>

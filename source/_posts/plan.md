@@ -5,7 +5,7 @@ updated:
 type:
 categories:
 - 未来日记
-cover: https://www.freeimg.cn/i/2024/01/07/659a4c943f4fe.jpg
+cover: /pic/post/plan.jpg
 ---
 人生如白驹过隙，转瞬即逝。大一也是过的浑浑噩噩，感觉什么也没学到。
 时间很快，节奏很慢。于是打算立点flag，一点一点完成，至少要给自己点方向感。<br/>

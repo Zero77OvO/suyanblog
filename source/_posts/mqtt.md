@@ -7,8 +7,8 @@ categories:
 - 嵌入式
 - 物联网
 - 图传
-top_img: https://www.freeimg.cn/i/2024/06/11/6668031d2d7f9.jpg
-cover: https://www.freeimg.cn/i/2024/06/11/6668031d2d7f9.jpg
+top_img: 
+cover: /pic/post/qrs.jpg
 ---
 最近在准备嵌入式大赛的项目，需要用到多端的数据传输。本地可以使用usart传参，云端与设备之间则利用阿里云平台借助mqtt协议进行收发数据。
 因为我们的项目还涉及图像传输，所以我们没有使用资料更多的esp8266模块而是选用自带摄像头的esp32-cam。
@@ -21,7 +21,7 @@ esp32-cam端部署(c/c++)：
 通过使用[aliyunmqtt库](https://blog.csdn.net/qq_43064082/article/details/105999645)，订阅目标产品设备的topic，从而接受来自目标产品设备发布的内容。同时通过topic可以发送json格式的信息，云端在接收以后通过格式解析出信息，从而达到收发的目的。
 多个设备之间的传输则需要使用云产品流转，云产品流转类型的规则可以对设备上报的数据进行简单处理，并将处理后的数据流转到其他 Topic 或阿里云产品。
 发送端则需要通过处理数据topic发送信息，而接收端则需要订阅转发数据topic从而接收发送信息。
-![1.png](https://www.freeimg.cn/i/2024/06/11/66680c7169c11.png)
+<!-- ![1.png](/pic/post/qrs.jpg) -->
 概念理解：
 产品：
 设备：

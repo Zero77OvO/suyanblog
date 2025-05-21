@@ -5,8 +5,8 @@ updated: 2023-11-06
 type:
 categories:
 - 关于
-top_img: https://www.freeimg.cn/i/2024/01/07/659a53349ee1f.png
-cover: https://www.freeimg.cn/i/2024/01/07/659a53349ee1f.png
+top_img: /pic/post/interesting.png
+cover: /pic/post/interesting.png
 ---
 
  所谓兴趣使然

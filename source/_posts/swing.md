@@ -7,7 +7,7 @@ categories:
 - 嵌入式
 - 电赛
 top_img:
-cover: https://www.freeimg.cn/i/2024/04/01/660a3c494ee99.png
+cover: /pic/post/swing.png
 ---
 配置：F103C8T6+CUBEMX+HAL库
 

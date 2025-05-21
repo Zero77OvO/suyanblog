@@ -6,8 +6,8 @@ type:
 categories:
 - 嵌入式
 - maixpy
-top_img: https://www.freeimg.cn/i/2024/05/25/6651b876660c7.jpg
-cover: https://www.freeimg.cn/i/2024/05/25/6651b876660c7.jpg
+top_img: /pic/post/cam4.png
+cover: 
 ---
 整合了多方资料，作为流程补充
 部署流程仅作参考，请多方参考寻找适合自己环境的部署方法，有问题还请斧正
@@ -17,7 +17,7 @@ cover: https://www.freeimg.cn/i/2024/05/25/6651b876660c7.jpg
 ---
 用的是YOLO格式的数据集，
 标注采用labelimg
-![cam7.png](https://www.freeimg.cn/i/2024/05/25/6651c365b898b.png)
+![cam7.png](/pic/post/cam7.png)
 
 
 环境配置
@@ -43,7 +43,7 @@ pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https
 ```
 装完打开yolo5文件夹内train.py
 滑到最下面改一下目录，运行即可开始训练
-![cam8.png](https://www.freeimg.cn/i/2024/05/25/6651c48163c8d.png)
+![cam8.png](/pic/post/cam8.png)
 
 训练参数没动过，有需求的话可以调，保证weights，cfg，data地址对就行
 具体参数其他帖子有解释了，这里不过多赘述
@@ -54,7 +54,7 @@ pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https
 
 通过网址输入 netron.app 查看.onnx模型的三个输出
 这里可能每个模型都不一样，后面模型量化时候需要用
-![cam1.png](https://www.freeimg.cn/i/2024/05/25/66519ecc6a0ed.png)
+![cam1.png](/pic/post/cam1.png)
 如下，这是我自定义数据集训练模型的输出
 ```
 /model.24/m.0/Conv_output_0
@@ -95,7 +95,7 @@ newgrp docker
 ```
 docker run --privileged --name MYNAME -v $PWD:/workspace -it sophgo/tpuc_dev:latest
 ```
-![cam6.png](https://www.freeimg.cn/i/2024/05/25/6651bc4ac27f8.png)
+![cam6.png](/pic/post/cam6.png)
 MYNAME 是容器名字，自己自定义就可以
 
 3.TPU-MLIR量化环境搭建
@@ -112,7 +112,7 @@ pip install tpu_mlir-1.7-py3-none-any.whl
 pip install tpu_mlir-1.7-py3-none-any.whl[all] 
 ```
 再新建一个文件夹用来存放测试图片和onnx模型
-![cam2.png](https://www.freeimg.cn/i/2024/05/25/6651b0d1664c6.png)
+![cam2.png](/pic/post/cam2.png)
 
 
 然后就可以开始量化模型了
@@ -150,7 +150,7 @@ model_deploy \
 --tolerance 0.85,0.45 \
 --model yolov5s_cv181x_int8_sym.cvimodel
 ```
-![cam5.jpg](https://www.freeimg.cn/i/2024/05/25/6651bc4aec3e8.jpg)
+![cam5.jpg](/pic/post/cam5.png)
 
 **yolov5s_cv181x_int8_sym.cvimodel**
 
@@ -194,9 +194,9 @@ while not app.need_exit():
     dis.show(img)
 ```
 连接cam跟电脑，把cvmodel和mud上传到/root/models/ 路径下
-![cam3.png](https://www.freeimg.cn/i/2024/05/25/6651b8269c579.png)
+![cam3.png](/pic/post/cam3.png)
 实机运行如图
-![cam4.jpg](https://www.freeimg.cn/i/2024/05/25/6651b876660c7.jpg)
+![cam4.jpg](/pic/post/cam4.jpg)
 感觉可玩性很高啊，等期末考完猛猛把玩一手
 
 

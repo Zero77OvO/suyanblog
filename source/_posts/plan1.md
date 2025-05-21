@@ -5,7 +5,7 @@ updated: 2024-06-27 23:28:22
 type:
 categories:
 - 未来日记
-cover: https://www.freeimg.cn/i/2024/01/27/65b4f4afd6f46.jpg
+cover: /pic/post/plan2.png
 ---
 
 上个坑太深了，于是重新开个坑:p

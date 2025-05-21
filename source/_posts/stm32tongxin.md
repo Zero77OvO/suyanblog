@@ -7,7 +7,7 @@ categories:
 - 嵌入式
 - stm32
 top_img:
-cover: https://www.freeimg.cn/i/2024/01/02/6593a75a0d552.jpg
+cover: /pic/post/stm2.jpg
 ---
 单片机型号： stm32f103t8c6 
 相机：OpenMV Cam H7(Stm32H743) OV5640
@@ -25,11 +25,11 @@ usart1换到了usart2时候，stm会死机，debug发现卡B. 查了一下说是
 最开始一直传不进来参数，一直以为是代码问题，找了很久也没发现bug，去看了一下别人代码发现跟自己也是大差不差，debug也没发现什么问题。
 后来从usart1换到了usart2，自己相机还是废的，但是连了一下别人相机发现可以正常传参，排除软件问题。
 
-<img src="https://www.freeimg.cn/i/2024/01/07/659a4d8615bec.jpg" width="40%" height="40%" />
+<img src="/pic/post/stm1.jpg" width="40%" height="40%" />
 后来好奇用电表测了一下单片机rt tx引脚，输出3v3，嗯很对。但是openmv上的引脚只有0.3v，压根没输出啊对吧，后来用电表把引脚挨个测了一遍，就b10，b11引脚有输出，去找了一下引脚图发现这就是usart输出引脚，接上成功传参。
 
-<img src="https://www.freeimg.cn/i/2024/01/02/6593a75a0d552.jpg" width="80%" height="80%" />
+<img src="/pic/post/stm2.jpg" width="80%" height="80%" />
 
 ps:我都不知道这rx tx引脚标出来干啥的，真是害人不浅啊。
 
-<img src="https://www.freeimg.cn/i/2024/01/07/659a4d87a8b2b.jpg" width="50%" height="50%" />
+<img src="/pic/post/stm3.jpg" width="50%" height="50%" />
