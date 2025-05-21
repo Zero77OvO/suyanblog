@@ -61,7 +61,7 @@ social:
    fab fa-github: https://github.com/Zero77OvO || Github || '#24292e'
    fas fa-envelope: mailto:suyan770v0@gmail.com || Email || '#4a7dbe'
    fa-brands fa-bilibili: https://space.bilibili.com/10214649 || Bilibili || '#BC8F8F'
-   fa-brands fa-qq: https://qm.qq.com/cgi-bin/qm/qr?k=nBl0CgQSPT6Yv_xyqDgsCoLPdlRfQ8cP&noverify=0&personal_qrcode_source=1 || QQ || '#000000'
+  #  fa-brands fa-qq: https://qm.qq.com/cgi-bin/qm/qr?k=nBl0CgQSPT6Yv_xyqDgsCoLPdlRfQ8cP&noverify=0&personal_qrcode_source=1 || QQ || '#000000'
 
 #数学字符显示
 markdown:
