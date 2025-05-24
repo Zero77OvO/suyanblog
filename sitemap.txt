@@ -66,8 +66,8 @@ http://suyanblog.cn/talktomoon1/
 http://suyanblog.cn/myblog/
 http://suyanblog.cn/
 http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/
-http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/
 http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/
+http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/
 http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E6%B2%81%E6%81%92/
 http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/
 http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/
