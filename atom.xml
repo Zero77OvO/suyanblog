@@ -6,7 +6,7 @@
   <link href="http://suyanblog.cn/atom.xml" rel="self"/>
   
   <link href="http://suyanblog.cn/"/>
-  <updated>2025-01-06T23:41:12.000Z</updated>
+  <updated>2025-05-24T00:00:00.000Z</updated>
   <id>http://suyanblog.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Maixcam,Trigger signal, code:SIGSEGV(11)! 报错</title>
+    <link href="http://suyanblog.cn/maixcam2/"/>
+    <id>http://suyanblog.cn/maixcam2/</id>
+    <published>2025-05-24T00:00:00.000Z</published>
+    <updated>2025-05-24T00:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、今天在设计按键功能时，调用Find_rec函数处理图像，出现了出现了Trigger signal, code:SIGSEGV(11)!报错，</p><p>代码如下，部分省略</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">def find_rec(img):</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    # img = cam.read()</span><br><span class="line">    # img.lens_corr(strength=1.7)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    img_rec = image.image2cv(img, False, False).copy()</span><br><span class="line">    </span><br><span class="line">    gray_rec = cv2.cvtColor(img_rec, cv2.COLOR_RGB2GRAY)</span><br><span class="line">    </span><br><span class="line">    # 边缘检测</span><br><span class="line">    edges = cv2.Canny(gray_rec, 150, 250)</span><br><span class="line">    kernel = np.ones((4, 4), np.uint8)</span><br><span class="line">    dilated = cv2.dilate(edges, kernel, iterations=1)</span><br><span class="line"></span><br><span class="line">    # 轮廓检测</span><br><span class="line">    contours, _ = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)</span><br><span class="line">    if len(contours) &gt; 0:</span><br><span class="line">        # 筛选出最大的轮廓</span><br><span class="line">        largest_contour = max(contours, key=cv2.contourArea)</span><br><span class="line">        </span><br><span class="line">        epsilon = 0.02 * cv2.arcLength(largest_contour, True)</span><br><span class="line">        approx = cv2.approxPolyDP(largest_contour, epsilon, True)</span><br><span class="line">            </span><br><span class="line">            # filtered_approx = remove_duplicate_points(approx)</span><br><span class="line">        num_vertices = len(approx)</span><br><span class="line"></span><br><span class="line">                        </span><br><span class="line">    img_show = image.cv2image(img_rec, False, False)</span><br><span class="line"></span><br><span class="line">    print(&quot;img OK&quot;)</span><br><span class="line"></span><br><span class="line">    # disp.show(img_show)    </span><br><span class="line">    return img_show</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>2、Find_rec 函数单独调用是正常使用的，放在UI里进行按键触发，就会出bug。</p><p>一开始以为图像已经被释放或修改，在多个地方print，处理后的图像传递引用img.copy副本，问题也没有解决</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(&quot;img format:&quot;, img.format())</span><br><span class="line">print(&quot;img size:&quot;, img.width(), img.height())</span><br><span class="line">print(&quot;img type:&quot;, type(img))</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">if start_press:</span><br><span class="line">    </span><br><span class="line">    infoimg = image.Image(disp.width(), disp.height(), image.Format.FMT_RGB888)</span><br><span class="line">    infoimg.draw_string(</span><br><span class="line">        disp.width() // 2 - 80, disp.height() // 2, &quot;EXITING...&quot;, </span><br><span class="line">        color=iRGB(255, 0, 0), scale=2</span><br><span class="line">    )</span><br><span class="line">    </span><br><span class="line">    # processed_img = infoimg </span><br><span class="line">    </span><br><span class="line">    processed_img = find_rec(img.copy())  # 传入新拷贝</span><br><span class="line"></span><br><span class="line">    if Ex_fun_press:</span><br><span class="line">        start_press = False</span><br><span class="line">    </span><br><span class="line">    if processed_img:</span><br><span class="line">        # 显示前验证</span><br><span class="line">        if processed_img.format() == image.Format.FMT_RGB888:</span><br><span class="line">            print(&quot;format success&quot;)</span><br><span class="line">            return True, processed_img.copy()</span><br><span class="line">            </span><br><span class="line">    # 失败时返回原始图像</span><br><span class="line">    print(&quot;fail&quot;)</span><br><span class="line">    return True, img.copy()</span><br></pre></td></tr></table></figure><p>3、如果不调用Find_rec函数，而是新建一张图片，是可以正常显示的<br>说明不是外部逻辑问题，是函数内部出了问题</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def find_rec(img):</span><br><span class="line">    img_rec = image.image2cv(img, False, False).copy()</span><br><span class="line">    img_show = image.cv2image(img_rec, False, False)</span><br><span class="line">    print(&quot;img OK&quot;)</span><br><span class="line">    return img_show</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>4、后面我删掉多余的处理函数，还是有问题<br>在 find_rec(img) 的最后，创建一个新的稳定图像对象，并将转换后的图像绘制到这个图像上，问题得到解决</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def find_rec(img):</span><br><span class="line">    img_rec = image.image2cv(img, False, False).copy()</span><br><span class="line">    img_show = image.cv2image(img_rec, False, False)</span><br><span class="line"></span><br><span class="line">   </span><br><span class="line">    stable_img = image.Image(img_show.width(), img_show.height(), image.Format.FMT_RGB888)</span><br><span class="line">    stable_img.draw_image(0, 0, img_show)</span><br><span class="line"></span><br><span class="line">    return stable_img</span><br></pre></td></tr></table></figure><p><strong>总结：为什么前面都“看着没问题但还是崩溃”</strong></p><p>cv2image() 返回的 image.Image 实际上是 C 层快速构造的临时对象，它不像用 image.Image() 构造的那样“稳定”可控。</p><p>所以 只要任何时候用过 cv2image()，在 return 之前必须 draw_image() 到一个新图像中，确保内存托管在 Python 层。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;1、今天在设计按键功能时，调用Find_rec函数处理图像，出现了出现了Trigger signal, code:SIGSEGV(11)!报错，&lt;/p&gt;
+&lt;p&gt;代码如下，部分省略&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;</summary>
+      
+    
+    
+    
+    <category term="嵌入式" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+    <category term="maixpy" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/maixpy/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>25年的小坑</title>
@@ -468,33 +494,6 @@
     
     
     <category term="关于" scheme="http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>mqtt及阿里云物联网学习</title>
-    <link href="http://suyanblog.cn/mqtt/"/>
-    <id>http://suyanblog.cn/mqtt/</id>
-    <published>2024-05-31T16:02:33.000Z</published>
-    <updated>2024-06-11T16:47:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近在准备嵌入式大赛的项目，需要用到多端的数据传输。本地可以使用usart传参，云端与设备之间则利用阿里云平台借助mqtt协议进行收发数据。<br>因为我们的项目还涉及图像传输，所以我们没有使用资料更多的esp8266模块而是选用自带摄像头的esp32-cam。</p><h2 id="1-mqtt物联网通讯"><a href="#1-mqtt物联网通讯" class="headerlink" title="1.mqtt物联网通讯"></a>1.mqtt物联网通讯</h2><p>esp32-cam端部署(c&#x2F;c++)：</p><p>通过使用<a href="https://blog.csdn.net/qq_43064082/article/details/105999645">aliyunmqtt库</a>，订阅目标产品设备的topic，从而接受来自目标产品设备发布的内容。同时通过topic可以发送json格式的信息，云端在接收以后通过格式解析出信息，从而达到收发的目的。<br>多个设备之间的传输则需要使用云产品流转，云产品流转类型的规则可以对设备上报的数据进行简单处理，并将处理后的数据流转到其他 Topic 或阿里云产品。<br>发送端则需要通过处理数据topic发送信息，而接收端则需要订阅转发数据topic从而接收发送信息。</p><!-- ![1.png](/pic/post/qrs.jpg) --><p>概念理解：<br>产品：<br>设备：<br>topic订阅：<br>产品云流转：</p><h2 id="maixcam端-python"><a href="#maixcam端-python" class="headerlink" title="maixcam端(python):"></a>maixcam端(python):</h2><p>1.阿里云物联网平台提供的python sdk 第三方库 aliyun-iot-linkkit，可惜由于不明原因，本地部署一直无法跟云端连接，即使是用官方例程也不行，遂放弃。<br><a href="https://help.aliyun.com/zh/iot/developer-reference/python-link-sdk-1">阿里云Python Link SDK</a></p><p>刚才才看到，官方要求1.61，可能是paho-mqtt版本问题，当时没注意装的最新的2.10。</p><p>2.后来用paho-mqtt，版本是1.61，内容比阿里云官方的更简洁，配置完三个参数即可使用，<a href="https://help.aliyun.com/zh/iot/use-cases/use-the-paho-mqtt-library-for-python-to-connect-a-device-to-iot-platform">Paho-MQTT Python接入示例</a></p><h2 id="上位机-微信小程序-："><a href="#上位机-微信小程序-：" class="headerlink" title="上位机(微信小程序)："></a>上位机(微信小程序)：</h2><p>我们的重点并不在前端上，所以为了节约开发时间与成本，我们选择了微信小程序作为我们的上位机。<br>mqtt部署资料参考<a href="https://blog.csdn.net/ngl272/article/details/87887885">微信小程序使用MQTT.js连接阿里云IoT物联网平台</a>。</p><p>2.图传</p><p>最开始是espcam做图传，因为自带摄像头，价格相对也比较亲民，资料相对也多，开发(抄)的成本会低很多。<br>包括图传，esp跟微信小程序都有例程可以直接用。</p><p>功能都实现之后，感觉ov2640的摄像头太糊了，打算转用maixcam，这时候我才发现图传涉及的知识太多了。<br>flask，flv，rtmp，http流，以及图像数据的解析与发送，与上位机之间的交换等等。<br>图传内容太多了，挖个坑后面填</p><p>等后面都做完了，会把代码开源学习。</p><h2 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h2><p><a href="https://blog.csdn.net/qq_43064082/article/details/105999645">ESP32 arduino方式连接阿里云</a><br><a href="www.bilibili.com/video/BV1EC411z71i">【3.微信小程序部分(已更完)】毕设：STM32+ESP8266-01S+阿里云+微信小程序 实现智能家居</a><br><a href="https://blog.csdn.net/ngl272/article/details/87887885">微信小程序使用MQTT.js连接阿里云IoT物联网平台</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;最近在准备嵌入式大赛的项目，需要用到多端的数据传输。本地可以使用usart传参，云端与设备之间则利用阿里云平台借助mqtt协议进行收发数据。&lt;br&gt;因为我们的项目还涉及图像传输，所以我们没有使用资料更多的esp8266模块而是选用自带摄像头的esp32-cam。&lt;/p&gt;
-&lt;</summary>
-      
-    
-    
-    
-    <category term="嵌入式" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
-    
-    <category term="物联网" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-    <category term="图传" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%89%A9%E8%81%94%E7%BD%91/%E5%9B%BE%E4%BC%A0/"/>
     
     
   </entry>
