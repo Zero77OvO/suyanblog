@@ -12,8 +12,12 @@ cover:
 由于种种事故导致anaconda重装好几次了，每次都要翻攻略去配置环境，今天整合一下，找资源也方便
 
 
-CUDA：
-[cudatoolkit](https://developer.nvidia.com/cuda-toolkit-archive) 直接装
+CUDA：先在cmd里运行
+ ~~~
+ nvidia-smi.exe 
+ ~~~
+ 查看自己显卡最高支持什么版本，然后下载即可
+[cudatoolkit](https://developer.nvidia.com/cuda-toolkit-archive)  参考：[cuda安装教程](https://blog.csdn.net/chen565884393/article/details/127905428)  
 CUdnn：
 [cudnn](https://developer.nvidia.com/rdp/cudnn-archive) 库函数，复制丢"/CUDA/v12.2/"就行
 tensorRT:
@@ -25,12 +29,17 @@ opencv：
 pip install opencv-python
 ~~~
 
+
+
 pytorch：
 [离线pytorch包下载](https://download.pytorch.org/whl/torch/)
 
 pytorch 一键安装：
 ~~~
 pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu121
+
+
+pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu126
 ~~~
 [官方网站](https://pytorch.org/get-started/previous-versions/)
 [github](https://github.com/pytorch/vision#installation)
