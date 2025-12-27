@@ -42,7 +42,7 @@ sudp apt install chromium-browser
 安装gnome-tweaks，在图形化界面调整加速度配置(Acceleration Profile)为flat
 
 ```
-sudo apt install gnome-tweaks
+sudo apt install gnome-tweaks 
 
 ```
 
@@ -116,5 +116,17 @@ sudo ufw allow samba
 
 [Jetson Nano教程之安装Samba服务](https://www.waveshare.net/study/article-1047-1.html)
 
+
+
+# 修复unbuntu设置页面为竖屏，但启动页面为横屏
+
+原因是GDM在登陆页面没有跟系统设置同步
+下面刚好是把主机设置复制一份给GDM，完美解决问题
+
+```
+sudo cp ~/.config/monitors.xml /var/lib/gdm3/.config/monitors.xml
+sudo chown gdm:gdm /var/lib/gdm3/.config/monitors.xml
+
+```
 
 <br/>
