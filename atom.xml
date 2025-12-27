@@ -6,7 +6,7 @@
   <link href="http://suyanblog.cn/atom.xml" rel="self"/>
   
   <link href="http://suyanblog.cn/"/>
-  <updated>2025-08-06T00:00:00.000Z</updated>
+  <updated>2025-12-25T00:00:00.000Z</updated>
   <id>http://suyanblog.cn/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Jetson Nano配置指南</title>
+    <link href="http://suyanblog.cn/26_nano_1/"/>
+    <id>http://suyanblog.cn/26_nano_1/</id>
+    <published>2025-12-25T00:00:00.000Z</published>
+    <updated>2025-12-25T00:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="修复因snap版本更新导致浏览器无法正常启动的bug"><a href="#修复因snap版本更新导致浏览器无法正常启动的bug" class="headerlink" title="修复因snap版本更新导致浏览器无法正常启动的bug"></a>修复因snap版本更新导致浏览器无法正常启动的bug</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>Jetson Orin Nano刷机后无法打开chrome&#x2F;firefox浏览器 ubuntu22.04</p><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>执行以下命令即可（安装Snap 2.68.5并锁定，使其不会被snap或apt更新）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">snap download snapd --revision=24724</span><br><span class="line">sudo snap ack snapd_24724.assert</span><br><span class="line">sudo snap install snapd_24724.snap</span><br><span class="line">sudo snap refresh --hold snapd</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>参考<br><a href="https://zhuanlan.zhihu.com/p/1936952595513049503">Jetson Orin Nano刷机后无法打开chrome&#x2F;firefox浏览器</a></p><h1 id="修复鼠标加速度问题"><a href="#修复鼠标加速度问题" class="headerlink" title="修复鼠标加速度问题"></a>修复鼠标加速度问题</h1><h2 id="解决-1"><a href="#解决-1" class="headerlink" title="解决"></a>解决</h2><p>安装gnome-tweaks，在图形化界面调整加速度配置(Acceleration Profile)为flat</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install gnome-tweaks</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>在 Linux 的输入系统（libinput）中，没有绝对的“关闭加速度”开关。</p><p>“平坦”模式 意味着加速度倍数为常数（通常是1），即鼠标光标的移动速度与你的手部物理移动速度严格成正比，这符合大多数人对“无加速”的期望。</p><p>“默认”或“自适应”模式则会在你移动更快时，施加一个非线性的加速倍数，导致难以精准控制。</p><h1 id="安装其他应用"><a href="#安装其他应用" class="headerlink" title="安装其他应用"></a>安装其他应用</h1><p>如果有适配的deb文件就直接去官网下载<br>包括qq vscode miniconda 都是可以装的</p><h1 id="windows跟jetson-nano-通过网线实现文件夹共享"><a href="#windows跟jetson-nano-通过网线实现文件夹共享" class="headerlink" title="windows跟jetson nano 通过网线实现文件夹共享"></a>windows跟jetson nano 通过网线实现文件夹共享</h1><p>首先需要配置网络，保证双方可以ping通，这一部分网上攻略很多，不多赘述</p><p>Ubuntu系统，按如下步骤执行：<br>1.安装samba服务</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install samba -y</span><br></pre></td></tr></table></figure><p>2.创建共享目录</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /home/share  # 路径随意，下面也一样</span><br><span class="line">sudo chmod -R 777 /home/share</span><br></pre></td></tr></table></figure><p>3.配置samba服务</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/samba/smb.conf</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[sambashare]</span><br><span class="line">   path = /home/share</span><br><span class="line">   browseable = yes</span><br><span class="line">   read only = no</span><br><span class="line">   guest ok = no</span><br><span class="line">   valid users = suyan</span><br></pre></td></tr></table></figure><p>4.添加 Samba 用户</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo smbpasswd -a name  # 将 &#x27;name&#x27; 替换为你的用户名,随便起个名字就行</span><br></pre></td></tr></table></figure><p>系统会提示你设置 Samba 专用密码（可以与系统登录密码不同）。</p><p>5.重启samba服务和配置Linux防火墙</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart smbd</span><br><span class="line">sudo systemctl enable smbd # 开机自启</span><br><span class="line">sudo ufw allow samba</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>6.在 Windows 上访问共享<br>打开文件资源管理器</p><p>在地址栏输入：\192.168.x.x\（将 IP 换成你的 Nano IP）</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.cnblogs.com/linux-wang/p/18817900">Windows与Linux通过Samba共享文件夹</a><br><a href="https://www.bilibili.com/video/BV1ya4y1n7k9">Jetson Nano教程之文件共享 samba</a></p><p><a href="https://www.waveshare.net/study/article-1047-1.html">Jetson Nano教程之安装Samba服务</a></p><br/>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;修复因snap版本更新导致浏览器无法正常启动的bug&quot;&gt;&lt;a href=&quot;#修复因snap版本更新导致浏览器无法正常启动的bug&quot; class=&quot;headerlink&quot; title=&quot;修复因snap版本更新导致浏览器无法正常启动的bug&quot;&gt;&lt;/a&gt;修复因snap版</summary>
+      
+    
+    
+    
+    <category term="解决方案" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>考研结束后近期目标</title>
+    <link href="http://suyanblog.cn/26_target/"/>
+    <id>http://suyanblog.cn/26_target/</id>
+    <published>2025-12-22T00:00:00.000Z</published>
+    <updated>2025-12-22T00:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>理财:<br>1.后面过几个月再捏一批低价贴纸<br>2.后面可以看看股市，模拟一手<br>3.可以看看幻幻的知识星球 </p><p>生活方面:<br>1.考虑买一手自行车<br>2.后面可以去健身  </p><p>学业方面<br>1.想玩ai锁<br>2.看看fpga<br>3.毕业前看看再刷一次六级</p><p>最近：<br>1.收拾东西，把东西都整理一下<br>2.去拿证书<br>3.修blog，b站，做简历发邮件<br>4.把作业都交一交，学习通作业</p><p>5.看看复试专业课，看看导师</p><p>6.看看需不需要买个显示器 把jetson nano 整一整，买个hitbox玩锁去了<br>7.matlab得学 很关键，看看能不能把电赛题用仿真再搓一遍<br>8.英语还是不能丢的</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;理财:&lt;br&gt;1.后面过几个月再捏一批低价贴纸&lt;br&gt;2.后面可以看看股市，模拟一手&lt;br&gt;3.可以看看幻幻的知识星球 &lt;/p&gt;
+&lt;p&gt;生活方面:&lt;br&gt;1.考虑买一手自行车&lt;br&gt;2.后面可以去健身  &lt;/p&gt;
+&lt;p&gt;学业方面&lt;br&gt;1.想玩ai锁&lt;br&gt;2.看看fpga</summary>
+      
+    
+    
+    
+    <category term="未来日记" scheme="http://suyanblog.cn/categories/%E6%9C%AA%E6%9D%A5%E6%97%A5%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>25年电赛总结</title>
@@ -186,7 +232,7 @@
     <published>2024-10-06T20:33:20.000Z</published>
     <updated>2024-10-06T21:37:20.000Z</updated>
     
-    <content type="html"><![CDATA[<p>RT</p><p>涉案代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#这是一个用于显示菜单，并进行选择的代码</span><br><span class="line"></span><br><span class="line">def choose(</span><br><span class="line">        title: str,</span><br><span class="line">        options: tuple | list,</span><br><span class="line">        console: &quot;ColorfulConsole&quot;,</span><br><span class="line">        separate=None) -&gt; str:</span><br><span class="line">    screen = f&quot;&#123;title&#125;:\n&quot;</span><br><span class="line">    row = 0</span><br><span class="line">    for i, j in enumerate(options, start=1):</span><br><span class="line">        screen += f&quot;&#123;i: &gt;2d&#125;. &#123;j&#125;\n&quot;</span><br><span class="line">        if separate and row in separate:</span><br><span class="line">            screen += f&quot;&#123;&#x27;=&#x27; * 25&#125;\n&quot;</span><br><span class="line">        row += 1</span><br><span class="line">    return console.input(screen)</span><br><span class="line"></span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#  这是菜单选择功能代码</span><br><span class="line"></span><br><span class="line">    def run(self, default_mode: list):</span><br><span class="line">        self.default_mode = default_mode</span><br><span class="line">        with suppress(ValueError):</span><br><span class="line">            while self.running:</span><br><span class="line">                if not (select := safe_pop(self.default_mode)):</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                    select = choose(</span><br><span class="line">                        &quot;请选择采集功能&quot;,</span><br><span class="line">                        [i for i, _ in self.__function],</span><br><span class="line">                        self.console)</span><br><span class="line"></span><br><span class="line">                    # select=5</span><br><span class="line">                    # print(select)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                if select in &#123;&quot;Q&quot;, &quot;q&quot;&#125;:</span><br><span class="line">                    self.running = False</span><br><span class="line">                elif not select:</span><br><span class="line">                    break</span><br><span class="line">                elif (n := int(select) - 1) in range(len(self.__function)):</span><br><span class="line">                    self.__function[n][1](safe_pop(self.default_mode))</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>当我在控制台输入数字时，功能是可以正常调用的，但是在直接给 select变量赋值时功能执行不正常。</p><p>后来发现是 整数与字符串的原因</p><p>在使用 <code>choose()</code> 函数时，用户通过控制台进行输入，返回值是一个字符串。例如，如果用户输入 <code>5</code>，<code>select</code> 就是字符串 <code>&quot;5&quot;</code>。之后，代码会将 <code>select</code> 转换为整数并进行判断。</p><p>直接赋值的是一个整数，而不是字符串。如果不再通过控制台输入，代码依然会执行 <code>int(select)</code> 转换，但是这里的 <code>select</code> 已经是整数了，继续转换时会报错，因为 <code>int()</code> 函数需要处理字符串，而非整数。<strong>这是为什么功能无法正常执行的原因</strong>。</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>1.如果直接赋值给 <code>select</code>，应该确保跳过 <code>int()</code> 转换部分，或者直接处理整数。</p><p>2.即使手动赋值给 <code>select</code>，确保它是字符串形式：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select = <span class="string">&quot;5&quot;</span></span><br></pre></td></tr></table></figure><hr><p>后来发现根本不是整数与字符串的问题，很莫名其妙，后来在菜单选择之前加了一个sleep后，功能就正常了&#x3D; &#x3D;<br>有点玄学</p><pre><code>    def run(self, default_mode: list):        self.default_mode = default_mode        with suppress(ValueError):            while self.running:                if not (select := safe_pop(self.default_mode)):                    select = choose(                        &quot;请选择采集功能&quot;,                        [i for i, _ in self.__function],                        self.console)                    # select=5                    # print(select)                if select in &#123;&quot;Q&quot;, &quot;q&quot;&#125;:                    self.running = False                elif not select:                    break                elif (n := int(select) - 1) in range(len(self.__function)):                                        time.sleep(0.5)                                        self.__function[n][1](safe_pop(self.default_mode))</code></pre>]]></content>
+    <content type="html"><![CDATA[<p>RT</p><p>涉案代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#这是一个用于显示菜单，并进行选择的代码</span><br><span class="line"></span><br><span class="line">def choose(</span><br><span class="line">        title: str,</span><br><span class="line">        options: tuple | list,</span><br><span class="line">        console: &quot;ColorfulConsole&quot;,</span><br><span class="line">        separate=None) -&gt; str:</span><br><span class="line">    screen = f&quot;&#123;title&#125;:\n&quot;</span><br><span class="line">    row = 0</span><br><span class="line">    for i, j in enumerate(options, start=1):</span><br><span class="line">        screen += f&quot;&#123;i: &gt;2d&#125;. &#123;j&#125;\n&quot;</span><br><span class="line">        if separate and row in separate:</span><br><span class="line">            screen += f&quot;&#123;&#x27;=&#x27; * 25&#125;\n&quot;</span><br><span class="line">        row += 1</span><br><span class="line">    return console.input(screen)</span><br><span class="line"></span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#  这是菜单选择功能代码</span><br><span class="line"></span><br><span class="line">    def run(self, default_mode: list):</span><br><span class="line">        self.default_mode = default_mode</span><br><span class="line">        with suppress(ValueError):</span><br><span class="line">            while self.running:</span><br><span class="line">                if not (select := safe_pop(self.default_mode)):</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                    select = choose(</span><br><span class="line">                        &quot;请选择采集功能&quot;,</span><br><span class="line">                        [i for i, _ in self.__function],</span><br><span class="line">                        self.console)</span><br><span class="line"></span><br><span class="line">                    # select=5</span><br><span class="line">                    # print(select)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                if select in &#123;&quot;Q&quot;, &quot;q&quot;&#125;:</span><br><span class="line">                    self.running = False</span><br><span class="line">                elif not select:</span><br><span class="line">                    break</span><br><span class="line">                elif (n := int(select) - 1) in range(len(self.__function)):</span><br><span class="line">                    self.__function[n][1](safe_pop(self.default_mode))</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>当我在控制台输入数字时，功能是可以正常调用的，但是在直接给 select变量赋值时功能执行不正常。</p><p>后来发现是 整数与字符串的原因</p><p>在使用 <code>choose()</code> 函数时，用户通过控制台进行输入，返回值是一个字符串。例如，如果用户输入 <code>5</code>，<code>select</code> 就是字符串 <code>&quot;5&quot;</code>。之后，代码会将 <code>select</code> 转换为整数并进行判断。</p><p>直接赋值的是一个整数，而不是字符串。如果不再通过控制台输入，代码依然会执行 <code>int(select)</code> 转换，但是这里的 <code>select</code> 已经是整数了，继续转换时会报错，因为 <code>int()</code> 函数需要处理字符串，而非整数。<strong>这是为什么功能无法正常执行的原因</strong>。</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>1.如果直接赋值给 <code>select</code>，应该确保跳过 <code>int()</code> 转换部分，或者直接处理整数。</p><p>2.即使手动赋值给 <code>select</code>，确保它是字符串形式：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select = <span class="string">&quot;5&quot;</span></span><br></pre></td></tr></table></figure><hr><p>后来发现根本不是整数与字符串的问题，很莫名其妙，后来在菜单选择之前加了一个sleep后，功能就正常了&#x3D; &#x3D;<br>有点玄学</p><pre><code>    def run(self, default_mode: list):        self.default_mode = default_mode        with suppress(ValueError):            while self.running:                if not (select := safe_pop(self.default_mode)):                    select = choose(                        &quot;请选择采集功能&quot;,                        [i for i, _ in self.__function],                        self.console)                    # select=5                    # print(select)                if select in {&quot;Q&quot;, &quot;q&quot;}:                    self.running = False                elif not select:                    break                elif (n := int(select) - 1) in range(len(self.__function)):                                        time.sleep(0.5)                                        self.__function[n][1](safe_pop(self.default_mode))</code></pre>]]></content>
     
     
       
@@ -446,52 +492,6 @@
     <category term="嵌入式" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
     
     <category term="沁恒" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E6%B2%81%E6%81%92/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>GitHub Failed to connect to github.com port 443Timed out</title>
-    <link href="http://suyanblog.cn/git1/"/>
-    <id>http://suyanblog.cn/git1/</id>
-    <published>2024-06-16T10:02:33.000Z</published>
-    <updated>2024-06-16T10:02:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>使用以下命令，提交代码到远程仓库时，</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><p>遇到如下问题：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: unable to access &#x27;https://github.com/xxx/&#x27;: Failed to connect to github.com port 443: Timed out</span><br></pre></td></tr></table></figure><h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>设置代理再取消代理</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global https.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure><p>再次提交</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;使用以下命令，提交代码到远程仓库时，&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;</summary>
-      
-    
-    
-    
-    <category term="解决方案" scheme="http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>关于考试</title>
-    <link href="http://suyanblog.cn/six_test/"/>
-    <id>http://suyanblog.cn/six_test/</id>
-    <published>2024-06-15T18:08:21.000Z</published>
-    <updated>2024-06-15T18:08:21.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>这次六级又g了</p><h2 id="专注与环境："><a href="#专注与环境：" class="headerlink" title="专注与环境："></a>专注与环境：</h2><p>最近才发现自己耐性很差，不能静下心专注去做一件事情，比如去做一套完整的题，或者是用大段时间去做一些事情。<br>很容易做一会，心思就飘到其他地方，去打断一下原来的活动。<br>这跟环境也有关系。<br>在宿舍要素太多，总是会想一些其他东西从而打断状态<br>因为复习他毕竟是很枯燥的一件事情，所以自然而然的会去分神，看到桌面上的一件东西就会想它的故事，看到手机就想看看有没有消息，微信弹个消息，游戏就约上了<br>抵制不了这个诱惑就要去隔绝诱惑，那我不看了还不行吗<br>外部的杂乱信息也是影响专注的要素之一，所以碎片时间，宁愿发呆，也不要去刷一些视频或者是论坛之类的东西，会分神<br>所以后面复习尽可能的换一个专注且舒适的环境，减少环境的干扰<br>包括考研复习，也是需要这个环境的</p><h2 id="状态与时间："><a href="#状态与时间：" class="headerlink" title="状态与时间："></a>状态与时间：</h2><p>考试时候也不在状态，包括听力跟作文，总是有一种无所适从的感觉。<br>果然距离高考越远，考试的状态就会越差<br>是因为做题太少了，没有做题找状态。</p><p>从写作文开始就找不到状态，进而影响后面的听力，阅读因为做过两套题，再加上基础还是不错的，所以没什么问题<br>其实我听力阅读底子都是不错的，模拟练习少了，尤其是作文，跟翻译，近两年基本没有怎么动过笔，导致下笔时候脑袋也都是空空的<br>阅读因为有每天背单词的习惯，日常也会接触到一些英文段落，所以阅读没什么问题。</p><p>所以实际花在准备考试的的时间还是太短了，吃完饭了玩会游戏。。学了一小时太累了玩会游戏。。学会一个知识点了玩会游戏。。到晚上了没状态又约游戏了玩会游戏。。<br>自己不是那种突击选手，把事情压到后面一块干真不太行，只能是细水长流了<br>后面一定要每天读写看，保持英语的感觉，再看一下考研题型吧，跟六级一块准备</p><h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>要做好时间规划，提前留一段时间去干事。也不要拖延。什么时间就去做什么，比如这一周我要考试复习，白天就专心考试复习</p><p>环境也要做到专注，避免在宿舍读书，去教室，实验室，或者是图书馆，避免分心。同时不要看微信之类的，因为真的会打断</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;这次六级又g了&lt;/p&gt;
-&lt;h2 id=&quot;专注与环境：&quot;&gt;&lt;a href=&quot;#专注与环境：&quot; class=&quot;headerlink&quot; title=&quot;专注与环境：&quot;&gt;&lt;/a&gt;专注与环境：&lt;/h2&gt;&lt;p&gt;最近才发现自己耐性很差，不能静下心专注去做一件事情，比如去做一套完整的题，或者</summary>
-      
-    
-    
-    
-    <category term="关于" scheme="http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/"/>
     
     
   </entry>
