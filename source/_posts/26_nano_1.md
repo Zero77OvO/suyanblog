@@ -26,6 +26,11 @@ sudo snap refresh --hold snapd
 
 ```
 
+安装谷歌浏览器
+```
+sudo apt update
+sudp apt install chromium-browser
+```
 参考
 [Jetson Orin Nano刷机后无法打开chrome/firefox浏览器](https://zhuanlan.zhihu.com/p/1936952595513049503)
 
