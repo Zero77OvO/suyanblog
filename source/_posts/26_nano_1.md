@@ -129,4 +129,80 @@ sudo chown gdm:gdm /var/lib/gdm3/.config/monitors.xml
 
 ```
 
+
+# 如何在unbuntu上科学上网
+
+下一个clash verge
+然后勾选代理和互联网连接即可。
+
+https://docs.ultralytics.com/guides/nvidia-jetson/#install-pytorch-and-torchvision
+
+# docker的安装与配置
+
+
+
+## 下载jetson-containers工具
+jetson-containers可以通过模块化的方式来自动构建image，但是jetson-containers也有构建好的包含所有我们使用组件的image，我们用的就是他们构建好的image。
+
+安装脚本会提示您输入sudo密码，并会安装一些Python依赖项，并通过在/usr/local/bin下建立链接的方式将诸如autotag之类的工具添加到$PATH中（如果您移动了jetson-containers存储库，请再次运行此步骤）。
+```
+git clone https://github.com/dusty-nv/jetson-containers
+bash jetson-containers/install.sh
+```
+## 修改Docker默认运行时为nvidia
+这一步建议做，不然每次启动container时，都要加上--runtime=nvidia，例如下面的启动指令，就要加上--runtime。
+```
+sudo docker run --runtime nvidia --gpus all --net host --ipc host -it --name pytorch_ngc_v2 -v /home:/home nvcr.io/nvidia/pytorch:25.01-py3-igpu
+
+```
+
+```
+sudo vim /etc/docker/daemon.json
+```
+修改/etc/docker/daemon.json文件，将"default-runtime": "nvidia"添加到/etc/docker/daemon.json配置文件中：
+```
+{
+    "runtimes": {
+        "nvidia": {
+            "path": "nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    },
+    "default-runtime": "nvidia",
+    "proxies": {
+        "http-proxy": "http://127.0.0.1:7897",  ##代理记得换成自己的，删掉也可以
+        "https-proxy": "http://127.0.0.1:7897"
+    },
+    "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
+}
+```
+
+顺便修复了一下代理和镜像
+
+然后重启Docker服务：
+```
+sudo systemctl restart docker
+```
+可以通过查看docker info来确认更改：
+```
+sudo docker info | grep 'Default Runtime'
+Default Runtime: nvidia
+```
+
+## 拉取docker镜像
+我们使用jetson-containers工具来自动匹配我们的机器，这个命令会查看当前jetson的jetpack版本以及当前host的其他组件的版本，来自动选择合适的docker image。
+```
+# automatically pull or build a compatible container image
+jetson-containers run $(autotag nanoowl)
+
+```
+这个命令在我的机器上，其实是直接拉取的dustynv/nanoowl:r36.4.0这个镜像。
+
+拉取完成后，镜像会自动运行，我们可以直接ctrl+D退出，使用我们的自定义命令重新打开。
+```
+sudo docker run --runtime nvidia --gpus all --net host --ipc host -it --name ai_all_in_one  -v /home:/home dustynv/nanoow:r36.4.0
+```
+
+参考
+[jetson orin nano super AI模型部署之路（二）保姆级最好用AI环境配置](https://zhuanlan.zhihu.com/p/32524824059)
 <br/>
