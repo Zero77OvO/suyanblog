@@ -1,7 +1,7 @@
 ---
 title: 考研结束后近期目标
 date: 2025-12-22 
-updated: 2025-12-22 
+updated: 2026-02-16
 type:
 categories:
 - 未来日记
