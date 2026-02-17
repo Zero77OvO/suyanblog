@@ -342,25 +342,6 @@
       <name>素颜</name>
     </author>
     <category term="嵌入式" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
-    <category term="TI" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/TI/"/>
-    <content>
-      <![CDATA[<p>至今没有解决，具体体现在 <strong>引用变量</strong> 进行 <strong>运算</strong> 时候就会内存跑飞，可能跟extern变量也有关系<br>等后面有时间了再解决一下</p><h2 id="7月21日更新"><a href="#7月21日更新" class="headerlink" title="7月21日更新"></a>7月21日更新</h2><p>据说是编译器的问题，尽量不要用keil，使用ccs进行工程配置使用，到目前来说没有遇到奇怪的现象</p><p>这块板子布局本身也不太合理。。但是必须要用啊- -</p><h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="https://blog.csdn.net/xinyz4104/article/details/118611065">STM32 Keil静态全局变量值被修改</a><br><a href="https://blog.csdn.net/phker/article/details/134056670">单片机的变量竟然被无故修改了.</a><br><a href="https://blog.csdn.net/weixin_47221359/article/details/109390145">全局变量被未知原因改变的解决方法</a><br><a href="https://zhidao.baidu.com/question/397854115.html">为什么我的DS18B20总是乱跳呢</a><br><a href="https://cn.bing.com/search?pglt=161&q=%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AE%BE%E7%BD%AE%E4%B8%BA0+%E6%95%B0%E5%AD%97%E4%BC%9A%E4%B9%B1%E8%B7%B3&cvid=bb5ef59d9c634b349ac9fbe393e2c7e0&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQABhAMgYIAhAAGEAyBggDEAAYQDIGCAQQABhAMgYIBRAAGEAyBggGEAAYQDIGCAcQABhAMgYICBAAGEDSAQkxMDEzOWowajGoAgiwAgE&FORM=ANNTA1&adppc=EDGEESS&PC=ASTS">初始化设置为0 数字会乱跳</a><br><a href="https://shequ.stmicroelectronics.cn/thread-622719-1-1.html">又是一个奇葩问题——stm32 全局变量自己乱变</a></p>]]>
-    </content>
-    <id>http://suyanblog.cn/ti1/</id>
-    <link href="http://suyanblog.cn/ti1/"/>
-    <published>2024-07-16T00:00:00.000Z</published>
-    <summary>
-      <![CDATA[<p>至今没有解决，具体体现在 <strong>引用变量</strong> 进行 <strong>运算</strong> 时候就会内存跑飞，可能跟extern变量也有关系<br>等后面有时间了再解决一下</p>
-<h2 id="7月21日更新"><a href="#7月21日更新]]>
-    </summary>
-    <title>msp3507板子跑飞</title>
-    <updated>2024-07-21T00:00:00.000Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>素颜</name>
-    </author>
-    <category term="嵌入式" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
     <category term="stm32" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/"/>
     <content>
       <![CDATA[<h2 id="省流："><a href="#省流：" class="headerlink" title="省流："></a>省流：</h2><pre><code>1.函数使用了多个其他.c文件中的变量，使用extern声明变量。</code></pre><p>当多个.c文件使用extern 声明变量，导致正确的参数无法被引用，导致返回值错误。<br>以后在定义变量时，尽量把extern都写在.h文件中，并把所有的.h文件集合在一个.h文件中，调用只需要include一个.h文件，避免使用多个extern 声明同一个变量</p><pre><code>2. 在参数传入时候，float int类型要保证规范，否则会导致数据溢出或者是其他很奇怪的问题3.在定时器与while中使用结构体，在main里有pid的初始化，所以定时器里只放了声明与函数，导致返回值一直不对</code></pre><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">   //定时器</span><br><span class="line"></span><br><span class="line"> IncrementalPID ver;</span><br><span class="line">IncrementalPID hor;</span><br><span class="line"></span><br><span class="line"> IncrementalPID_init(&amp;ver, 0.4, 0.01, 0.0);// 设置PID参数</span><br><span class="line"> IncrementalPID_init(&amp;hor, 0.4, 0.01, 0.0);// 设置PID参数</span><br><span class="line"></span><br><span class="line">Servo_pid_move(&amp;ver, &amp;hor,  y1,  y_green,  x1,  x_green);</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>结构体的书写要规范，在定时器中使用时候</p><p>声明、初始化、函数使用都不能少</p><p>代码书写一定要严谨，思路清晰。</p><p>参考：<br><a href="https://blog.csdn.net/weixin_51370842/article/details/127679618">keil中的extern的使用</a><br><a href="https://blog.csdn.net/z5z5z5z56/article/details/105982306">关于extern声明后，变量值和定义值不一样的问题及解决办法</a></p>]]>
@@ -375,5 +356,24 @@
     </summary>
     <title>在定时器中断与while中执行代码效果不同记录</title>
     <updated>2024-07-16T00:00:00.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>素颜</name>
+    </author>
+    <category term="嵌入式" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    <category term="TI" scheme="http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/TI/"/>
+    <content>
+      <![CDATA[<p>至今没有解决，具体体现在 <strong>引用变量</strong> 进行 <strong>运算</strong> 时候就会内存跑飞，可能跟extern变量也有关系<br>等后面有时间了再解决一下</p><h2 id="7月21日更新"><a href="#7月21日更新" class="headerlink" title="7月21日更新"></a>7月21日更新</h2><p>据说是编译器的问题，尽量不要用keil，使用ccs进行工程配置使用，到目前来说没有遇到奇怪的现象</p><p>这块板子布局本身也不太合理。。但是必须要用啊- -</p><h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="https://blog.csdn.net/xinyz4104/article/details/118611065">STM32 Keil静态全局变量值被修改</a><br><a href="https://blog.csdn.net/phker/article/details/134056670">单片机的变量竟然被无故修改了.</a><br><a href="https://blog.csdn.net/weixin_47221359/article/details/109390145">全局变量被未知原因改变的解决方法</a><br><a href="https://zhidao.baidu.com/question/397854115.html">为什么我的DS18B20总是乱跳呢</a><br><a href="https://cn.bing.com/search?pglt=161&q=%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AE%BE%E7%BD%AE%E4%B8%BA0+%E6%95%B0%E5%AD%97%E4%BC%9A%E4%B9%B1%E8%B7%B3&cvid=bb5ef59d9c634b349ac9fbe393e2c7e0&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQABhAMgYIAhAAGEAyBggDEAAYQDIGCAQQABhAMgYIBRAAGEAyBggGEAAYQDIGCAcQABhAMgYICBAAGEDSAQkxMDEzOWowajGoAgiwAgE&FORM=ANNTA1&adppc=EDGEESS&PC=ASTS">初始化设置为0 数字会乱跳</a><br><a href="https://shequ.stmicroelectronics.cn/thread-622719-1-1.html">又是一个奇葩问题——stm32 全局变量自己乱变</a></p>]]>
+    </content>
+    <id>http://suyanblog.cn/ti1/</id>
+    <link href="http://suyanblog.cn/ti1/"/>
+    <published>2024-07-16T00:00:00.000Z</published>
+    <summary>
+      <![CDATA[<p>至今没有解决，具体体现在 <strong>引用变量</strong> 进行 <strong>运算</strong> 时候就会内存跑飞，可能跟extern变量也有关系<br>等后面有时间了再解决一下</p>
+<h2 id="7月21日更新"><a href="#7月21日更新]]>
+    </summary>
+    <title>msp3507板子跑飞</title>
+    <updated>2024-07-21T00:00:00.000Z</updated>
   </entry>
 </feed>
