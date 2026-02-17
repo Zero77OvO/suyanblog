@@ -85,7 +85,8 @@ avatar:
 disable_top_img: false
 
 # The banner image of home page
-index_img: /pic/others/background.jpg
+index_img: https://i0.hdslb.com/bfs/new_dyn/26dfce757b3312f52ed0715343be68c310214649.webp
+# /pic/others/background.jpg
 
 
 # If the banner of page not setting, it will show the top_img
