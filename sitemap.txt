@@ -1,7 +1,7 @@
 http://suyanblog.cn/tags/index.html
-http://suyanblog.cn/comments/index.html
-http://suyanblog.cn/link/index.html
 http://suyanblog.cn/categories/index.html
+http://suyanblog.cn/link/index.html
+http://suyanblog.cn/comments/index.html
 http://suyanblog.cn/plan/
 http://suyanblog.cn/26_target/
 http://suyanblog.cn/26_nano_3/
@@ -78,10 +78,10 @@ http://suyanblog.cn/categories/%E5%85%B3%E4%BA%8E/
 http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/
 http://suyanblog.cn/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/python/
 http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/
+http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/%E6%B8%B8%E6%88%8F/
 http://suyanblog.cn/categories/%E6%B8%B8%E6%88%8F/
 http://suyanblog.cn/categories/%E5%A6%82%E4%BD%95/
 http://suyanblog.cn/categories/%E7%A2%8E%E8%AE%B0/%E6%B8%B8%E6%88%8F/
-http://suyanblog.cn/categories/%E6%97%A5%E5%B8%B8/%E6%B8%B8%E6%88%8F/
 http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/maixpy/
 http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/
 http://suyanblog.cn/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%89%A9%E8%81%94%E7%BD%91/
