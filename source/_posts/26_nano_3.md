@@ -1,5 +1,5 @@
 ---
-title: Jetson orin nano super YoloV8部署过程
+title: Jetson orin nano super YoloV8 (py）部署过程
 date: 2025-12-29
 updated: 2025-12-29
 tags:
@@ -154,6 +154,6 @@ cv2.destroyAllWindows()
 
 
 
-yolo export model=yolov8n.pt format=engine device=0
-yolo predict model=yolov8n.engine source=images/ device=0
+<!-- yolo export model=yolov8n.pt format=engine device=0
+yolo predict model=yolov8n.engine source=images/ device=0 -->
 <br/>
