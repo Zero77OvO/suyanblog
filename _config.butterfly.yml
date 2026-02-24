@@ -294,7 +294,11 @@ aside:
     content: 本科自动化在读<br/>
              一个兴趣使然的家伙；<br/>
              摆烂大王<br/>
-             随便写点东西记录记录
+             随便写点东西记录记录<br/>
+
+             博客使用静态页面挂载在github上<br/>
+             访问速度可能不太理想<br/>
+             建议使用代理访问→_→<br/>
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
